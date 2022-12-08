@@ -92,7 +92,7 @@ struct CustomTextFieldWithDate: View {
     let textFieldLabel: String
     let datePickerTitle: String
     //data picker
-    @State private var selectedDate = Date()
+    @Binding var selectedDate : Date
     @State private var isHidden = true
     
     let formatter: DateFormatter = {
