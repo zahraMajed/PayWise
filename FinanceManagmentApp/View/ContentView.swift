@@ -16,7 +16,8 @@ struct ContentView: View {
 
             CustomTextField(textFieldLabel: "Name", textFieldHint: "Enter Your name", isSwitch: false, userInput: $username).padding()
             
-            CustomTextFieldWithDate(textFieldLabel: "Date of Bitrh", datePickerTitle: "Date of birth", selectedDate: $selectedDate)
+            CustomTextFieldWithDate(textFieldLabel: "Date of Bitrh", datePickerTitle: "Date of birth", selectedDate: $selectedDate).padding()
+            
             
         }
     }

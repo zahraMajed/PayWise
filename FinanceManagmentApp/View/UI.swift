@@ -87,14 +87,12 @@ struct CustomTextField: View {
 // CustomTextField Refrence
 //https://medium.com/@khageshp/floatingtextfield-in-swiftui-b46b86298825
 
-
 struct CustomTextFieldWithDate: View {
     let textFieldLabel: String
     let datePickerTitle: String
     //data picker
     @Binding var selectedDate : Date
     @State private var isHidden = true
-    
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
@@ -102,16 +100,23 @@ struct CustomTextFieldWithDate: View {
       }()
     
     var body: some View {
-        VStack(alignment: .leading){
-            Text(textFieldLabel)
-                .font(.subheadline)
-                .foregroundColor(Color("Gray2"))
-                .padding([.top, .leading, .trailing], 12)
-                .padding(.bottom, 5)
-            TextField("MM/DD/YYYY", value: $selectedDate, formatter: formatter)
-                .disableAutocorrection(true)
-                .foregroundColor(Color.black)
-                .padding([.leading, .bottom, .trailing], 12)
+        HStack {
+            VStack(alignment: .leading){
+                Text(textFieldLabel)
+                    .font(.subheadline)
+                    .foregroundColor(Color("Gray2"))
+                    .padding([.top, .leading, .trailing], 12)
+                    .padding(.bottom, 5)
+                TextField("MM/DD/YYYY", value: $selectedDate, formatter: formatter)
+                    .disableAutocorrection(true)
+                    .foregroundColor(Color.black)
+                    .padding([.leading, .bottom, .trailing], 12)
+            }
+            Image(systemName: "calendar")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .padding(.trailing)
+                .foregroundColor(Color("AccentGreenLight"))
         }
         .background(Color("Gray4"))
         .cornerRadius(14)
@@ -119,30 +124,37 @@ struct CustomTextFieldWithDate: View {
         .onTapGesture {
             self.onExpandTapped()
         }
+        
         if !isHidden {
             VStack {
+                Spacer()
                 HStack{
                     //icon
                     Text(datePickerTitle)
                         .font(.headline)
                         .fontWeight(.bold)
                 }
-                .padding(.vertical, 17.0)
-                
+                //.padding(.vertical, 17.0)
+                Spacer()
                 DatePicker("", selection: $selectedDate, displayedComponents: .date)
-                    .padding(.bottom, 17.0)
-                .frame(width: 390)
-                .datePickerStyle(.wheel)
-                .labelsHidden()
-                
+                    .frame(width: 390)
+                    //.padding(.bottom, 17.0)
+                    .datePickerStyle(.wheel)
+                    .labelsHidden()
+                Spacer()
                 MediumButton(text: "Done", isfilled: false) {
                     isHidden.toggle()
                 }
                 .padding(.bottom, 17.0)
-            }.frame(width: 390, height: 350)
-                .background(Color.blue)
-                .cornerRadius(10, corners: [.topLeft, .topRight])
-            //TODO: Data Picker Shadows
+                Spacer()
+            }
+            .frame(width: 390, height: 350, alignment: .bottom)
+            .background(
+                Rectangle()
+                    .fill(Color.white)
+                    .cornerRadius(12, corners: [.topLeft, .topRight])
+                    .shadow(color: Color.gray.opacity(0.25), radius: 8, x: 0,y: -10))
+            
         }
     }
     private func onExpandTapped() {
