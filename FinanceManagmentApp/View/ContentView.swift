@@ -14,10 +14,9 @@ struct ContentView: View {
         var body: some View {
         VStack {
 
-            CustomTextField(textFieldLabel: "Name", textFieldHint: "Enter Your name", isSwitch: false, userInput: $username).padding()
+            CustomTextField(textFieldLabel: "Name", textFieldHint: "Enter Your name", isSwitch: false, isCurrancy: false, userInput: $username).padding()
             
             CustomTextFieldWithDate(textFieldLabel: "Date of Bitrh", datePickerTitle: "Date of birth", selectedDate: $selectedDate).padding()
-            
             
         }
     }

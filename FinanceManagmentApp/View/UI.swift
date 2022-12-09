@@ -65,6 +65,7 @@ struct CustomTextField: View {
     var textFieldLabel: String
     var textFieldHint: String
     var isSwitch: Bool
+    var isCurrancy: Bool
     @Binding var userInput: String
     
     var body: some View {
@@ -86,6 +87,15 @@ struct CustomTextField: View {
 }
 // CustomTextField Refrence
 //https://medium.com/@khageshp/floatingtextfield-in-swiftui-b46b86298825
+
+//TODO: Either in the same struct or seprate struct
+struct CustomTextFieldWithSwitch {
+    
+}
+
+struct CustomTextFieldWithCurrancy {
+    
+}
 
 struct CustomTextFieldWithDate: View {
     let textFieldLabel: String
