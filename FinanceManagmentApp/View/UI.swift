@@ -87,6 +87,7 @@ struct CustomTextField: View {
 }
 // CustomTextField Refrence
 //https://medium.com/@khageshp/floatingtextfield-in-swiftui-b46b86298825
+
 struct CustomPhoneTextField: View {
     var countryPhoneCode: String
     @Binding var userInput: String
