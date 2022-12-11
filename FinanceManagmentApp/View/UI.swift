@@ -88,6 +88,31 @@ struct CustomTextField: View {
 // CustomTextField Refrence
 //https://medium.com/@khageshp/floatingtextfield-in-swiftui-b46b86298825
 
+struct CustomPhoneTextField: View {
+    var countryPhoneCode: String
+    @Binding var userInput: String
+    
+    var body: some View {
+        VStack(alignment: .leading){
+            Text("Phone number")
+                .font(.subheadline)
+                .foregroundColor(Color("Gray2"))
+                .padding([.top, .leading, .trailing], 12)
+                .padding(.bottom, 5)
+            HStack {
+                Text("+ \(countryPhoneCode)")
+                TextField("650-555-1234", text: $userInput)
+                    .keyboardType(.numberPad)
+                    .foregroundColor(Color.black)
+            }
+            .padding([.leading, .bottom, .trailing], 12)
+        }
+        .background(Color("Gray4"))
+        .cornerRadius(14)
+        .frame(width: 355, height: 65)
+    }
+}
+
 //TODO: Either in the same struct or seprate struct
 struct CustomTextFieldWithSwitch {
     
