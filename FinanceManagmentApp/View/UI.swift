@@ -8,6 +8,23 @@
 import Foundation
 import SwiftUI
 
+//MARK: Title and Description
+struct ViewTitleDescription : View {
+    var viewTitle: String
+    var viewDescription: String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10){
+            Text(viewTitle)
+                .font(.title)
+                .fontWeight(.bold)
+            Text(viewDescription)
+                .font(.callout)
+                .fontWeight(.regular)
+        }
+    }
+}
+
 //MARK: Buttons
 struct LargeButton: View {
     var text: String
@@ -20,9 +37,9 @@ struct LargeButton: View {
                 .font(.headline)
                 .fontWeight(.semibold)
                 .foregroundColor(isfilled ? Color.white : Color("AccentGreenLight"))
-                .background(Color( isfilled ? "AccentGreenLight" : "AccentGreenVariantLight")
-                    .cornerRadius(14)
-                    .frame(width: 355, height: 43))
+                .frame(width: 355, height: 43)
+                .background(Color( isfilled ? "AccentGreenLight" : "AccentGreenVariantLight"))
+                .cornerRadius(14)
         }
     }
 }
