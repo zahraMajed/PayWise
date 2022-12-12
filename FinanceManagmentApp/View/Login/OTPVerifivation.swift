@@ -1,5 +1,5 @@
 //
-//  OTPVerifivationPInfo.swift
+//  OTPVerifivation.swift
 //  FinanceManagmentApp
 //
 //  Created by Zahra Majed Alzawad on 18/05/1444 AH.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OTPVerifivationPInfo: View {
+struct OTPVerifivation: View {
     //MARK: vars
     @ObservedObject var loginData : LoginViewModel
     
@@ -19,8 +19,7 @@ struct OTPVerifivationPInfo: View {
             OTPTextField(loginData: loginData)
             
             LargeButton(text: "Continue", isfilled: true) {
-                //Task{await loginData.verifyOTP()}
-                Task{await loginData.verifyOTPithoutSignin()}
+                Task{await loginData.verifyOTP()}
             }
             .disabled(checkOTPFieldStates())
             .opacity(checkOTPFieldStates() ? 0.4 : 1)
@@ -29,14 +28,12 @@ struct OTPVerifivationPInfo: View {
                 //loginData.requestCode()
             }
             
-            if loginData.shouldGoToPersonalInfo {
-                //should go to the PersonalInfoView withouth navigation link.
-            }
+            //should go to the Home withouth navigation link.
+            
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }
-    
     //MARK: function
     func checkOTPFieldStates() -> Bool {
         for index in 0..<6 {
@@ -48,8 +45,8 @@ struct OTPVerifivationPInfo: View {
     }
 }
 
-struct OTPVerifivationPInfo_Previews: PreviewProvider {
+struct OTPVerifivation_Previews: PreviewProvider {
     static var previews: some View {
-        OTPVerifivationPInfo(loginData: LoginViewModel())
+        OTPVerifivation(loginData: LoginViewModel())
     }
 }

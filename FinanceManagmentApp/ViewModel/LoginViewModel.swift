@@ -25,6 +25,7 @@ class LoginViewModel: ObservableObject {
     @Published var isLoading = false
     // user logged status
     @AppStorage("log_Status") var isLoggedIn = false
+    @Published var shouldGoToPersonalInfo  = false
     
     //MARK: function
     func getCountryCode() -> String {
@@ -50,6 +51,26 @@ class LoginViewModel: ObservableObject {
             handleError(error: error.localizedDescription)
         }
     }
+    
+    func verifyOTPithoutSignin() async {
+        do{
+            DispatchQueue.main.async {
+                self.enteredOTPText = self.otpFields.reduce("") { partialResult, value in
+                   partialResult + value
+                }
+                self.isLoading = true
+            }
+            let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.firebaseOTPcode, verificationCode: enteredOTPText)
+            let _ = try await Auth.auth().signIn(with: credential)
+            try Auth.auth().signOut()
+            DispatchQueue.main.async {
+                self.shouldGoToPersonalInfo = true
+            }
+        } catch{
+            handleError(error: error.localizedDescription)
+        }
+    }
+
     
     func verifyOTP() async {
         do{

@@ -21,6 +21,8 @@
 		2BF567E72947610900A6E95B /* OTPVerifivationPInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567E62947610900A6E95B /* OTPVerifivationPInfo.swift */; };
 		2BF567EB2947734200A6E95B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567EA2947734200A6E95B /* SplashView.swift */; };
 		2BF567ED294773EF00A6E95B /* SetupInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567EC294773EF00A6E95B /* SetupInfoView.swift */; };
+		2BF567F42947BD1300A6E95B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567F32947BD1300A6E95B /* Login.swift */; };
+		2BF567F62947BD2F00A6E95B /* OTPVerifivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567F52947BD2F00A6E95B /* OTPVerifivation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		2BF567E82947632700A6E95B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2BF567EA2947734200A6E95B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		2BF567EC294773EF00A6E95B /* SetupInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupInfoView.swift; sourceTree = "<group>"; };
+		2BF567F32947BD1300A6E95B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		2BF567F52947BD2F00A6E95B /* OTPVerifivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerifivation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		2B1DE9E72941F59D007F7518 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2BF567F22947BCFD00A6E95B /* Login */,
 				2BF567E9294772F100A6E95B /* Splash and on boarding */,
 				2BF567E1294760B500A6E95B /* Setup Views */,
 				2B1DE9D92941F41D007F7518 /* ContentView.swift */,
@@ -160,6 +165,15 @@
 				2BF567EA2947734200A6E95B /* SplashView.swift */,
 			);
 			path = "Splash and on boarding";
+			sourceTree = "<group>";
+		};
+		2BF567F22947BCFD00A6E95B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2BF567F32947BD1300A6E95B /* Login.swift */,
+				2BF567F52947BD2F00A6E95B /* OTPVerifivation.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,10 +258,12 @@
 				2BF567E72947610900A6E95B /* OTPVerifivationPInfo.swift in Sources */,
 				2BF567E5294760F100A6E95B /* PhoneNumberPInfo.swift in Sources */,
 				2BF567D929475BB700A6E95B /* LoginViewModel.swift in Sources */,
+				2BF567F62947BD2F00A6E95B /* OTPVerifivation.swift in Sources */,
 				2B1DE9D82941F41D007F7518 /* FinanceManagmentAppApp.swift in Sources */,
 				2BF567ED294773EF00A6E95B /* SetupInfoView.swift in Sources */,
 				2B1DE9EF2941FEA2007F7518 /* UI.swift in Sources */,
 				2B1DE9EC2941FB02007F7518 /* Cards.swift in Sources */,
+				2BF567F42947BD1300A6E95B /* Login.swift in Sources */,
 				2BF567EB2947734200A6E95B /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +397,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinanceManagmentApp/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -411,6 +428,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinanceManagmentApp/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
