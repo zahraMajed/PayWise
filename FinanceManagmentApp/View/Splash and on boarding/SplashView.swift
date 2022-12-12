@@ -10,8 +10,8 @@ import SwiftUI
 struct SplashView: View {
     //MARK: vars
     @AppStorage("log_Status") var isLoggedIn = false
-    @AppStorage("Setup_Status") var isSetupDone = false
-    @State private var isSplashActive = true
+    @AppStorage("Setup_Status") var isSetupDone = true
+    @State private var isSplashActive = false
     
     var body: some View {
         if isSplashActive {
@@ -22,6 +22,7 @@ struct SplashView: View {
                 if isLoggedIn {
                     //go to home page
                     // i think user should always reauth to be more secure.( i mean i should sign him out when he exit the app!
+                    ContentView()
                 }else {
                     NavigationView {
                         PhoneNumberPInfo()
