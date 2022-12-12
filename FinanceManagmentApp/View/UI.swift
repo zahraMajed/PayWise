@@ -113,6 +113,94 @@ struct CustomPhoneTextField: View {
     }
 }
 
+struct OTPTextField: View {
+    @ObservedObject var loginData : LoginViewModel
+    @FocusState var activeOtpField : OTPField?
+    
+    var body: some View {
+        HStack(spacing: 10){
+            ForEach(0..<6, id: \.self) { index in
+                ZStack() {
+                    Rectangle()
+                        .fill(activeOtpField == fieldActiveStateForIndex(index: index) ?  Color.blue : Color("Gray4"))
+                    .cornerRadius(12)
+                    
+                    TextField("", text: $loginData.otpFields[index])
+                        .keyboardType(.numberPad)
+                        .textContentType(.oneTimeCode)
+                        .foregroundColor(Color.black)
+                        .multilineTextAlignment(.center)
+                        .focused($activeOtpField, equals: fieldActiveStateForIndex(index: index))
+                }.frame(width: 50, height: 65)
+            }
+            .onChange(of: loginData.otpFields) { newValue in
+                OTPFieldsCondition(newOTPFieldValue: newValue)
+            }
+        }
+    }
+    
+    //MARK: functions
+    func OTPFieldsCondition(newOTPFieldValue: [String]){
+        
+        // checking if OTP is pressed
+        for index in 0..<6{
+            if newOTPFieldValue[index].count == 6 {
+                DispatchQueue.main.async {
+                    loginData.enteredOTPText = newOTPFieldValue[index]
+                    loginData.otpFields[index] = ""
+                    
+                    // updating all textfields with value
+                    for item in loginData.enteredOTPText.enumerated() {
+                        loginData.otpFields[item.offset] = String(item.element)
+                    }
+                }
+                return
+            }
+        }
+        // moving next field if current field typed
+        for index in 0..<5{
+            if newOTPFieldValue[index].count == 1 && fieldActiveStateForIndex(index: index) == activeOtpField {
+                activeOtpField = fieldActiveStateForIndex(index: index + 1)
+            }
+        }
+        // moving back if current is empty and previous is not empty
+        for index in 1...5{
+            if newOTPFieldValue[index].isEmpty && !newOTPFieldValue[index - 1].isEmpty {
+                activeOtpField = fieldActiveStateForIndex(index: index - 1)
+            }
+        }
+        
+        // in case user type more than 1 number in a feild -> we will take the last one
+        // force the arrey to have one number in each index
+        for index in 0..<6 {
+            if newOTPFieldValue[index].count > 1 {
+                loginData.otpFields[index] = String(newOTPFieldValue[index].last!)
+            }
+        }
+    }
+    func fieldActiveStateForIndex(index: Int) -> OTPField {
+        switch index {
+        case 0: return .field1
+        case 1: return .field2
+        case 2: return .field3
+        case 3: return .field4
+        case 4: return .field5
+        default: return .field6
+        }
+    }
+}
+
+//MARK: FocusState Enum
+enum OTPField{
+    case field1
+    case field2
+    case field3
+    case field4
+    case field5
+    case field6
+}
+
+
 //TODO: Either in the same struct or seprate struct
 struct CustomTextFieldWithSwitch {
     
