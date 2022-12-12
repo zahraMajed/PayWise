@@ -34,6 +34,7 @@
 		2BF567DF29475EB700A6E95B /* CountriesPhoneCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPhoneCode.swift; sourceTree = "<group>"; };
 		2BF567E4294760F100A6E95B /* PhoneNumberPInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberPInfo.swift; sourceTree = "<group>"; };
 		2BF567E62947610900A6E95B /* OTPVerifivationPInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerifivationPInfo.swift; sourceTree = "<group>"; };
+		2BF567E82947632700A6E95B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 		2B1DE9D62941F41D007F7518 /* FinanceManagmentApp */ = {
 			isa = PBXGroup;
 			children = (
+				2BF567E82947632700A6E95B /* Info.plist */,
 				2BF567DA29475CEE00A6E95B /* GoogleService-Info-2.plist */,
 				2B1DE9E82941F5A9007F7518 /* Networking */,
 				2B1DE9E72941F59D007F7518 /* View */,
@@ -362,6 +364,7 @@
 				DEVELOPMENT_TEAM = 7MYQ7W5DQV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinanceManagmentApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -391,6 +394,7 @@
 				DEVELOPMENT_TEAM = 7MYQ7W5DQV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinanceManagmentApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
