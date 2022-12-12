@@ -12,15 +12,24 @@ struct PhoneNumberPInfo: View {
     @StateObject var loginData = LoginViewModel()
     
     var body: some View {
-        VStack{
-            ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will store and send a varivarion code to it")
-            CustomPhoneTextField(countryPhoneCode: loginData.getCountryCode(), userInput: $loginData.phoneNumber)
-            
-            LargeButton(text: "Continue", isfilled: true) {
+            VStack(){
                 
+                ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will store and send a varivarion code to it")
+                
+                CustomPhoneTextField(countryPhoneCode: loginData.getCountryCode(), userInput: $loginData.phoneNumber)
+                
+                LargeButton(text: "Continue", isfilled: true) {
+                    Task{await loginData.sendOTP()}
+                    print("code sent")
+                }
+                .disabled(loginData.phoneNumber == "" ? true : false)
+                .opacity(loginData.phoneNumber == "" ? 0.4 : 1)
+                
+                NavigationLink(destination: OTPVerifivationPInfo(loginData: loginData), isActive: $loginData.shouldGoToVerify) {
+                    Text("")
+                        .hidden()
+                }
             }
-        }
-        
     }
 }
 

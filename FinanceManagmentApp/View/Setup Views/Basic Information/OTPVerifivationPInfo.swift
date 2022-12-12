@@ -15,12 +15,30 @@ struct OTPVerifivationPInfo: View {
     var body: some View {
         VStack {
             ViewTitleDescription(viewTitle: "OTP Sent", viewDescription: "Enter the 4-digit code sent to your phone number. Didn't receive it ?")
+            
             OTPTextField(loginData: loginData)
             
             LargeButton(text: "Continue", isfilled: true) {
-                
+                Task{await loginData.verifyOTP()}
+            }
+            .disabled(checkOTPFieldStates())
+            .opacity(checkOTPFieldStates() ? 0.4 : 1)
+            
+            PlainButton(text: "Resend OTP") {
+                //loginData.requestCode()
+            }
+        }.navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+    }
+    
+    //MARK: function
+    func checkOTPFieldStates() -> Bool {
+        for index in 0..<6 {
+            if loginData.otpFields[index].isEmpty {
+                return true
             }
         }
+        return false
     }
 }
 
