@@ -55,9 +55,9 @@ struct MediumButton: View {
                 .font(.headline)
                 .fontWeight(.semibold)
                 .foregroundColor(isfilled ? Color.white : Color("AccentGreenLight"))
-                .background(Color( isfilled ? "AccentGreenLight" : "AccentGreenVariantLight")
-                    .cornerRadius(14)
-                    .frame(width: 200, height: 43))
+                .frame(width: 200, height: 43)
+                .background(Color( isfilled ? "AccentGreenLight" : "AccentGreenVariantLight"))
+                .cornerRadius(14)
         }
     }
 }
