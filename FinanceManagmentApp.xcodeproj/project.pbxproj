@@ -25,6 +25,7 @@
 		2BF567F62947BD2F00A6E95B /* OTPVerifivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567F52947BD2F00A6E95B /* OTPVerifivation.swift */; };
 		2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567F82948648600A6E95B /* FaceIdPermission.swift */; };
 		2BF567FB2948649600A6E95B /* NotificationsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567FA2948649600A6E95B /* NotificationsPermission.swift */; };
+		2BF568392949139400A6E95B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF568382949139400A6E95B /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		2BF567F52947BD2F00A6E95B /* OTPVerifivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerifivation.swift; sourceTree = "<group>"; };
 		2BF567F82948648600A6E95B /* FaceIdPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdPermission.swift; sourceTree = "<group>"; };
 		2BF567FA2948649600A6E95B /* NotificationsPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPermission.swift; sourceTree = "<group>"; };
+		2BF568382949139400A6E95B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				2B1DE9EB2941FB02007F7518 /* Cards.swift */,
 				2BF567DF29475EB700A6E95B /* CountriesPhoneCode.swift */,
+				2BF568382949139400A6E95B /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				2BF567D929475BB700A6E95B /* LoginViewModel.swift in Sources */,
 				2BF567F62947BD2F00A6E95B /* OTPVerifivation.swift in Sources */,
 				2B1DE9D82941F41D007F7518 /* FinanceManagmentAppApp.swift in Sources */,
+				2BF568392949139400A6E95B /* User.swift in Sources */,
 				2BF567ED294773EF00A6E95B /* SetupInfoView.swift in Sources */,
 				2B1DE9EF2941FEA2007F7518 /* UI.swift in Sources */,
 				2B1DE9EC2941FB02007F7518 /* Cards.swift in Sources */,

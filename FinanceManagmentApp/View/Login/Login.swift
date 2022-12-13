@@ -20,6 +20,7 @@ struct Login: View {
             Spacer()
             CustomPhoneTextField(countryPhoneCode: loginData.getCountryCode(), userInput: $loginData.phoneNumber)
             Spacer(minLength: 377)
+            
             LargeButton(text: "Continue", isfilled: true) {
                 Task{await loginData.sendOTP()}
                 print("code sent")

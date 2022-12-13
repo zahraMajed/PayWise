@@ -10,11 +10,15 @@ import Firebase
 
 @main
 struct FinanceManagmentAppApp: App {
-    
+    @StateObject var userData = User()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
+            //.environmentObject(userData) only once right?
             SplashView()
+                .environmentObject(userData)
+            
             
         }
     }

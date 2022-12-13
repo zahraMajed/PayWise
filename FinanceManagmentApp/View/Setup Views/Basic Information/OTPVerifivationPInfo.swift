@@ -24,14 +24,14 @@ struct OTPVerifivationPInfo: View {
             }
             .disabled(checkOTPFieldStates())
             .opacity(checkOTPFieldStates() ? 0.4 : 1)
+            .fullScreenCover(isPresented: $loginData.shouldGoToPersonalInfo) {
+                ContentView()
+            }
             
             PlainButton(text: "Resend OTP") {
                 //loginData.requestCode()
             }
             
-            if loginData.shouldGoToPersonalInfo {
-                //should go to the PersonalInfoView withouth navigation link.
-            }
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)

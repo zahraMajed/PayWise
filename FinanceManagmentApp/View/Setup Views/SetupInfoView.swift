@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct SetupInfoView: View {
+    @EnvironmentObject var userData : User
+    @State private var showNextScreen = false
+    
     var body: some View {
-        Text("Setup info!")
+        VStack {
+            Text("Setup info!")
+            
+            Button("Discover my routine") {
+                showNextScreen = true
+            }
+            .frame(width: 346, height: 41)
+            .background(Color.green)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            .fullScreenCover(isPresented: $showNextScreen) {
+                PhoneNumberPInfo()
+            }
+        }
     }
 }
 

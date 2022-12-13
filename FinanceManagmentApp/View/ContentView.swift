@@ -12,6 +12,7 @@ struct ContentView: View {
     @AppStorage("log_Status") var isLoggedIn = false
     @State private var username: String = ""
     @State private var selectedDate: Date = Date.now
+    @EnvironmentObject var userData : User
     
         var body: some View {
         VStack {
@@ -29,7 +30,7 @@ struct ContentView: View {
              } catch let signOutError as NSError {
                print("Error signing out: %@", signOutError)
              }
-            }, label: {Text("Logout")
+            }, label: {Text(userData.phoneNumber)
                 .foregroundColor(.blue)
             })
             
@@ -40,5 +41,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(User())
     }
 }
