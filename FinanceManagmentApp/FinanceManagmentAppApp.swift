@@ -14,7 +14,7 @@ struct FinanceManagmentAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            FaceIdPermission()
+            SplashView()
             
         }
     }

@@ -10,31 +10,29 @@ import LocalAuthentication
 
 struct FaceIdPermission: View {
     //MARK: vars
-    @AppStorage("faceId_Status") var isFaceIDEnabled = false
-    @State var isEnableLater: Bool = false
+    //@AppStorage("faceId_Status") var isFaceIDEnabled = false
+    @State var shouldGoToNotificationPermission: Bool = false
     
     //MARK: body
     var body: some View {
-        NavigationView {
-            VStack {
+        VStack {
                 Spacer()
                 ViewTitleDescription(viewTitle: "Enable Face ID", viewDescription: "Face Id is a convenient and secure method to signin")
                 Spacer(minLength: 490)
                 
                 LargeButton(text: "Enable", isfilled: true) {
                     authenticate()
+                    shouldGoToNotificationPermission = true
                 }
-                NavigationLink(destination: Login(), isActive: $isFaceIDEnabled) {
-                }.labelsHidden()
-                
+                                
                 PlainButton(text: "Maybe Later") {
-                    isEnableLater = true
+                    shouldGoToNotificationPermission = true
                 }
                 Spacer()
-                NavigationLink(destination: NotificationsPermission(), isActive: $isEnableLater) {
+                NavigationLink(destination: NotificationsPermission(), isActive: $shouldGoToNotificationPermission) {
                 }.labelsHidden()
-            }
         }
+        
     }
     
     //MARK: functions
@@ -45,21 +43,24 @@ struct FaceIdPermission: View {
         // check whether biometric authentication is possible
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             // it's possible, so go ahead and use it
-            let reason = "Face Id is a convenient and secure method to signin"
+            let reason = "We need to unlock your data.!"
             
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                 // authentication has now completed
                 if success {
                     // authenticated successfully
-                    isFaceIDEnabled = true
+                    print("Face id is enabled now")
                     //....
                 } else {
                     // there was a problem
+                    print(error)
                    return
                 }
             }
         } else {
             // no biometrics
+            print("no biometrics")
+            print(error)
             return
         }
     }

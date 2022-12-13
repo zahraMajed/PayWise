@@ -139,7 +139,7 @@ struct OTPTextField: View {
             ForEach(0..<6, id: \.self) { index in
                 ZStack() {
                     Rectangle()
-                        .fill(activeOtpField == fieldActiveStateForIndex(index: index) ?  Color.blue : Color("Gray4"))
+                        .fill(activeOtpField == fieldActiveStateForIndex(index: index) ?   Color("Gray3") : Color("Gray4"))
                     .cornerRadius(12)
                     
                     TextField("", text: $loginData.otpFields[index])

@@ -28,10 +28,11 @@ struct Login: View {
             .opacity(loginData.phoneNumber == "" ? 0.4 : 1)
             Spacer()
             
-            NavigationLink(destination: OTPVerifivationPInfo(loginData: loginData), isActive: $loginData.shouldGoToVerify) {
+            NavigationLink(destination: OTPVerifivation(loginData: loginData), isActive: $loginData.shouldGoToVerify) {
                 Text("")
                     .hidden()
             }
+            
         }
         .onAppear(perform: authenticate)
         
@@ -51,7 +52,9 @@ struct Login: View {
                 // authentication has now completed
                 if success {
                     // authenticated successfully
-                    loginData.isLoggedIn = true
+                    DispatchQueue.main.async {
+                        loginData.isLoggedIn = true
+                    }
                 } else {
                     // there was a problem
                    return
