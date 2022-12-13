@@ -31,6 +31,7 @@ struct SplashView: View {
             }
         }
     }
+    
 }
 
 struct SplashView_Previews: PreviewProvider {
@@ -38,3 +39,7 @@ struct SplashView_Previews: PreviewProvider {
         SplashView()
     }
 }
+
+//Questions:
+///About button with keyboard
+///making user struct as AppStorage
