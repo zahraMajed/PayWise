@@ -14,10 +14,11 @@ struct OTPVerifivation: View {
     //MARK: body
     var body: some View {
         VStack {
+            Spacer()
             ViewTitleDescription(viewTitle: "OTP Sent", viewDescription: "Enter the 6-digit code sent to your phone number.")
-            
+            Spacer()
             OTPTextField(loginData: loginData)
-            
+            Spacer(minLength: 377)
             LargeButton(text: "Continue", isfilled: true) {
                 Task{await loginData.verifyOTP()}
             }
@@ -27,7 +28,7 @@ struct OTPVerifivation: View {
             PlainButton(text: "Resend OTP") {
                 //loginData.requestCode()
             }
-            
+            Spacer()
             //should go to the Home withouth navigation link.
             
         }

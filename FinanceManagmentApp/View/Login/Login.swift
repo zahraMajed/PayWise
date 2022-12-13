@@ -14,18 +14,19 @@ struct Login: View {
     
     //MARK: body
     var body: some View {
-        VStack(){
-            
+        VStack(alignment: .leading){
+            Spacer()
             ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will send you a one time password")
-            
+            Spacer()
             CustomPhoneTextField(countryPhoneCode: loginData.getCountryCode(), userInput: $loginData.phoneNumber)
-            
+            Spacer(minLength: 377)
             LargeButton(text: "Continue", isfilled: true) {
                 Task{await loginData.sendOTP()}
                 print("code sent")
             }
             .disabled(loginData.phoneNumber == "" ? true : false)
             .opacity(loginData.phoneNumber == "" ? 0.4 : 1)
+            Spacer()
             
             NavigationLink(destination: OTPVerifivationPInfo(loginData: loginData), isActive: $loginData.shouldGoToVerify) {
                 Text("")
@@ -33,6 +34,7 @@ struct Login: View {
             }
         }
         .onAppear(perform: authenticate)
+        
     }
     
     //MARK: functions
@@ -43,7 +45,7 @@ struct Login: View {
         // check whether biometric authentication is possible
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             // it's possible, so go ahead and use it
-            let reason = "We need to unlock your data."
+            let reason = "We need to unlock your data.!"
             
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                 // authentication has now completed

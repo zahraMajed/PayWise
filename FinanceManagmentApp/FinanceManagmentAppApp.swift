@@ -10,10 +10,12 @@ import Firebase
 
 @main
 struct FinanceManagmentAppApp: App {
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            FaceIdPermission()
+            
         }
     }
 }
