@@ -14,7 +14,7 @@ struct PhoneNumberPInfo: View {
     var body: some View {
             VStack(){
                 
-                ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will store and send a varivarion code to it")
+                ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will store it and send OTP to it")
                 
                 CustomPhoneTextField(countryPhoneCode: loginData.getCountryCode(), userInput: $loginData.phoneNumber)
                 

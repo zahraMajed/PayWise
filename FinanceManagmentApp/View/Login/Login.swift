@@ -16,7 +16,7 @@ struct Login: View {
     var body: some View {
         VStack(){
             
-            ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will store and send a varivarion code to it")
+            ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will send you a one time password")
             
             CustomPhoneTextField(countryPhoneCode: loginData.getCountryCode(), userInput: $loginData.phoneNumber)
             

@@ -23,6 +23,8 @@
 		2BF567ED294773EF00A6E95B /* SetupInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567EC294773EF00A6E95B /* SetupInfoView.swift */; };
 		2BF567F42947BD1300A6E95B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567F32947BD1300A6E95B /* Login.swift */; };
 		2BF567F62947BD2F00A6E95B /* OTPVerifivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567F52947BD2F00A6E95B /* OTPVerifivation.swift */; };
+		2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567F82948648600A6E95B /* FaceIdPermission.swift */; };
+		2BF567FB2948649600A6E95B /* NotificationsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567FA2948649600A6E95B /* NotificationsPermission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		2BF567EC294773EF00A6E95B /* SetupInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupInfoView.swift; sourceTree = "<group>"; };
 		2BF567F32947BD1300A6E95B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		2BF567F52947BD2F00A6E95B /* OTPVerifivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerifivation.swift; sourceTree = "<group>"; };
+		2BF567F82948648600A6E95B /* FaceIdPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdPermission.swift; sourceTree = "<group>"; };
+		2BF567FA2948649600A6E95B /* NotificationsPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPermission.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		2BF567E1294760B500A6E95B /* Setup Views */ = {
 			isa = PBXGroup;
 			children = (
+				2BF567F72948646200A6E95B /* Permissions  */,
 				2BF567E3294760D500A6E95B /* Financial Information */,
 				2BF567E2294760C500A6E95B /* Basic Information */,
 				2BF567EC294773EF00A6E95B /* SetupInfoView.swift */,
@@ -174,6 +179,15 @@
 				2BF567F52947BD2F00A6E95B /* OTPVerifivation.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		2BF567F72948646200A6E95B /* Permissions  */ = {
+			isa = PBXGroup;
+			children = (
+				2BF567F82948648600A6E95B /* FaceIdPermission.swift */,
+				2BF567FA2948649600A6E95B /* NotificationsPermission.swift */,
+			);
+			path = "Permissions ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */,
 				2BF567E029475EB700A6E95B /* CountriesPhoneCode.swift in Sources */,
 				2B1DE9DA2941F41D007F7518 /* ContentView.swift in Sources */,
 				2BF567E72947610900A6E95B /* OTPVerifivationPInfo.swift in Sources */,
@@ -263,6 +278,7 @@
 				2BF567ED294773EF00A6E95B /* SetupInfoView.swift in Sources */,
 				2B1DE9EF2941FEA2007F7518 /* UI.swift in Sources */,
 				2B1DE9EC2941FB02007F7518 /* Cards.swift in Sources */,
+				2BF567FB2948649600A6E95B /* NotificationsPermission.swift in Sources */,
 				2BF567F42947BD1300A6E95B /* Login.swift in Sources */,
 				2BF567EB2947734200A6E95B /* SplashView.swift in Sources */,
 			);

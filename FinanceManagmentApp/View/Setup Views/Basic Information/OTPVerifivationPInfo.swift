@@ -14,7 +14,7 @@ struct OTPVerifivationPInfo: View {
     //MARK: body
     var body: some View {
         VStack {
-            ViewTitleDescription(viewTitle: "OTP Sent", viewDescription: "Enter the 4-digit code sent to your phone number. Didn't receive it ?")
+            ViewTitleDescription(viewTitle: "OTP Sent", viewDescription: "Enter the 6-digit code sent to your phone number.")
             
             OTPTextField(loginData: loginData)
             
