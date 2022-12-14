@@ -36,7 +36,6 @@ struct Login: View {
             
         }
         .onAppear(perform: authenticate)
-        
     }
     
     //MARK: functions

@@ -22,8 +22,13 @@ struct SetupInfoView: View {
             .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(10)
-            .fullScreenCover(isPresented: $showNextScreen) {
+            /*.fullScreenCover(isPresented: $showNextScreen) {
                 PhoneNumberPInfo()
+            }*/
+            
+            NavigationLink(destination: PhoneNumberPInfo(), isActive: $showNextScreen) {
+                Text("")
+                    .hidden()
             }
         }
     }

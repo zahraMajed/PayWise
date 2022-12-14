@@ -22,12 +22,12 @@ struct SplashView: View {
                 NavigationView {
                     Login()
                         //.environmentObject(userData)
-                        .navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true)
                 }
             } else {
                 /// How to end navigation view? (i need the navigation view only for 2 views then i need view with full screen then after that i need navigation view again
-                SetupInfoView()
+                NavigationView {
+                    SetupInfoView()
+                }
             }
         }
     }

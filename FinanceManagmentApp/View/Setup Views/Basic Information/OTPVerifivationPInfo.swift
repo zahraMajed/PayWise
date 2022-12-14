@@ -33,8 +33,6 @@ struct OTPVerifivationPInfo: View {
             }
             
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
     }
     
     //MARK: function
