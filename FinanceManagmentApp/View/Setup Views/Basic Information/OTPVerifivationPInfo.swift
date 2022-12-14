@@ -29,7 +29,7 @@ struct OTPVerifivationPInfo: View {
                 //loginData.requestCode()
             }
             
-            NavigationLink(destination: ContentView(), isActive: $loginData.shouldGoToPersonalInfo) {
+            NavigationLink(destination: PersonalInfoView(), isActive: $loginData.shouldGoToPersonalInfo) {
                 Text("")
                     .hidden()
             }
