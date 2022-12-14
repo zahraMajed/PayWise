@@ -97,9 +97,9 @@ struct CustomTextField: View {
                 .foregroundColor(Color.black)
                 .padding([.leading, .bottom, .trailing], 12)
         }
+        .frame(width: 355, height: 65)
         .background(Color("Gray4"))
         .cornerRadius(14)
-        .frame(width: 355, height: 65)
     }
 }
 // CustomTextField Refrence
@@ -124,9 +124,9 @@ struct CustomPhoneTextField: View {
             }
             .padding([.leading, .bottom, .trailing], 12)
         }
+        .frame(width: 355, height: 65)
         .background(Color("Gray4"))
         .cornerRadius(14)
-        .frame(width: 355, height: 65)
     }
 }
 

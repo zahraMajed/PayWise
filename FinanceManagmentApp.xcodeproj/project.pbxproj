@@ -26,6 +26,7 @@
 		2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567F82948648600A6E95B /* FaceIdPermission.swift */; };
 		2BF567FB2948649600A6E95B /* NotificationsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567FA2948649600A6E95B /* NotificationsPermission.swift */; };
 		2BF568392949139400A6E95B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF568382949139400A6E95B /* User.swift */; };
+		5691E10B294A138000576643 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5691E10A294A138000576643 /* PersonalInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		2BF567F82948648600A6E95B /* FaceIdPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdPermission.swift; sourceTree = "<group>"; };
 		2BF567FA2948649600A6E95B /* NotificationsPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPermission.swift; sourceTree = "<group>"; };
 		2BF568382949139400A6E95B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5691E10A294A138000576643 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				2BF567E4294760F100A6E95B /* PhoneNumberPInfo.swift */,
 				2BF567E62947610900A6E95B /* OTPVerifivationPInfo.swift */,
+				5691E10A294A138000576643 /* PersonalInfoView.swift */,
 			);
 			path = "Basic Information";
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				2BF567ED294773EF00A6E95B /* SetupInfoView.swift in Sources */,
 				2B1DE9EF2941FEA2007F7518 /* UI.swift in Sources */,
 				2B1DE9EC2941FB02007F7518 /* Cards.swift in Sources */,
+				5691E10B294A138000576643 /* PersonalInfoView.swift in Sources */,
 				2BF567FB2948649600A6E95B /* NotificationsPermission.swift in Sources */,
 				2BF567F42947BD1300A6E95B /* Login.swift in Sources */,
 				2BF567EB2947734200A6E95B /* SplashView.swift in Sources */,

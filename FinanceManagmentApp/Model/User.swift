@@ -12,4 +12,5 @@ class User: ObservableObject {
     @Published var countryPhoneCode = ""
     @Published var phoneNumber = ""
     @Published var dateOfBirth = ""
+    @Published var nationalID = ""
 }
