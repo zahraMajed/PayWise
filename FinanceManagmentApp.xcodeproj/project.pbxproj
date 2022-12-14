@@ -11,7 +11,6 @@
 		2B1DE9DA2941F41D007F7518 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DE9D92941F41D007F7518 /* ContentView.swift */; };
 		2B1DE9DC2941F41E007F7518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B1DE9DB2941F41E007F7518 /* Assets.xcassets */; };
 		2B1DE9DF2941F41E007F7518 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B1DE9DE2941F41E007F7518 /* Preview Assets.xcassets */; };
-		2B1DE9EC2941FB02007F7518 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DE9EB2941FB02007F7518 /* Cards.swift */; };
 		2B1DE9EF2941FEA2007F7518 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DE9EE2941FEA2007F7518 /* UI.swift */; };
 		2BF567D929475BB700A6E95B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567D829475BB700A6E95B /* LoginViewModel.swift */; };
 		2BF567DB29475CEE00A6E95B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BF567DA29475CEE00A6E95B /* GoogleService-Info.plist */; };
@@ -26,6 +25,11 @@
 		2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567F82948648600A6E95B /* FaceIdPermission.swift */; };
 		2BF567FB2948649600A6E95B /* NotificationsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567FA2948649600A6E95B /* NotificationsPermission.swift */; };
 		2BF568392949139400A6E95B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF568382949139400A6E95B /* User.swift */; };
+		2BF5683B294A640E00A6E95B /* APIContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5683A294A640E00A6E95B /* APIContentViewModel.swift */; };
+		2BF5683D294A642A00A6E95B /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5683C294A642A00A6E95B /* Transactions.swift */; };
+		2BF5683F294A645100A6E95B /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5683E294A645100A6E95B /* TransactionsView.swift */; };
+		2BF56841294A648C00A6E95B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF56840294A648C00A6E95B /* API.swift */; };
+		2BF56843294A649A00A6E95B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF56842294A649A00A6E95B /* APIService.swift */; };
 		5691E10B294A138000576643 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5691E10A294A138000576643 /* PersonalInfoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +39,6 @@
 		2B1DE9D92941F41D007F7518 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2B1DE9DB2941F41E007F7518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B1DE9DE2941F41E007F7518 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2B1DE9EB2941FB02007F7518 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		2B1DE9EE2941FEA2007F7518 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		2BF567D829475BB700A6E95B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2BF567DA29475CEE00A6E95B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -50,6 +53,11 @@
 		2BF567F82948648600A6E95B /* FaceIdPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdPermission.swift; sourceTree = "<group>"; };
 		2BF567FA2948649600A6E95B /* NotificationsPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPermission.swift; sourceTree = "<group>"; };
 		2BF568382949139400A6E95B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2BF5683A294A640E00A6E95B /* APIContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContentViewModel.swift; sourceTree = "<group>"; };
+		2BF5683C294A642A00A6E95B /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
+		2BF5683E294A645100A6E95B /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		2BF56840294A648C00A6E95B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2BF56842294A649A00A6E95B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5691E10A294A138000576643 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2BF567D829475BB700A6E95B /* LoginViewModel.swift */,
+				2BF5683A294A640E00A6E95B /* APIContentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -116,9 +125,9 @@
 		2B1DE9E62941F595007F7518 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2B1DE9EB2941FB02007F7518 /* Cards.swift */,
 				2BF567DF29475EB700A6E95B /* CountriesPhoneCode.swift */,
 				2BF568382949139400A6E95B /* User.swift */,
+				2BF5683C294A642A00A6E95B /* Transactions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +140,7 @@
 				2BF567E1294760B500A6E95B /* Setup Views */,
 				2B1DE9D92941F41D007F7518 /* ContentView.swift */,
 				2B1DE9EE2941FEA2007F7518 /* UI.swift */,
+				2BF5683E294A645100A6E95B /* TransactionsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +148,8 @@
 		2B1DE9E82941F5A9007F7518 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				2BF56840294A648C00A6E95B /* API.swift */,
+				2BF56842294A649A00A6E95B /* APIService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -274,17 +286,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */,
+				2BF56841294A648C00A6E95B /* API.swift in Sources */,
 				2BF567E029475EB700A6E95B /* CountriesPhoneCode.swift in Sources */,
 				2B1DE9DA2941F41D007F7518 /* ContentView.swift in Sources */,
 				2BF567E72947610900A6E95B /* OTPVerifivationPInfo.swift in Sources */,
 				2BF567E5294760F100A6E95B /* PhoneNumberPInfo.swift in Sources */,
+				2BF56843294A649A00A6E95B /* APIService.swift in Sources */,
+				2BF5683F294A645100A6E95B /* TransactionsView.swift in Sources */,
+				2BF5683B294A640E00A6E95B /* APIContentViewModel.swift in Sources */,
 				2BF567D929475BB700A6E95B /* LoginViewModel.swift in Sources */,
 				2BF567F62947BD2F00A6E95B /* OTPVerifivation.swift in Sources */,
 				2B1DE9D82941F41D007F7518 /* FinanceManagmentAppApp.swift in Sources */,
 				2BF568392949139400A6E95B /* User.swift in Sources */,
+				2BF5683D294A642A00A6E95B /* Transactions.swift in Sources */,
 				2BF567ED294773EF00A6E95B /* SetupInfoView.swift in Sources */,
 				2B1DE9EF2941FEA2007F7518 /* UI.swift in Sources */,
-				2B1DE9EC2941FB02007F7518 /* Cards.swift in Sources */,
 				5691E10B294A138000576643 /* PersonalInfoView.swift in Sources */,
 				2BF567FB2948649600A6E95B /* NotificationsPermission.swift in Sources */,
 				2BF567F42947BD1300A6E95B /* Login.swift in Sources */,

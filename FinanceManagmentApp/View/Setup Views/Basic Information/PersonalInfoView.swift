@@ -35,9 +35,11 @@ struct PersonalInfoView: View {
             Spacer()
         NavigationLink(destination: SetupInfoView(), isActive: $showNextView) {
             }.labelsHidden()
+            
         }.navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         
+
     }
 }
 

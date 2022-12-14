@@ -11,6 +11,6 @@ class User: ObservableObject {
     @Published var name = ""
     @Published var countryPhoneCode = ""
     @Published var phoneNumber = ""
-    @Published var dateOfBirth = ""
+    @Published var dateOfBirth = Date.now
     @Published var nationalID = ""
 }
