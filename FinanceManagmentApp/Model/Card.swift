@@ -37,6 +37,7 @@ struct CardInfo {
     var cardNumber: String
     var cvv: String
     var expDate: String
+    var cardColor : String
 }
 
 struct CardSetting {

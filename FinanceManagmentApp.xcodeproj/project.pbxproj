@@ -34,6 +34,8 @@
 		5691E10B294A138000576643 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5691E10A294A138000576643 /* PersonalInfoView.swift */; };
 		56DD2367294B48470062BC21 /* MoneyGrowthGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD2366294B48470062BC21 /* MoneyGrowthGoal.swift */; };
 		87C26CEC294B42DD0006334F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C26CEB294B42DD0006334F /* Card.swift */; };
+		87C26CF0294B51D80006334F /* WalletHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C26CEF294B51D80006334F /* WalletHome.swift */; };
+		87C26CF2294B523C0006334F /* TabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C26CF1294B523C0006334F /* TabMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		5691E10A294A138000576643 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 		56DD2366294B48470062BC21 /* MoneyGrowthGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyGrowthGoal.swift; sourceTree = "<group>"; };
 		87C26CEB294B42DD0006334F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		87C26CEF294B51D80006334F /* WalletHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHome.swift; sourceTree = "<group>"; };
+		87C26CF1294B523C0006334F /* TabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				2BC07FF5294B11EE00B90371 /* PersonalAccountView.swift */,
+				87C26CEF294B51D80006334F /* WalletHome.swift */,
+				87C26CF1294B523C0006334F /* TabMainView.swift */,
 			);
 			path = "Core Views";
 			sourceTree = "<group>";
@@ -311,10 +317,12 @@
 				2BF56843294A649A00A6E95B /* APIService.swift in Sources */,
 				2BF5683F294A645100A6E95B /* TransactionsView.swift in Sources */,
 				2BF5683B294A640E00A6E95B /* APIContentViewModel.swift in Sources */,
+				87C26CF2294B523C0006334F /* TabMainView.swift in Sources */,
 				2BF567D929475BB700A6E95B /* LoginViewModel.swift in Sources */,
 				2BC07FF6294B11EE00B90371 /* PersonalAccountView.swift in Sources */,
 				2BF567F62947BD2F00A6E95B /* OTPVerifivation.swift in Sources */,
 				2B1DE9D82941F41D007F7518 /* FinanceManagmentAppApp.swift in Sources */,
+				87C26CF0294B51D80006334F /* WalletHome.swift in Sources */,
 				2BF568392949139400A6E95B /* User.swift in Sources */,
 				56DD2367294B48470062BC21 /* MoneyGrowthGoal.swift in Sources */,
 				2BF5683D294A642A00A6E95B /* Transactions.swift in Sources */,
