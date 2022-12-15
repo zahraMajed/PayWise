@@ -59,8 +59,6 @@ struct cardDesign : View {
             .frame(width: 358, height: 224)
             .background(Color("Gray1"))
             .cornerRadius(12)
-            
-       
     }
 }
 
@@ -71,8 +69,8 @@ struct PersonalAccountView: View {
     
     //MARK: body
     var body: some View {
+        
         ScrollView(.vertical) {
-            
             cardDesign(cardType: "Personal Card", cardNumber: userData.personalAccount.cardInfo.cardNumber, cardCVV: userData.personalAccount.cardInfo.cvv, cardExpDate: userData.personalAccount.cardInfo.expDate) {
                 
             }
