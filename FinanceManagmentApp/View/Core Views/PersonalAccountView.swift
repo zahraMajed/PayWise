@@ -9,15 +9,6 @@ import SwiftUI
 
 
 
-
-var cards: [Card] = [
-    Card( cardType: "Personal", cardNumber: "1253  9758  7568  4049", cardImage: "Card1", cardCVV: " 123", expireDate: "Expires 01/25", cardColor: "personal"),
-    Card(  cardType: "Liabilities", cardNumber: "1253  9758  7568  4049", cardImage: "Card2", cardCVV: " 123", expireDate: "Expires 01/25", cardColor: "liabilities"),
-    Card(cardType: "Business", cardNumber: "1253  9758  7568  4049", cardImage: "Card3", cardCVV: " 123", expireDate: "Expires 01/25", cardColor: "business")
-]
-
-
-
 struct cardDesign : View {
     var isEyeClicked: (() -> Void)
     var isEyeHiddin : Bool = true

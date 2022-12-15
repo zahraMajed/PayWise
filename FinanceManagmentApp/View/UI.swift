@@ -325,3 +325,38 @@ struct RoundedCorner: Shape {
     }
 }
 
+
+struct CheckView: View {
+    @State var isChecked:Bool = false
+    var title:String
+    func toggle(){isChecked = !isChecked}
+    var body: some View {
+        Button(action: toggle){
+            
+            HStack{
+                Image(systemName: isChecked ? "checkmark.square.fill": "square")
+                    .foregroundColor(.green)
+                Text(title)
+            }
+        }.foregroundColor(.black)
+          
+    }
+}
+struct LargeButton2: View {
+    var text: String
+    var isfilled: Bool
+   // var clicked: (() -> Void)
+    
+    var body: some View {
+      //  Button(action: clicked) {
+            Text(text)
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundColor(isfilled ? Color.white : Color("AccentGreenLight"))
+                .background(Color( isfilled ? "AccentGreenLight" : "AccentGreenVariantLight")
+                    .cornerRadius(14)
+                    .frame(width: 355, height: 43))
+       // }
+    }
+}
+
