@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+
 struct WalletHome: View {
     //MARK: vars
     @EnvironmentObject var userData : User
     @State var expandCards: Bool = false
     
     var body: some View {
+        
         VStack(spacing: 0){
             
             Text("Wallet")
@@ -23,8 +25,8 @@ struct WalletHome: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 
-                VStack(spacing: 5){
-                    CardDesign1(cardType: "Personal Card", cardNumber: userData.personalAccount.cardInfo.cardNumber, cardCVV: userData.personalAccount.cardInfo.cvv, cardColor: userData.personalAccount.cardInfo.cardColor, cardExpDate: userData.personalAccount.cardInfo.expDate) {
+                VStack(spacing: 0){
+                    /*CardDesign1(cardType: "Personal Card", cardNumber: userData.personalAccount.cardInfo.cardNumber, cardCVV: userData.personalAccount.cardInfo.cvv, cardColor: userData.personalAccount.cardInfo.cardColor, cardExpDate: userData.personalAccount.cardInfo.expDate) {
 
                     }
                     .padding(15)
@@ -38,7 +40,7 @@ struct WalletHome: View {
                     CardDesign1(cardType: "Business Card", cardNumber: "", cardCVV: "", cardColor: "AccentPurpleLight", cardExpDate: "") {
                         
                     }
-                    .padding(15)
+                    .padding(15)*/
 
                 } .overlay {
                     Rectangle()
@@ -53,11 +55,19 @@ struct WalletHome: View {
             }
             .coordinateSpace(name: "SCROLL")
             .offset(y: expandCards ? 0 : 30)
-            }
-            
-            
         }
+        }
+    
+    //MARK: functions
+    func getCards() -> [CardDesign1] {
+        return [CardDesign1(cardType: "Personal Card", cardNumber: userData.personalAccount.cardInfo.cardNumber, cardCVV: userData.personalAccount.cardInfo.cvv, cardColor: userData.personalAccount.cardInfo.cardColor, cardExpDate: userData.personalAccount.cardInfo.expDate) {
+            
+        }, CardDesign1(cardType: "Liabilities Account", cardNumber: userData.liabilitiesAccount.cardInfo.cardNumber, cardCVV: userData.liabilitiesAccount.cardInfo.cvv, cardColor: userData.liabilitiesAccount.cardInfo.cardColor, cardExpDate: userData.liabilitiesAccount.cardInfo.expDate) {
+            
+        }, CardDesign1(cardType: "Business Card", cardNumber: "", cardCVV: "", cardColor: "AccentPurpleLight", cardExpDate: "") {
+        }]
     }
+}
 
 
 
