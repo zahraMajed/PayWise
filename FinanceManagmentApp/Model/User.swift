@@ -13,4 +13,11 @@ class User: ObservableObject {
     @Published var phoneNumber = ""
     @Published var dateOfBirth = Date.now
     @Published var nationalID = ""
+    var personalAccount : PersonalAccount
+    var liabilitiesAccount : LiabilitiesAccount
+    
+    init(personalAccount: PersonalAccount, liabilitiesAccount: LiabilitiesAccount) {
+        self.personalAccount = personalAccount
+        self.liabilitiesAccount = liabilitiesAccount
+    }
 }

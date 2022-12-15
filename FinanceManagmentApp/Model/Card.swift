@@ -11,20 +11,27 @@ import Foundation
 struct PersonalAccount {
     var cardInfo : CardInfo
     var cardSetting : CardSetting
-    var transactions : Transactions
+    //var transactions : Transactions
     var totalBalance : Int
     var thisMonthBudget : Int
     var thisMonthExpense : Int
 }
 
-/*struct PersonalAccount {
+struct LiabilitiesAccount {
     var cardInfo : CardInfo
     var cardSetting : CardSetting
-    var transactions : Transactions
+    //var transactions : Transactions
+    var liabilities : Liabilities
+    var liabilitiesCost : Int
     var totalBalance : Int
     var thisMonthBudget : Int
     var thisMonthExpense : Int
-}*/
+}
+
+struct Liabilities {
+    var liabilityName : String
+    var liabilityCost : Int
+}
 
 struct CardInfo {
     var cardNumber: String
