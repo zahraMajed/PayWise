@@ -10,13 +10,20 @@ import SwiftUI
 
 
 struct cardDesign : View {
+    
+    //MARK: vars
+    var cardType: String
+    var cardNumber: String
+    var cardCVV: String
+    var cardExpDate: String
     var isEyeClicked: (() -> Void)
     var isEyeHiddin : Bool = true
     
+    //MARK: body
     var body: some View {
         VStack(spacing: 30) {
                 HStack {
-                    Text("Personal Card")
+                    Text(cardType)
                         .font(.headline)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -30,19 +37,19 @@ struct cardDesign : View {
                     }
                 }
                 .padding(15)
-                Text("1111 2222 3333 4444")
+                Text(cardNumber)
                 .font(.title)
                 .fontWeight(.regular)
                 .foregroundColor(.white)
                 .padding(15)
                 HStack{
-                    Text("Exp: 10/12")
+                    Text("Exp: \(cardExpDate)")
                         .font(.headline)
                         .fontWeight(.regular)
                         .foregroundColor(.white)
                         
                     Spacer()
-                    Text("CVV: 333")
+                    Text("CVV: \(cardCVV))")
                         .font(.headline)
                         .fontWeight(.regular)
                         .foregroundColor(.white)
@@ -61,10 +68,12 @@ struct PersonalAccountView: View {
     //MARK: vars
     @EnvironmentObject var userData : User
     @State var selectedOption = AccountServicesSegmentedPicker.accountServicesOptions.transactions
+    
     //MARK: body
     var body: some View {
         ScrollView(.vertical) {
-            cardDesign {
+            
+            cardDesign(cardType: "Personal Card", cardNumber: userData.personalAccount.cardInfo.cardNumber, cardCVV: userData.personalAccount.cardInfo.cvv, cardExpDate: userData.personalAccount.cardInfo.expDate) {
                 
             }
             AccountServicesSegmentedPicker(currentAccountType: .Personal, selectedOption: $selectedOption)
@@ -135,5 +144,6 @@ struct AccountServicesSegmentedPicker: View {
 struct PersonalAccountView_Previews: PreviewProvider {
     static var previews: some View {
         PersonalAccountView()
+            .environmentObject(User())
     }
 }
