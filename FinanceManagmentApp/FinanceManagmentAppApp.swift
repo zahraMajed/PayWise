@@ -10,9 +10,11 @@ import Firebase
 
 @main
 struct FinanceManagmentAppApp: App {
+    //MARK: vars
     @ObservedObject var userData = User()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    //MARK: body
     var body: some Scene {
         WindowGroup {
             SplashView()
