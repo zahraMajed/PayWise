@@ -1,8 +1,8 @@
 //
-//  Card.swift
+//  Cards.swift
 //  FinanceManagmentApp
 //
-//  Created by Reema Alsheddi on 15/12/2022.
+//  Created by Zahra Majed Alzawad on 22/05/1444 AH.
 //
 
 import Foundation
@@ -33,11 +33,13 @@ struct Liabilities {
     var liabilityCost : Int
 }
 
-struct CardInfo {
+struct CardInfo: Identifiable {
+    var id = UUID().uuidString
+    var cardType: String
     var cardNumber: String
-    var cvv: String
-    var expDate: String
-    var cardColor : String
+    var cardCVV: String
+    var cardColor :String
+    var cardExpDate: String
 }
 
 struct CardSetting {
