@@ -51,7 +51,7 @@ struct WalletMain: View {
                     //.padding(.top,expandCards ? 30 : 0)
                 }//end scrole
                 .coordinateSpace(name: "SCROLL")
-                
+                //you should delete the navigation view then
                 if currentCard?.accountType == .Personal {
                     NavigationLink(destination: PersonalAccountView(currentCard: currentCard ?? CardInfo(accountType: .Personal, cardName: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: ""), userData: _userData), isActive: $showDetailCard) {}.labelsHidden()
                 }else if currentCard?.accountType == .Liabilities {

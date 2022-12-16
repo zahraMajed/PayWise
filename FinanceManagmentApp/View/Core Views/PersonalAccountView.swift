@@ -33,7 +33,7 @@ struct PersonalAccountView: View {
     //MARK: body
     var body: some View {
         VStack {
-            CardDesign2(cardType: "Personal Card", cardNumber: userData.personalAccount.cardInfo.cardNumber, cardCVV: userData.personalAccount.cardInfo.cardCVV, cardColor: userData.personalAccount.cardInfo.cardColor, cardExpDate: userData.personalAccount.cardInfo.cardExpDate) {
+            CardDesign(cardInfo: currentCard) {
                 
             }
             AccountServicesSegmentedPicker(currentAccountType: currentCard.accountType, selectedOption: $selectedOption)
@@ -104,14 +104,15 @@ struct PersonalAccountView_Previews: PreviewProvider {
     }
 }
 
-struct CardDesign2 : View {
+struct CardDesign : View {
     
     //MARK: vars
-    var cardType: String
+    /*var cardType: String
     var cardNumber: String
     var cardCVV: String
     var cardColor: String
-    var cardExpDate: String
+    var cardExpDate: String*/
+    var cardInfo: CardInfo
     var isEyeClicked: (() -> Void)
     var isEyeHiddin : Bool = true
     
@@ -119,7 +120,7 @@ struct CardDesign2 : View {
     var body: some View {
         VStack(spacing: 30) {
                 HStack {
-                    Text(cardType)
+                    Text(cardInfo.cardName)
                         .font(.headline)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -133,19 +134,19 @@ struct CardDesign2 : View {
                     }
                 }
                 .padding(15)
-                Text(cardNumber)
+                Text(cardInfo.cardNumber)
                 .font(.title)
                 .fontWeight(.regular)
                 .foregroundColor(.white)
                 .padding(15)
                 HStack{
-                    Text("Exp: \(cardExpDate)")
+                    Text("Exp: \(cardInfo.cardExpDate)")
                         .font(.headline)
                         .fontWeight(.regular)
                         .foregroundColor(.white)
                         
                     Spacer()
-                    Text("CVV: \(cardCVV))")
+                    Text("CVV: \(cardInfo.cardCVV)")
                         .font(.headline)
                         .fontWeight(.regular)
                         .foregroundColor(.white)
@@ -155,7 +156,7 @@ struct CardDesign2 : View {
         // here we add .offset
         //.offset(y: 40)
             .frame(width: 358, height: 224)
-            .background(Color(cardColor))
+            .background(Color(cardInfo.cardColor))
             .cornerRadius(12)
     }
     
