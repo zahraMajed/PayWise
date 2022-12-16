@@ -44,6 +44,24 @@ struct LargeButton: View {
     }
 }
 
+struct LargeButton2: View {
+    var text: String
+    var isfilled: Bool
+   // var clicked: (() -> Void)
+    
+    var body: some View {
+      //  Button(action: clicked) {
+            Text(text)
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundColor(isfilled ? Color.white : Color("AccentGreenLight"))
+                .background(Color( isfilled ? "AccentGreenLight" : "AccentGreenVariantLight")
+                    .cornerRadius(14)
+                    .frame(width: 355, height: 43))
+       // }
+    }
+}
+
 struct MediumButton: View {
     var text: String
     var isfilled: Bool
@@ -342,21 +360,97 @@ struct CheckView: View {
           
     }
 }
-struct LargeButton2: View {
-    var text: String
-    var isfilled: Bool
-   // var clicked: (() -> Void)
+
+
+struct CardDesign : View {
+    //MARK: vars
+    /*var cardType: String
+    var cardNumber: String
+    var cardCVV: String
+    var cardColor: String
+    var cardExpDate: String*/
+    var cardInfo: CardInfo
+    var isEyeClicked: (() -> Void)
+    var isEyeHiddin : Bool = true
     
+    //MARK: body
     var body: some View {
-      //  Button(action: clicked) {
-            Text(text)
-                .font(.headline)
-                .fontWeight(.semibold)
-                .foregroundColor(isfilled ? Color.white : Color("AccentGreenLight"))
-                .background(Color( isfilled ? "AccentGreenLight" : "AccentGreenVariantLight")
-                    .cornerRadius(14)
-                    .frame(width: 355, height: 43))
-       // }
+        VStack(spacing: 30) {
+                HStack {
+                    Text(cardInfo.cardName)
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        Spacer()
+                    if !isEyeHiddin {
+                        Button(action: isEyeClicked) {
+                            Image(systemName: "eye")
+                        }
+                        .foregroundColor(.white)
+                        
+                    }
+                }
+                .padding(15)
+                Text(cardInfo.cardNumber)
+                .font(.title)
+                .fontWeight(.regular)
+                .foregroundColor(.white)
+                .padding(15)
+                HStack{
+                    Text("Exp: \(cardInfo.cardExpDate)")
+                        .font(.headline)
+                        .fontWeight(.regular)
+                        .foregroundColor(.white)
+                        
+                    Spacer()
+                    Text("CVV: \(cardInfo.cardCVV)")
+                        .font(.headline)
+                        .fontWeight(.regular)
+                        .foregroundColor(.white)
+                        
+                }.padding(15)
+            }
+        // here we add .offset
+        //.offset(y: 40)
+            .frame(width: 358, height: 224)
+            .background(Color(cardInfo.cardColor))
+            .cornerRadius(12)
     }
 }
 
+
+struct AccountServicesSegmentedPicker: View {
+    //MARK: vars
+    var currentAccountType : accountType
+    @Binding var selectedOption : accountServicesOptions
+    
+    enum accountServicesOptions : String , CaseIterable, Identifiable {
+        case transactions = "Transactions"
+        case manage = "Manage"
+        case detailes = "Detailes"
+        case goals = "Goals"
+        case liabilities = "Liabilities"
+        
+        var id: accountServicesOptions { self }
+    }
+    //MARK: body
+    var body: some View {
+         Picker("Account Services", selection: $selectedOption) {
+             ForEach(accountServicesOptions.allCases) { option in
+                 
+                 if option.rawValue != "Goals" && option.rawValue !=  "Liabilities" {
+                     Text(option.rawValue)
+                 }
+                 
+                 if currentAccountType == .Business && option.rawValue == "Goals" {
+                     Text(option.rawValue)
+                 } else if currentAccountType == .Liabilities && option.rawValue == "Liabilities" {
+                     Text(option.rawValue)
+                 }
+             }
+         }
+         .frame(maxWidth: 358)
+         .pickerStyle(SegmentedPickerStyle())
+    }
+    
+}
