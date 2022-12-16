@@ -7,10 +7,18 @@
 
 import SwiftUI
 
+struct CardInfo: Identifiable {
+    var id = UUID().uuidString
+    var cardType: String
+    var cardNumber: String
+    var cardCVV: String
+    var cardColor :String
+    var cardExpDate: String
+}
 
 struct PersonalAccountView: View {
     //MARK: vars
-    //var currentCard: CardInfo
+    var currentCard: CardInfo
     @EnvironmentObject var userData : User
     @State var selectedOption = AccountServicesSegmentedPicker.accountServicesOptions.transactions
     
@@ -89,9 +97,8 @@ struct AccountServicesSegmentedPicker: View {
 
 struct PersonalAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalAccountView()
+        PersonalAccountView(currentCard: CardInfo(cardType: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: ""))
             .environmentObject(User())
-        //currentCard: CardInfo(cardType: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: "")
     }
 }
 

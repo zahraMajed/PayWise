@@ -19,44 +19,45 @@ struct WalletMain: View {
     
     //MARK: body
     var body: some View {
-        VStack (alignment: .leading){
-            Text("Wallet")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 0) {
-                    //MARK: Card
-                    ForEach(getCardsArr()) { card in
-                        CardView(card: card)
-                            .onTapGesture {
-                                withAnimation(.easeInOut(duration: 0.35)){
-                                currentCard = card
-                                showDetailCard = true
+        NavigationView{
+            VStack (alignment: .leading){
+                Text("Wallet")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 0) {
+                        //MARK: Card
+                        ForEach(getCardsArr()) { card in
+                            CardView(card: card)
+                                .onTapGesture {
+                                    withAnimation(.easeInOut(duration: 0.35)){
+                                    currentCard = card
+                                    showDetailCard = true
+                                }
                             }
                         }
                     }
-                }
-                .overlay {
-                    //To avoid Scrolling
-                    Rectangle()
-                        .fill(.black.opacity(expandCards ? 0 : 0.01))
-                        .onTapGesture {
-                            withAnimation(.easeInOut(duration: 0.35)){
-                                expandCards = true
+                    .overlay {
+                        //To avoid Scrolling
+                        Rectangle()
+                            .fill(.black.opacity(expandCards ? 0 : 0.01))
+                            .onTapGesture {
+                                withAnimation(.easeInOut(duration: 0.35)){
+                                    expandCards = true
+                                }
                             }
-                        }
-                }
-                //.padding(.top,expandCards ? 30 : 0)
-            }//end scrole
-            .coordinateSpace(name: "SCROLL")
-            
-            /*NavigationLink(destination: PersonalAccountView(currentCard: currentCard ?? CardInfo(cardType: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: ""), userData: _userData), isActive: $showDetailCard) {
+                    }
+                    //.padding(.top,expandCards ? 30 : 0)
+                }//end scrole
+                .coordinateSpace(name: "SCROLL")
                 
-            }.labelsHidden()*/
-            
+                NavigationLink(destination: PersonalAccountView(currentCard: currentCard ?? CardInfo(cardType: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: ""), userData: _userData), isActive: $showDetailCard) {
+                    
+                }.labelsHidden()
+            }
+            .padding([.horizontal, .top])
         }
-        .padding([.horizontal, .top])
     }
     
     //MARK: functions

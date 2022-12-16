@@ -33,15 +33,6 @@ struct Liabilities {
     var liabilityCost : Int
 }
 
-struct CardInfo: Identifiable {
-    var id = UUID().uuidString
-    var cardType: String
-    var cardNumber: String
-    var cardCVV: String
-    var cardColor :String
-    var cardExpDate: String
-}
-
 struct CardSetting {
     var cardLimit: Int
     var isCardLocked: Bool
