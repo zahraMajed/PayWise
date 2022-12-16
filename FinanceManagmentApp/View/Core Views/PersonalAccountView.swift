@@ -95,69 +95,6 @@ struct PersonalAccountView_Previews: PreviewProvider {
     }
 }
 
-
-struct CardDesign1 : View {
-    
-    //MARK: vars
-    var cardType: String
-    var cardNumber: String
-    var cardCVV: String
-    var cardColor: String
-    var cardExpDate: String
-    var isEyeClicked: (() -> Void)
-    var isEyeHiddin : Bool = true
-    
-    //MARK: body
-    var body: some View {
-        GeometryReader { proxy in
-            //let rect = proxy.frame(in: .named("SCROLL"))
-            // here we made change
-           // let offset = -rect.minY + 0
-            VStack(spacing: 30) {
-                    HStack {
-                        Text(cardType)
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            Spacer()
-                        if !isEyeHiddin {
-                            Button(action: isEyeClicked) {
-                                Image(systemName: "eye")
-                            }
-                            .foregroundColor(.white)
-                            
-                        }
-                    }
-                    .padding(15)
-                    Text(cardNumber)
-                    .font(.title)
-                    .fontWeight(.regular)
-                    .foregroundColor(.white)
-                    .padding(15)
-                    HStack{
-                        Text("Exp: \(cardExpDate)")
-                            .font(.headline)
-                            .fontWeight(.regular)
-                            .foregroundColor(.white)
-                            
-                        Spacer()
-                        Text("CVV: \(cardCVV))")
-                            .font(.headline)
-                            .fontWeight(.regular)
-                            .foregroundColor(.white)
-                            
-                    }.padding(15)
-                }
-            // here we add .offset
-            //.offset(y: 40)
-                .frame(width: 358, height: 224)
-                .background(Color(cardColor))
-                .cornerRadius(12)
-        }
-    }
-   
-}
-
 struct CardDesign2 : View {
     
     //MARK: vars

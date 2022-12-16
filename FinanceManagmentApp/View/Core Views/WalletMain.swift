@@ -11,7 +11,6 @@ struct WalletMain: View {
     
     //MARK: vars
     @EnvironmentObject var userData : User
-
     //MARK: Animation vars
     @State var expandCards: Bool = false
     //MARK: Details vars
@@ -56,8 +55,7 @@ struct WalletMain: View {
                 
             }.labelsHidden()*/
             
-        }//Vstack
-        //.onAppear(perform: self.getCardsArr())
+        }
         .padding([.horizontal, .top])
     }
     
