@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct CardInfo: Identifiable {
+    //all these data should be computed proporty
     var id = UUID().uuidString
-    var cardType: String
+    var accountType : accountType
+    var cardName: String
     var cardNumber: String
     var cardCVV: String
     var cardColor :String
     var cardExpDate: String
+}
+
+enum accountType : String {
+    case Personal
+    case Business
+    case Liabilities
 }
 
 struct PersonalAccountView: View {
@@ -28,7 +36,7 @@ struct PersonalAccountView: View {
             CardDesign2(cardType: "Personal Card", cardNumber: userData.personalAccount.cardInfo.cardNumber, cardCVV: userData.personalAccount.cardInfo.cardCVV, cardColor: userData.personalAccount.cardInfo.cardColor, cardExpDate: userData.personalAccount.cardInfo.cardExpDate) {
                 
             }
-                AccountServicesSegmentedPicker(currentAccountType: .Personal, selectedOption: $selectedOption)
+            AccountServicesSegmentedPicker(currentAccountType: currentCard.accountType, selectedOption: $selectedOption)
                 TransactionsView()
                 
             }
@@ -56,12 +64,6 @@ struct AccountServicesSegmentedPicker: View {
     var currentAccountType : accountType
     @Binding var selectedOption : accountServicesOptions
     
-    //MARK: enum
-    enum accountType : String {
-        case Personal
-        case Business
-        case Liabilities
-    }
     enum accountServicesOptions : String , CaseIterable, Identifiable {
         case transactions = "Transactions"
         case manage = "Manage"
@@ -97,7 +99,7 @@ struct AccountServicesSegmentedPicker: View {
 
 struct PersonalAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalAccountView(currentCard: CardInfo(cardType: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: ""))
+        PersonalAccountView(currentCard: CardInfo(accountType: .Personal, cardName: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: ""))
             .environmentObject(User())
     }
 }

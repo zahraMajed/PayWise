@@ -52,9 +52,13 @@ struct WalletMain: View {
                 }//end scrole
                 .coordinateSpace(name: "SCROLL")
                 
-                NavigationLink(destination: PersonalAccountView(currentCard: currentCard ?? CardInfo(cardType: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: ""), userData: _userData), isActive: $showDetailCard) {
-                    
-                }.labelsHidden()
+                if currentCard?.accountType == .Personal {
+                    NavigationLink(destination: PersonalAccountView(currentCard: currentCard ?? CardInfo(accountType: .Personal, cardName: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: ""), userData: _userData), isActive: $showDetailCard) {}.labelsHidden()
+                }else if currentCard?.accountType == .Liabilities {
+                    Text("should go to Liabilities")
+                } else if currentCard?.accountType == .Business {
+                    Text("should go to Business")
+                }
             }
             .padding([.horizontal, .top])
         }
@@ -80,7 +84,7 @@ struct WalletMain: View {
                 
                 VStack(spacing: 35) {
                     HStack {
-                        Text(card.cardType)
+                        Text(card.cardName)
                             .font(.headline)
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
