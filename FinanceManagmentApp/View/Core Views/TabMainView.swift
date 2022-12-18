@@ -14,7 +14,7 @@ struct TabMainView: View {
                 .tabItem{Label("Wallet", systemImage: "creditcard")}
             InsightsView()
                 .tabItem { Label("Insight", systemImage: "chart.bar") }
-            VStack {}
+            Account()
                 .tabItem { Label("Account", systemImage: "person") }
         }
 

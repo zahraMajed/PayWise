@@ -39,6 +39,8 @@
 		56DD2367294B48470062BC21 /* MoneyGrowthGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD2366294B48470062BC21 /* MoneyGrowthGoal.swift */; };
 		56DD2400294F2A2F0062BC21 /* FinancialInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD23FF294F2A2F0062BC21 /* FinancialInfoView.swift */; };
 		56DD2402294F329C0062BC21 /* RecurringLiabilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD2401294F329C0062BC21 /* RecurringLiabilitiesView.swift */; };
+		5F060881294F4F7A00D29E0D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F060880294F4F7A00D29E0D /* Account.swift */; };
+		5F060883294F516900D29E0D /* manageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F060882294F516900D29E0D /* manageView.swift */; };
 		87C26CF2294B523C0006334F /* TabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C26CF1294B523C0006334F /* TabMainView.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		56DD2366294B48470062BC21 /* MoneyGrowthGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyGrowthGoal.swift; sourceTree = "<group>"; };
 		56DD23FF294F2A2F0062BC21 /* FinancialInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialInfoView.swift; sourceTree = "<group>"; };
 		56DD2401294F329C0062BC21 /* RecurringLiabilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringLiabilitiesView.swift; sourceTree = "<group>"; };
+		5F060880294F4F7A00D29E0D /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		5F060882294F516900D29E0D /* manageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageView.swift; sourceTree = "<group>"; };
 		87C26CF1294B523C0006334F /* TabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +185,7 @@
 				2BC0801A294C817500B90371 /* WalletMain.swift */,
 				2BC0801E294EE2A900B90371 /* InsightsView.swift */,
 				2BC08022294EEEDC00B90371 /* AccountView.swift */,
+				5F060882294F516900D29E0D /* manageView.swift */,
 			);
 			path = "Core Views";
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				56DD23FF294F2A2F0062BC21 /* FinancialInfoView.swift */,
 				56DD2401294F329C0062BC21 /* RecurringLiabilitiesView.swift */,
 				56DD2366294B48470062BC21 /* MoneyGrowthGoal.swift */,
+				5F060880294F4F7A00D29E0D /* Account.swift */,
 			);
 			path = "Financial Information";
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */,
+				5F060883294F516900D29E0D /* manageView.swift in Sources */,
 				2BC0801F294EE2A900B90371 /* InsightsView.swift in Sources */,
 				2BF56841294A648C00A6E95B /* API.swift in Sources */,
 				2BF567E029475EB700A6E95B /* CountriesPhoneCode.swift in Sources */,
@@ -329,6 +336,7 @@
 				2BC08023294EEEDC00B90371 /* AccountView.swift in Sources */,
 				2BF567E72947610900A6E95B /* OTPVerifivationPInfo.swift in Sources */,
 				2BF567E5294760F100A6E95B /* PhoneNumberPInfo.swift in Sources */,
+				5F060881294F4F7A00D29E0D /* Account.swift in Sources */,
 				2BF56843294A649A00A6E95B /* APIService.swift in Sources */,
 				2BF5683F294A645100A6E95B /* TransactionsView.swift in Sources */,
 				2BC08025294F39FE00B90371 /* AddToWalletView.swift in Sources */,

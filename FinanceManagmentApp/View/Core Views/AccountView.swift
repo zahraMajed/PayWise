@@ -29,7 +29,7 @@ struct AccountView: View {
         case .transactions:
             return AnyView(TransactionsView())
         case .manage:
-            return AnyView(Text("ManageView()"))
+            return AnyView(manageView())
         case .detailes:
             return AnyView(Text("DetailesView()"))
         case .goals:
