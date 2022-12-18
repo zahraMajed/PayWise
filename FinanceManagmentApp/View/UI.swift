@@ -696,6 +696,7 @@ struct listRow: View {
                 Spacer()
                 //Image(systemName: "line.3.horizontal")
             }
+            .frame(height: 60)
         }
     }
 }
