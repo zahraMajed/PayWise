@@ -14,30 +14,24 @@ struct FinancialInfoView: View {
     
     //MARK: body
     var body: some View {
-        VStack {
-                VStack(alignment: .leading) {
-                    Text("Financial Information")
-                        .font(.title)
-                        .bold()
-                    Text("We will store and send a varivarion code to it")}
-                .padding()
-                
-                VStack (spacing: 17){
-                    
-                    CustomTextField(textFieldLabel: "Monthly income", textFieldHint: "0.00", isSwitch: true, isCurrancy: true, userInput: $userData.monthlyIncom)
-                        .keyboardType(.numberPad)
-                        .padding()
-                    
-                    /*CustomTextField(textFieldLabel: "Recurring Expences Cost", textFieldHint: "0.00", isSwitch: true, isCurrancy: true, userInput: $amount)
-                        .keyboardType(.namePhonePad)
-                        .padding()*/
-                }
-                Spacer()
+        VStack(){
+            Spacer()
+            ViewTitleDescription(viewTitle: "Financial Information", viewDescription: "We will store and send a varivarion code to it")
+            Spacer()
+            CustomTextField(textFieldLabel: "Monthly income", textFieldHint: "0.00", isSwitch: true, isCurrancy: true, userInput: $userData.monthlyIncom)
+                .keyboardType(.numberPad)
+                        
+            /*CustomTextField(textFieldLabel: "Recurring Expences Cost", textFieldHint: "0.00", isSwitch: true, isCurrancy: true, userInput: $amount)
+                .keyboardType(.namePhonePad)
+                .padding()*/
+            
+            Spacer(minLength: 380)
             
             LargeButton(text: "Continue", isfilled: true) {
                 shouldGo = true
             }
             
+            Spacer()
             NavigationLink(destination: RecurringLiabilitiesView(), isActive: $shouldGo) {
             }.labelsHidden()
                 
