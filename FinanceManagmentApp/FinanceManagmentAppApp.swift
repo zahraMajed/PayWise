@@ -17,7 +17,7 @@ struct FinanceManagmentAppApp: App {
     //MARK: body
     var body: some Scene {
         WindowGroup {
-            Login()
+            SplashView()
                 .environmentObject(userData)
             
         }

@@ -62,7 +62,7 @@ struct WalletMain: View {
     //MARK: functions
     
     func getCardsArr() -> [CardInfo] {
-        let cards = [userData.personalAccount.cardInfo, userData.liabilitiesAccount.cardInfo, userData.liabilitiesAccount2.cardInfo]
+        let cards = [userData.personalAccount.cardInfo, userData.liabilitiesAccount.cardInfo, userData.businessAccount.cardInfo]
         return cards
     }
     
