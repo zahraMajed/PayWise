@@ -515,5 +515,8 @@ struct AccountServicesSegmentedPicker: View {
          }
          .frame(maxWidth: 358)
          .pickerStyle(SegmentedPickerStyle())
+         .onAppear {
+             UISegmentedControl.appearance().backgroundColor = UIColor(named: "AccentGreenVariantLight")
+         }
     }
 }
