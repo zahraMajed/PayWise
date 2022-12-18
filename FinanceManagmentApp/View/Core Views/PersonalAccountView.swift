@@ -33,9 +33,7 @@ struct PersonalAccountView: View {
     //MARK: body
     var body: some View {
         VStack {
-            CardDesign(cardInfo: currentCard) {
-                
-            }
+            CardDesign(cardInfo: currentCard)
             AccountServicesSegmentedPicker(currentAccountType: currentCard.accountType, selectedOption: $selectedOption)
                 TransactionsView()
                 

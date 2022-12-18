@@ -103,7 +103,7 @@ struct WalletMain: View {
                             .foregroundColor(.white)
                             
                         Spacer()
-                        Text("CVV: \(card.cardCVV)")
+                        Text("CVV: ***")
                             .font(.headline)
                             .fontWeight(.regular)
                             .foregroundColor(.white)

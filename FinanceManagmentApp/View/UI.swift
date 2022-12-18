@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import LocalAuthentication
 
 //MARK: Title and Description
 struct ViewTitleDescription : View {
@@ -370,8 +371,10 @@ struct CardDesign : View {
     var cardColor: String
     var cardExpDate: String*/
     var cardInfo: CardInfo
-    var isEyeClicked: (() -> Void)
+    @State var showInfo : Bool = false
+    @State var showFaceID : Bool = false
     var isEyeHiddin : Bool = true
+    let star = "***"
     
     //MARK: body
     var body: some View {
@@ -382,16 +385,22 @@ struct CardDesign : View {
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                         Spacer()
-                    if !isEyeHiddin {
-                        Button(action: isEyeClicked) {
-                            Image(systemName: "eye")
+                    
+                    Button {
+                        showFaceID.toggle()
+                        if showFaceID {
+                            authenticate()
+                        } else {
+                            showInfo = false
                         }
-                        .foregroundColor(.white)
-                        
+                    } label: {
+                        Image(systemName: showInfo ? "eye.slash" : "eye")
                     }
+                    .foregroundColor(.white)
+
                 }
                 .padding(15)
-                Text(cardInfo.cardNumber)
+            Text(showInfo ? cardInfo.cardNumber : customisedCardNumber(number: cardInfo.cardNumber))
                 .font(.title)
                 .fontWeight(.regular)
                 .foregroundColor(.white)
@@ -403,18 +412,73 @@ struct CardDesign : View {
                         .foregroundColor(.white)
                         
                     Spacer()
-                    Text("CVV: \(cardInfo.cardCVV)")
+                    Text("CVV: \(showInfo ? cardInfo.cardCVV : star)")
                         .font(.headline)
                         .fontWeight(.regular)
                         .foregroundColor(.white)
                         
                 }.padding(15)
             }
-        // here we add .offset
-        //.offset(y: 40)
             .frame(width: 358, height: 224)
             .background(Color(cardInfo.cardColor))
             .cornerRadius(12)
+    }
+    
+    //MARK: Hiddin all number except the last 4
+    func customisedCardNumber(number: String)->String{
+        var newValue: String = ""
+        let maxCount = number.count - 4
+        number.enumerated().forEach { value in
+            if value.offset >= maxCount{
+                //Displaying Text
+                let string = String(value.element)
+                newValue.append(contentsOf: string)
+            }
+            else{
+                //Simply Displaying star
+                let string = String(value.element)
+                if string == " "{
+                    //Avoiding Spaces
+                    newValue.append(contentsOf: " ")
+                }
+                else{
+                    newValue.append(contentsOf: "*")
+                }
+            }
+        }
+        
+        return newValue
+    }
+    
+    func authenticate() {
+        let context = LAContext()
+        var error: NSError?
+
+        // check whether biometric authentication is possible
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            // it's possible, so go ahead and use it
+            let reason = "We need to unlock your data.!"
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                // authentication has now completed
+                if success {
+                    // authenticated successfully
+                    DispatchQueue.main.async {
+                        showInfo = true
+                    }
+                } else {
+                    // there was a problem
+                    print("faceid ui")
+                    print(error)
+                   return
+                }
+            }
+        } else {
+            // no biometrics
+            print("faceid ui no")
+            print(error)
+            return
+        }
     }
 }
 
