@@ -55,3 +55,20 @@ struct CardSetting {
     var isCardLocked: Bool
     var isEcommerceTransDisabled: Bool
 }
+
+struct BusinessAccount {
+    var cardInfo : CardInfo
+    var cardSetting : CardSetting
+    //var transactions : Transactions
+    //var gaols : []
+    var totalBalance : Int
+    var thisMonthBudget : Int
+    var thisMonthExpense : Int
+    //var currenProgress
+}
+
+/*enum gaolsType {
+    case
+}*/
+
+

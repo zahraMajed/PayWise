@@ -571,6 +571,7 @@ enum AlertType {
 }
 
 
+//MARK: custom alert
 /// A boolean State variable is required in order to present the view.
 struct CustomAlert: View {
     
@@ -672,6 +673,26 @@ struct CustomAlert: View {
 struct CustomAlert_Previews: PreviewProvider {
     static var previews: some View {
         CustomAlert(presentAlert: .constant(true))
+    }
+}
+
+//MARK: listliabview
+
+struct listliabview: View {
+    var liability : Liabilities
+    var body: some View {
+        HStack {
+            Image(systemName: "mappin.circle.fill")
+            VStack(alignment: .leading) {
+                
+                Text(liability.liabilityName)
+                Text("\(liability.liabilityCost)")
+                
+            }
+            Spacer()
+            Image(systemName: "line.3.horizontal")
+            
+        }
     }
 }
 
