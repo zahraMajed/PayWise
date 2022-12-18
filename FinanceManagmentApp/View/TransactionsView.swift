@@ -11,36 +11,34 @@ struct TransactionsView: View {
     @ObservedObject var apiViewModel = APIContentViewModel()
     
     var body: some View {
-        GeometryReader { geometry in
-            
-            // if apiViewModel currentState is SUCCESS, i'll get the data
-            if case .SUCCESS(let transactionsArr) = apiViewModel.currentState {
-                LazyVStack {
-                    ForEach(transactionsArr, id: \.self) { item in
-                        TransactionRow(transactionPayee: item.payee, transactionAmount: item.amount, transactionDate: item.date)
-                    }
+        // if apiViewModel currentState is SUCCESS, i'll get the data
+        if case .SUCCESS(let transactionsArr) = apiViewModel.currentState {
+            LazyVStack {
+                ForEach(transactionsArr, id: \.self) { item in
+                    TransactionRow(transactionPayee: item.payee, transactionAmount: item.amount, transactionDate: item.date)
                 }
-            }
-            
-            // if apiViewModel currentState is FAILURE, i'll show the error
-            else if case .FAILURE(let error) = apiViewModel.currentState {
-                VStack(alignment: .center) {
-                    Spacer()
-                    Text(error)
-                        .font(.headline.bold())
-                        .multilineTextAlignment(.center)
-                    Spacer()
-                }
-                .padding()
-            }
-            // if apiViewModel currentState is LOADING, i'll show loading animation
-            else if case .LOADING = apiViewModel.currentState {
-                Text("loader")
-                    .font(.headline)
-                    .padding()
-                    .position(x:200, y:350)
             }
         }
+        
+        // if apiViewModel currentState is FAILURE, i'll show the error
+        else if case .FAILURE(let error) = apiViewModel.currentState {
+            VStack(alignment: .center) {
+                Spacer()
+                Text(error)
+                    .font(.headline.bold())
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+            .padding()
+        }
+        // if apiViewModel currentState is LOADING, i'll show loading animation
+        else if case .LOADING = apiViewModel.currentState {
+            Text("loader")
+                .font(.headline)
+                .padding()
+                .position(x:200, y:350)
+        }
+    
     }
 }
 

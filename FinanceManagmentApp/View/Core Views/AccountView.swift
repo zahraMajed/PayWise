@@ -18,8 +18,10 @@ struct AccountView: View {
         VStack {
             CardDesign(cardInfo: currentCard)
             AccountServicesSegmentedPicker(currentAccountType: currentCard.accountType, selectedOption: $selectedOption)
-            containedView(selectedOption: selectedOption)
+            ScrollView (showsIndicators: false){
+                containedView(selectedOption: selectedOption)
             }
+        }
     }
     //MARK: functions
     func containedView(selectedOption: AccountServicesSegmentedPicker.accountServicesOptions) -> AnyView {
