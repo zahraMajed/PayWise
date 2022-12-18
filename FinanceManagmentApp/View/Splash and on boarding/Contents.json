@@ -1,17 +1,34 @@
 {
-  "images" : [
+  "colors" : [
     {
-      "filename" : "Copy of Black White Minimalist Letter AG Logo_prev_ui.png",
-      "idiom" : "universal",
-      "scale" : "1x"
+      "color" : {
+        "color-space" : "display-p3",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.851",
+          "green" : "0.761",
+          "red" : "0.761"
+        }
+      },
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "display-p3",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.851",
+          "green" : "0.761",
+          "red" : "0.761"
+        }
+      },
+      "idiom" : "universal"
     }
   ],
   "info" : {
