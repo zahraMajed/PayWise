@@ -226,7 +226,6 @@ struct OTPTextField: View {
     }
 }
 
-//MARK: FocusState Enum
 enum OTPField{
     case field1
     case field2
@@ -362,20 +361,14 @@ struct CheckView: View {
     }
 }
 
-
+//MARK: card design
 struct CardDesign : View {
-    //MARK: vars
-    /*var cardType: String
-    var cardNumber: String
-    var cardCVV: String
-    var cardColor: String
-    var cardExpDate: String*/
+
     var cardInfo: CardInfo
     @State var showInfo : Bool = false
     @State var showFaceID : Bool = false
     let star = "***"
     
-    //MARK: body
     var body: some View {
         VStack(spacing: 30) {
                 HStack {
@@ -423,7 +416,6 @@ struct CardDesign : View {
             .cornerRadius(12)
     }
     
-    //MARK: Hiddin all number except the last 4
     func customisedCardNumber(number: String)->String{
         var newValue: String = ""
         let maxCount = number.count - 4
@@ -481,7 +473,7 @@ struct CardDesign : View {
     }
 }
 
-
+//MARK: SegmentedPicker
 struct AccountServicesSegmentedPicker: View {
     //MARK: vars
     var currentAccountType : accountType
@@ -520,3 +512,166 @@ struct AccountServicesSegmentedPicker: View {
          }
     }
 }
+
+//MARK: Custome Alert
+enum AlertType {
+    // create the type of the custom alert.
+    // We are just creating the two type.
+    case success
+    case error(title: String, message: String = "")
+    
+    //will return alert title in string.
+    func title() -> String {
+        switch self {
+        case .success:
+            return "Success"
+        case .error(title: let title, _):
+            return title
+        }
+    }
+    
+    //will return alert message in string.
+    func message() -> String {
+        switch self {
+        case .success:
+            return "Please confirm that you're still open to session requests"
+        case .error(_, message: let message):
+            return message
+        }
+    }
+    
+    /// Left button action text for the alert view
+    var leftActionText: String {
+        switch self {
+        case .success:
+            return "Go"
+        case .error(_, _):
+            return "Go"
+        }
+    }
+    
+    /// Right button action text for the alert view
+    var rightActionText: String {
+        switch self {
+        case .success:
+            return "Cancel"
+        case .error(_, _):
+            return "Cancel"
+        }
+    }
+    
+    func height(isShowVerticalButtons: Bool = false) -> CGFloat {
+        switch self {
+        case .success:
+            return isShowVerticalButtons ? 220 : 150
+        case .error(_, _):
+            return isShowVerticalButtons ? 220 : 150
+        }
+    }
+}
+
+
+/// A boolean State variable is required in order to present the view.
+struct CustomAlert: View {
+    
+    /// Flag used to dismiss the alert on the presenting view
+    @Binding var presentAlert: Bool
+    
+    /// The alert type being shown
+    @State var alertType: AlertType = .success
+    
+    /// based on this value alert buttons will show vertically
+    var isShowVerticalButtons = false
+    
+    /// closure that used to handle the action of the buttons
+    var leftButtonAction: (() -> ())?
+    var rightButtonAction: (() -> ())?
+    
+    let verticalButtonsHeight: CGFloat = 80
+    
+    var body: some View {
+        
+        ZStack {
+            
+            // faded background
+            Color.black.opacity(0.75)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 0) {
+                
+                if alertType.title() != "" {
+                    // alert title
+                    Text(alertType.title())
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.black)
+                        .multilineTextAlignment(.center)
+                        .frame(height: 25)
+                        .padding(.top, 16)
+                        .padding(.bottom, 8)
+                        .padding(.horizontal, 16)
+                }
+
+                // alert message
+                Text(alertType.message())
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    .font(.system(size: 14))
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 16)
+                    .minimumScaleFactor(0.5)
+                
+                Divider()
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 0.5)
+                    .padding(.all, 0)
+                
+                HStack(spacing: 0) {
+                    // left button
+                    if (!alertType.leftActionText.isEmpty) {
+                        Button {
+                            leftButtonAction?()
+                        } label: {
+                            Text(alertType.leftActionText)
+                                .font(.system(size: 16, weight: .bold))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
+                                .padding()
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                        }
+                        Divider()
+                            .frame(minWidth: 0, maxWidth: 0.5, minHeight: 0, maxHeight: .infinity)
+                    }
+                    
+                    // right button (default)
+                    Button {
+                        presentAlert.toggle()
+                    } label: {
+                        Text(alertType.rightActionText)
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.pink)
+                            .multilineTextAlignment(.center)
+                            .padding(15)
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    }
+                    
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 55)
+                .padding([.horizontal, .bottom], 0)
+                
+            }
+            .frame(width: 270, height: alertType.height(isShowVerticalButtons: isShowVerticalButtons))
+            .background(
+                Color.white
+            )
+            .cornerRadius(4)
+        }
+        .zIndex(2)
+    }
+}
+
+struct CustomAlert_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomAlert(presentAlert: .constant(true))
+    }
+}
+

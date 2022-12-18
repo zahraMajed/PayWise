@@ -14,28 +14,35 @@ struct Login: View {
     
     //MARK: body
     var body: some View {
-        VStack(alignment: .leading){
-            Spacer()
-            ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will send you a one time password")
-            Spacer()
-            CustomPhoneTextField(countryPhoneCode: loginData.getCountryCode(), userInput: $loginData.phoneNumber)
-            Spacer(minLength: 377)
-            
-            LargeButton(text: "Continue", isfilled: true) {
-                Task{await loginData.sendOTP()}
-                print("code sent")
+        ZStack {
+            VStack(alignment: .leading){
+                Spacer()
+                ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will send you a one time password")
+                Spacer()
+                CustomPhoneTextField(countryPhoneCode: loginData.getCountryCode(), userInput: $loginData.phoneNumber)
+                Spacer(minLength: 377)
+                
+                LargeButton(text: "Continue", isfilled: true) {
+                    Task{await loginData.sendOTP()}
+                    print("code sent")
+                }
+                .disabled(loginData.phoneNumber == "" ? true : false)
+                .opacity(loginData.phoneNumber == "" ? 0.4 : 1)
+                Spacer()
+                
+                NavigationLink(destination: OTPVerifivation(loginData: loginData), isActive: $loginData.shouldGoToVerify) {
+                    Text("")
+                        .hidden()
+                }
+                
             }
-            .disabled(loginData.phoneNumber == "" ? true : false)
-            .opacity(loginData.phoneNumber == "" ? 0.4 : 1)
-            Spacer()
+            .onAppear(perform: authenticate)
             
-            NavigationLink(destination: OTPVerifivation(loginData: loginData), isActive: $loginData.shouldGoToVerify) {
-                Text("")
-                    .hidden()
+           
+            if loginData.isError {
+                CustomAlert(presentAlert: $loginData.isError, alertType: .error(title: "Error", message: loginData.errorMsg))
             }
-            
         }
-        .onAppear(perform: authenticate)
     }
     
     //MARK: functions
