@@ -676,23 +676,33 @@ struct CustomAlert_Previews: PreviewProvider {
     }
 }
 
-//MARK: listliabview
-
-struct listliabview: View {
+//MARK: listRow
+struct listRow: View {
     var liability : Liabilities
     var body: some View {
-        HStack {
-            Image(systemName: "mappin.circle.fill")
-            VStack(alignment: .leading) {
-                
-                Text(liability.liabilityName)
-                Text("\(liability.liabilityCost)")
-                
+        if liability.liabilityName != "" && liability.liabilityCost != "" {
+            HStack {
+                Image(systemName: "mappin.circle.fill")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .padding(.leading, 17.0)
+                VStack(alignment: .leading ,spacing: 2) {
+                    Text(liability.liabilityName)
+                        .font(.headline)
+                    Text(liability.liabilityCost)
+                        .font(.caption)
+                }
+                .padding(.leading, 17.0)
+                Spacer()
+                //Image(systemName: "line.3.horizontal")
             }
-            Spacer()
-            Image(systemName: "line.3.horizontal")
-            
         }
+    }
+}
+
+struct listRow_Previews: PreviewProvider {
+    static var previews: some View {
+        listRow(liability: Liabilities(liabilityName: "car", liabilityCost: "200"))
     }
 }
 

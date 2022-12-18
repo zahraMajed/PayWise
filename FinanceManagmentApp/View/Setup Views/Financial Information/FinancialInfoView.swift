@@ -32,8 +32,8 @@ struct FinancialInfoView: View {
             }
             
             Spacer()
-            NavigationLink(destination: RecurringLiabilitiesView(), isActive: $shouldGo) {
-            }.labelsHidden()
+            /*NavigationLink(destination: RecurringLiabilitiesView(), isActive: $shouldGo) {
+            }.labelsHidden()*/
                 
         }
         .navigationBarHidden(true)

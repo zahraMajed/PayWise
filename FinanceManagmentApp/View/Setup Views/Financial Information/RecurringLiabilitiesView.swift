@@ -9,26 +9,98 @@ import SwiftUI
 
 struct RecurringLiabilitiesView: View {
     //MARK: vars
+    @State var editinglidt = false
+    @State private var shouldGo : Bool = false
+    @State private var Addliability : Bool = false
+    @State  var totalcost: Int
+    
+    @EnvironmentObject var userData : User
+    @State private var liabilityName: String = ""
+    @State private var liabilityCost: String = ""
+    @State private var showNextView : Bool = false
     
     //MARK: body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                
+                    VStack(){
+                        Spacer()
+                        ViewTitleDescription(viewTitle: "Recurring Liabilities", viewDescription: "We will store and send a varivarion code to it")
+                       
+                        CustomTextField(textFieldLabel: "Liability name", textFieldHint: "Car installments", isSwitch: false, isCurrancy: false, userInput: $liabilityName)
+                        
+                        CustomTextField(textFieldLabel: "Liability Cost", textFieldHint: "1000", isSwitch: false, isCurrancy: true, userInput: $liabilityCost)
+                            .keyboardType(.namePhonePad)
+                        
+                        LargeButton(text: "Add liability", isfilled: false) {
+                            userData.liabilitiesAccount.liabilities.append(Liabilities(liabilityName: liabilityName, liabilityCost: liabilityCost))
+                            if let liabCost = Int(liabilityCost) {
+                                userData.liabilitiesAccount.liabilitiesCost += liabCost
+                            }
+                        }
+                        
+                        List{
+                            ForEach(userData.liabilitiesAccount.liabilities, id: \.self) { liability in
+                                listRow(liability: liability)
+                            }
+                            /*.onDelete(perform: deleteLiabilitie)
+                            .onMove(perform: moveLiabilitie)
+                            .onLongPressGesture{
+                                withAnimation{
+                                    self.editinglidt = true
+                                }
+                            }
+                            .environment(\.editMode, editinglidt ?.constant(.active): .constant(.inactive))*/
+                            .listRowSeparator(.hidden)
+                        }
+                        .listStyle(.plain)
+                        
+                        HStack{
+                            Text("Total liabilities Cost:")
+                                .font(.headline)
+                            Text("\(userData.liabilitiesAccount.liabilitiesCost)")
+                            Spacer()
+                        }
+                        .padding(.leading, 17)
+                        
+                        LargeButton(text: "Continue", isfilled: true) {
+                            showNextView = true
+                        }
+                        NavigationLink(destination: MoneyGrowthGoal(), isActive: $showNextView) {
+                        }.labelsHidden()
+                    }
     }
     //MARK: function
-    /*func division(){
-        guard let montlyIncom = Int(userData.monthlyIncom) else {
-            return
-        }
-        var budgetPerAcc = (montlyIncom/3)
-        userData.personalAccount.totalBalance += budgetPerAcc
-        userData.liabilitiesAccount.totalBalance += budgetPerAcc
-        userData.businessAccount.totalBalance += budgetPerAcc
-        
-    }*/
+    func division(){
+          guard let montlyIncom = Int(userData.monthlyIncom) else {
+              return
+          }
+        let budgetPerAcc = (montlyIncom/3)
+          userData.personalAccount.totalBalance += budgetPerAcc
+          userData.liabilitiesAccount.totalBalance += budgetPerAcc
+          userData.businessAccount.totalBalance += budgetPerAcc
+          
+          userData.personalAccount.thisMonthBudget = budgetPerAcc
+          userData.liabilitiesAccount.thisMonthBudget = budgetPerAcc
+          userData.businessAccount.thisMonthBudget = budgetPerAcc
+          
+      }
+      
+      func deleteLiabilitie(indexSet : IndexSet){
+          userData.liabilitiesAccount.liabilities.remove(atOffsets: indexSet)
+      }
+    
+      func moveLiabilitie(fromOffsets source: IndexSet, toOffsets destination : Int){
+          userData.liabilitiesAccount.liabilities.move(fromOffsets: source, toOffset: destination)
+          withAnimation{
+              editinglidt = false
+          }
+          
+      }
 }
 
 struct RecurringLiabilitiesView_Previews: PreviewProvider {
     static var previews: some View {
-        RecurringLiabilitiesView()
+        RecurringLiabilitiesView(totalcost: 0)
+            .environmentObject(User())
     }
 }
