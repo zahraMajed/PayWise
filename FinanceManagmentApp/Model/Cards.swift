@@ -28,6 +28,23 @@ struct LiabilitiesAccount {
     var thisMonthExpense : Int
 }
 
+struct CardInfo: Identifiable {
+    //all these data should be computed proporty
+    var id = UUID().uuidString
+    var accountType : accountType
+    var cardName: String
+    var cardNumber: String
+    var cardCVV: String
+    var cardColor :String
+    var cardExpDate: String
+}
+
+enum accountType : String {
+    case Personal
+    case Business
+    case Liabilities
+}
+
 struct Liabilities {
     var liabilityName : String
     var liabilityCost : Int

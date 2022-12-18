@@ -373,7 +373,6 @@ struct CardDesign : View {
     var cardInfo: CardInfo
     @State var showInfo : Bool = false
     @State var showFaceID : Bool = false
-    var isEyeHiddin : Bool = true
     let star = "***"
     
     //MARK: body
@@ -516,5 +515,4 @@ struct AccountServicesSegmentedPicker: View {
          .frame(maxWidth: 358)
          .pickerStyle(SegmentedPickerStyle())
     }
-    
 }
