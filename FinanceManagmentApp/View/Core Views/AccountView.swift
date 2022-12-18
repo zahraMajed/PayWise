@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//iuhufpoiuhfiuyg
 struct AccountView: View {
     //MARK: vars
     var currentCard: CardInfo
