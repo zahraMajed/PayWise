@@ -546,7 +546,7 @@ enum AlertType {
         case .success:
             return "Go"
         case .error(_, _):
-            return "Go"
+            return ""
         }
     }
     
