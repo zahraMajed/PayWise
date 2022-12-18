@@ -15,6 +15,7 @@
 		2BC07FF6294B11EE00B90371 /* PersonalAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC07FF5294B11EE00B90371 /* PersonalAccountView.swift */; };
 		2BC0801B294C817500B90371 /* WalletMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0801A294C817500B90371 /* WalletMain.swift */; };
 		2BC0801D294C822600B90371 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0801C294C822600B90371 /* Cards.swift */; };
+		2BC0801F294EE2A900B90371 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0801E294EE2A900B90371 /* InsightsView.swift */; };
 		2BF567D929475BB700A6E95B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF567D829475BB700A6E95B /* LoginViewModel.swift */; };
 		2BF567DB29475CEE00A6E95B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BF567DA29475CEE00A6E95B /* GoogleService-Info.plist */; };
 		2BF567DE29475DE300A6E95B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF567DD29475DE300A6E95B /* FirebaseAuth */; };
@@ -48,6 +49,7 @@
 		2BC07FF5294B11EE00B90371 /* PersonalAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountView.swift; sourceTree = "<group>"; };
 		2BC0801A294C817500B90371 /* WalletMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMain.swift; sourceTree = "<group>"; };
 		2BC0801C294C822600B90371 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		2BC0801E294EE2A900B90371 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		2BF567D829475BB700A6E95B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2BF567DA29475CEE00A6E95B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2BF567DF29475EB700A6E95B /* CountriesPhoneCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPhoneCode.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				2BC07FF5294B11EE00B90371 /* PersonalAccountView.swift */,
 				87C26CF1294B523C0006334F /* TabMainView.swift */,
 				2BC0801A294C817500B90371 /* WalletMain.swift */,
+				2BC0801E294EE2A900B90371 /* InsightsView.swift */,
 			);
 			path = "Core Views";
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */,
+				2BC0801F294EE2A900B90371 /* InsightsView.swift in Sources */,
 				2BF56841294A648C00A6E95B /* API.swift in Sources */,
 				2BF567E029475EB700A6E95B /* CountriesPhoneCode.swift in Sources */,
 				2BC0801D294C822600B90371 /* Cards.swift in Sources */,
