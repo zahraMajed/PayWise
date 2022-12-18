@@ -115,7 +115,7 @@ struct WalletMain: View {
             .offset(y: expandCards ? offset : -rect.minY + offset)
         }
         //MAX size (same as card size)
-        .frame(height: 224)
+        .frame(height: 200)
     }
     
     //MARK: Retereiving Index
