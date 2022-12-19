@@ -41,6 +41,9 @@
 		56DD2402294F329C0062BC21 /* RecurringLiabilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD2401294F329C0062BC21 /* RecurringLiabilitiesView.swift */; };
 		5F060881294F4F7A00D29E0D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F060880294F4F7A00D29E0D /* Account.swift */; };
 		5F060883294F516900D29E0D /* manageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F060882294F516900D29E0D /* manageView.swift */; };
+		87058071295087130062B3DA /* FinancialPlanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87058070295087130062B3DA /* FinancialPlanInfo.swift */; };
+		87058073295087C10062B3DA /* setUpInfo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87058072295087C10062B3DA /* setUpInfo2.swift */; };
+		87058075295089700062B3DA /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87058074295089700062B3DA /* DetailsView.swift */; };
 		87C26CF2294B523C0006334F /* TabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C26CF1294B523C0006334F /* TabMainView.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,9 @@
 		56DD2401294F329C0062BC21 /* RecurringLiabilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringLiabilitiesView.swift; sourceTree = "<group>"; };
 		5F060880294F4F7A00D29E0D /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		5F060882294F516900D29E0D /* manageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageView.swift; sourceTree = "<group>"; };
+		87058070295087130062B3DA /* FinancialPlanInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialPlanInfo.swift; sourceTree = "<group>"; };
+		87058072295087C10062B3DA /* setUpInfo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setUpInfo2.swift; sourceTree = "<group>"; };
+		87058074295089700062B3DA /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		87C26CF1294B523C0006334F /* TabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +171,7 @@
 				2B1DE9D92941F41D007F7518 /* ContentView.swift */,
 				2B1DE9EE2941FEA2007F7518 /* UI.swift */,
 				2BF5683E294A645100A6E95B /* TransactionsView.swift */,
+				87058074295089700062B3DA /* DetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +204,8 @@
 				2BF567E3294760D500A6E95B /* Financial Information */,
 				2BF567E2294760C500A6E95B /* Basic Information */,
 				2BF567EC294773EF00A6E95B /* SetupInfoView.swift */,
+				87058072295087C10062B3DA /* setUpInfo2.swift */,
+				87058070295087130062B3DA /* FinancialPlanInfo.swift */,
 				2BC08024294F39FE00B90371 /* AddToWalletView.swift */,
 			);
 			path = "Setup Views";
@@ -331,6 +340,7 @@
 				2BC0801F294EE2A900B90371 /* InsightsView.swift in Sources */,
 				2BF56841294A648C00A6E95B /* API.swift in Sources */,
 				2BF567E029475EB700A6E95B /* CountriesPhoneCode.swift in Sources */,
+				87058073295087C10062B3DA /* setUpInfo2.swift in Sources */,
 				2BC0801D294C822600B90371 /* Cards.swift in Sources */,
 				2B1DE9DA2941F41D007F7518 /* ContentView.swift in Sources */,
 				2BC08023294EEEDC00B90371 /* AccountView.swift in Sources */,
@@ -340,6 +350,7 @@
 				2BF56843294A649A00A6E95B /* APIService.swift in Sources */,
 				2BF5683F294A645100A6E95B /* TransactionsView.swift in Sources */,
 				2BC08025294F39FE00B90371 /* AddToWalletView.swift in Sources */,
+				87058071295087130062B3DA /* FinancialPlanInfo.swift in Sources */,
 				2BF5683B294A640E00A6E95B /* APIContentViewModel.swift in Sources */,
 				2BC0801B294C817500B90371 /* WalletMain.swift in Sources */,
 				87C26CF2294B523C0006334F /* TabMainView.swift in Sources */,
@@ -355,6 +366,7 @@
 				5691E10B294A138000576643 /* PersonalInfoView.swift in Sources */,
 				56DD2402294F329C0062BC21 /* RecurringLiabilitiesView.swift in Sources */,
 				2BF567FB2948649600A6E95B /* NotificationsPermission.swift in Sources */,
+				87058075295089700062B3DA /* DetailsView.swift in Sources */,
 				2BF567F42947BD1300A6E95B /* Login.swift in Sources */,
 				2BF567EB2947734200A6E95B /* SplashView.swift in Sources */,
 			);

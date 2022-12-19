@@ -1,13 +1,13 @@
 //
-//  SetupInfoView.swift
+//  setUpInfo2.swift
 //  FinanceManagmentApp
 //
-//  Created by Zahra Majed Alzawad on 18/05/1444 AH.
+//  Created by Reema Alsheddi on 19/12/2022.
 //
 
 import SwiftUI
 
-struct SetupInfoView: View {
+struct setUpInfo2: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
@@ -22,51 +22,48 @@ struct SetupInfoView: View {
 
         HStack{
             Text("1")
-                .foregroundColor(.white)
+                .foregroundColor(Color("AccentPurpleLight"))
                 .padding(9)
-                .background(Color("AccentPurpleLight"))
+                .background(.white)
                 .clipShape(Circle())
                 .padding(.leading)
 
             
             Text("Basic Information")
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundColor(Color("grayText"))
+
             .bold() }
             
-        Text("Give us your phone number and wait for the magic! We will provide you with information, and you only have to amend it in case of error")
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.leading)
-    
-//    Spacer()
+ 
           .frame(height: 85)
             HStack{
                 
                 Text("2")
-                    .foregroundColor(Color("AccentPurpleLight"))
-
+                    .foregroundColor(.white)
                     .padding(9)
-                    .background(.white)
+                    .background(Color("AccentPurpleLight"))
                     .clipShape(Circle())
                     .padding(.leading)
-
+            
                 Text("Financial Information")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(Color("grayText"))
-
-
-                
             }
+            Text("Share with us a little bit of your financial information so that we can develop an appropriate financial strategy. All your data will be secure. ")
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.leading)
             LargeButton(text: "Start", isfilled: true) {
                
             }
+            .padding(5)
             .padding(.leading)
             Spacer()
         }
     }
 }
 
-struct SetupInfoView_Previews: PreviewProvider {
+struct setUpInfo2_Previews: PreviewProvider {
     static var previews: some View {
-        SetupInfoView()
+        setUpInfo2()
     }
 }
