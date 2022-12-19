@@ -66,6 +66,7 @@ struct BusinessAccount {
     var thisMonthBudget : Int
     var thisMonthExpense : Int
     var businessCost : Int?
+    var businessDueDate : Date = Date.now
     //var currenProgress
     
 }

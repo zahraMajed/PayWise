@@ -10,7 +10,6 @@ import SwiftUI
 
 struct MoneyGrowthGoal: View {
     @State private var BusinessCost: String = ""
-    @State private var selectedDate : Date = Date.now
     //MARK: vars
     @EnvironmentObject var userData : User
     @State private var showNextView : Bool = false
@@ -55,9 +54,10 @@ struct MoneyGrowthGoal: View {
                 .background(Color("Gray4"))
                 .cornerRadius(14)
                 
-                CustomTextField(textFieldLabel: "Business Cost", textFieldHint: "$ 50,000.00", isSwitch: false, isCurrancy: false, userInput: $BusinessCost)
+                CustomTextField(textFieldLabel: "Business Cost", textFieldHint: "$50,000.00", isSwitch: false, isCurrancy: false, userInput: $BusinessCost)
                 
-                CustomTextFieldWithDate(textFieldLabel: "Business opening date", datePickerTitle: "Business opening date", selectedDate: $selectedDate)
+                CustomTextFieldWithDate(textFieldLabel: "Business opening date", datePickerTitle: "Business opening date", selectedDate: $userData.businessAccount.businessDueDate)
+
             }
             Spacer()
             LargeButton(text: "Create Account", isfilled: true) {
