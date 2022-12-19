@@ -11,71 +11,47 @@ import SwiftUI
 struct MoneyGrowthGoal: View {
     @State private var BusinessCost: String = ""
     @State private var selectedDate : Date = Date.now
-    @State private var showSheet : Bool = false
+    //MARK: vars
+    @State private var showNextView : Bool = false
 
     var body: some View {
-        NavigationView{
-            VStack(spacing: 40){
-                Text("The Business Card will be managed according to your choice")
-                    .multilineTextAlignment(.leading)
-                    .font(.system(size: 18, weight: .light, design: .serif))
+        VStack(){
+            Spacer()
+            ViewTitleDescription(viewTitle: "Money Growth Goal", viewDescription: "The Business Card will be managed according to your choice")
+            Spacer()
+            VStack (spacing: 17){
                 
+                VStack(alignment: .leading){
+                    
+                    Text("Goals to grow your money")
+                        .font(.subheadline)
+                        .foregroundColor(Color("Gray2"))
+                        .padding([.top, .leading, .trailing], 12)
+                        .padding(.bottom, 5)
+                    
+                    CheckView(title: "Opening Startup")
+                    CheckView(title: "Stock Trading")
+                    
+                }
+                .frame(width: 355, height: 121)
+                .background(Color("Gray4"))
+                .cornerRadius(14)
                 
-                ZStack{
-
-        Rectangle()
-                        .fill(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
-                    .frame(width: 350, height: 150)
-                    .cornerRadius(15)
-                    
-                    
-                    VStack(alignment: .leading){
-                        Text("Goals to grow your money")
-                            .foregroundColor(Color(red: 0.6039215686274509, green: 0.6039215686274509, blue: 0.6039215686274509))
-                            .font(.system(size: 18, weight: .light, design: .serif))
-                            .padding(.bottom)
-                            .padding(.trailing,20)
-                        CheckView(title: "Opening new business")
-                            .font(.system(size: 20,weight: .light,design: .default))
-                            
-                        
-                        CheckView(title: "Stock trading")
-                            .font(.system(size: 20,weight: .light,design: .default))
-                     
-                    }
-                    .padding(.bottom,30)
-                    .padding(.trailing,80)
+                CustomTextField(textFieldLabel: "Business Cost", textFieldHint: "$ 50,000.00", isSwitch: false, isCurrancy: false, userInput: $BusinessCost)
+                
+                CustomTextFieldWithDate(textFieldLabel: "Business opening date", datePickerTitle: "Business opening date", selectedDate: $selectedDate)
             }
-             
-                
-                
-                // text field for the Business Cost
-                CustomTextField(textFieldLabel: "Business Cost", textFieldHint: "$ 50,000.00", isSwitch: false, isCurrancy: false, userInput: $BusinessCost).padding()
-                
-                // text field for the Business opening date
-                CustomTextFieldWithDate(textFieldLabel: "Business opening date", datePickerTitle: "Business opening date", selectedDate: $selectedDate).padding()
-                
-                Button(action: {
-                    showSheet.toggle()
-                    
-                }, label: {
-                    LargeButton2(text: "Create Account", isfilled: true)
-                        .labelsHidden()
-                })
-                
-                Spacer()
-            } .navigationBarTitle("Money Growth Goal")
-                .padding()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
+            Spacer()
+            LargeButton(text: "Create Account", isfilled: true) {
+                showNextView = true
+                //creat the calculation and everything
+            }
+            Spacer()
         }
-        .fullScreenCover(isPresented: $showSheet) {
-            SetupInfoView()
-        }
-            
-        }
-        
+
     }
+    
+}
 
 
 struct MoneyGrowthGoal_Previews: PreviewProvider {

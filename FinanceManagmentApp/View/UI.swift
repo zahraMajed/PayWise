@@ -13,7 +13,6 @@ import LocalAuthentication
 struct ViewTitleDescription : View {
     var viewTitle: String
     var viewDescription: String
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
             Text(viewTitle)
@@ -21,10 +20,18 @@ struct ViewTitleDescription : View {
                 .fontWeight(.bold)
             Text(viewDescription)
                 .font(.callout)
+                .multilineTextAlignment(.leading)
                 .fontWeight(.regular)
         }
     }
 }
+
+struct ViewTitleDescription_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewTitleDescription(viewTitle: "Money Growth Goal", viewDescription: "The Business Card will be managed according to your choice")
+    }
+}
+
 
 //MARK: Buttons
 struct LargeButton: View {
@@ -321,6 +328,43 @@ struct CustomTextFieldWithDate: View {
     }
 }
 
+struct CheckView: View {
+    @State var isChecked:Bool = false
+    var title:String
+    func toggle(){isChecked = !isChecked}
+    var body: some View {
+        HStack {
+            Button(action: toggle) {
+                Image(systemName: isChecked ? "checkmark.square.fill": "square")
+                    .foregroundColor(Color("AccentGreenLight"))
+            }
+            Text(title)
+                .font(.body)
+                .disableAutocorrection(true)
+                .foregroundColor(Color.black)
+            Spacer()
+        }
+        .padding([.leading, .trailing], 12)
+        .padding(.bottom, 5)
+        
+        /*Button(action: toggle){
+            HStack{
+                Image(systemName: isChecked ? "checkmark.square.fill": "square")
+                    .foregroundColor(.green)
+                Text(title)
+            }
+        }.foregroundColor(.black)*/
+    }
+}
+
+
+struct CheckView_Previews: PreviewProvider {
+    static var previews: some View {
+        CheckView(title: "Open")
+    }
+}
+
+
 //MARK: Extensions
 extension UIApplication {
     func endEditing() {
@@ -343,23 +387,6 @@ struct RoundedCorner: Shape {
     }
 }
 
-
-struct CheckView: View {
-    @State var isChecked:Bool = false
-    var title:String
-    func toggle(){isChecked = !isChecked}
-    var body: some View {
-        Button(action: toggle){
-            
-            HStack{
-                Image(systemName: isChecked ? "checkmark.square.fill": "square")
-                    .foregroundColor(.green)
-                Text(title)
-            }
-        }.foregroundColor(.black)
-          
-    }
-}
 
 //MARK: card design
 struct CardDesign : View {
