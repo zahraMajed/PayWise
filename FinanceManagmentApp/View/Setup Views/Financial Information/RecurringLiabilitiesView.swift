@@ -10,9 +10,6 @@ import SwiftUI
 struct RecurringLiabilitiesView: View {
     //MARK: vars
     @State var editinglidt = false
-    @State private var shouldGo : Bool = false
-    @State private var Addliability : Bool = false
-    @State  var totalcost: Int
     
     @EnvironmentObject var userData : User
     @State private var liabilityName: String = ""
@@ -32,6 +29,7 @@ struct RecurringLiabilitiesView: View {
                     .keyboardType(.namePhonePad)
                 
                 LargeButton(text: "Add liability", isfilled: false) {
+                    
                     userData.liabilitiesAccount.liabilities.append(Liabilities(liabilityName: liabilityName, liabilityCost: liabilityCost))
                     if let liabCost = Int(liabilityCost) {
                         userData.liabilitiesAccount.liabilitiesCost += liabCost
@@ -69,7 +67,7 @@ struct RecurringLiabilitiesView: View {
             LargeButton(text: "Continue", isfilled: true) {
                 showNextView = true
             }
-            .padding(.bottom, 20).labelsHidden()
+            .padding(.bottom, 20)
             NavigationLink(destination: MoneyGrowthGoal(), isActive: $showNextView) {
             }
         }
@@ -113,7 +111,7 @@ struct RecurringLiabilitiesView: View {
 
 struct RecurringLiabilitiesView_Previews: PreviewProvider {
     static var previews: some View {
-        RecurringLiabilitiesView(totalcost: 0)
+        RecurringLiabilitiesView()
             .environmentObject(User())
     }
 }
