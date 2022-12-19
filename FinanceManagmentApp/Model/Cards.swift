@@ -21,7 +21,7 @@ struct LiabilitiesAccount {
     var cardInfo : CardInfo
     var cardSetting : CardSetting
     //var transactions : Transactions
-    var liabilities : Liabilities
+    var liabilities : [Liabilities]
     var liabilitiesCost : Int
     var totalBalance : Int
     var thisMonthBudget : Int
@@ -45,9 +45,10 @@ enum accountType : String {
     case Liabilities
 }
 
-struct Liabilities {
+struct Liabilities: Identifiable, Hashable{
+    var id = UUID()
     var liabilityName : String
-    var liabilityCost : Int
+    var liabilityCost : String
 }
 
 struct CardSetting {
@@ -60,15 +61,15 @@ struct BusinessAccount {
     var cardInfo : CardInfo
     var cardSetting : CardSetting
     //var transactions : Transactions
-    //var gaols : []
+    var gaols : [Int:String]
     var totalBalance : Int
     var thisMonthBudget : Int
     var thisMonthExpense : Int
+    var businessCost : Int?
+    var businessDueDate : Date = Date.now
     //var currenProgress
+    
 }
 
-/*enum gaolsType {
-    case
-}*/
 
 

@@ -13,7 +13,6 @@ import LocalAuthentication
 struct ViewTitleDescription : View {
     var viewTitle: String
     var viewDescription: String
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
             Text(viewTitle)
@@ -21,10 +20,18 @@ struct ViewTitleDescription : View {
                 .fontWeight(.bold)
             Text(viewDescription)
                 .font(.callout)
+                .multilineTextAlignment(.leading)
                 .fontWeight(.regular)
         }
     }
 }
+
+struct ViewTitleDescription_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewTitleDescription(viewTitle: "Money Growth Goal", viewDescription: "The Business Card will be managed according to your choice")
+    }
+}
+
 
 //MARK: Buttons
 struct LargeButton: View {
@@ -174,8 +181,6 @@ struct OTPTextField: View {
             }
         }
     }
-    
-    //MARK: functions
     func OTPFieldsCondition(newOTPFieldValue: [String]){
         
         // checking if OTP is pressed
@@ -321,6 +326,41 @@ struct CustomTextFieldWithDate: View {
     }
 }
 
+struct CheckView: View {
+    @State var isChecked: Bool = false
+    var title:String
+    var clicked: ((Bool) -> Void)
+    
+    var body: some View {
+        HStack {
+            Button {
+                isChecked.toggle()
+                clicked(isChecked)
+            } label: {
+                Image(systemName: isChecked ? "checkmark.square.fill": "square")
+                    .foregroundColor(Color("AccentGreenLight"))
+            }
+
+            Text(title)
+                .font(.body)
+                .disableAutocorrection(true)
+                .foregroundColor(Color.black)
+            Spacer()
+        }
+        .padding([.leading, .trailing], 12)
+        .padding(.bottom, 5)
+        
+        /*Button(action: toggle){
+            HStack{
+                Image(systemName: isChecked ? "checkmark.square.fill": "square")
+                    .foregroundColor(.green)
+                Text(title)
+            }
+        }.foregroundColor(.black)*/
+    }
+}
+
+
 //MARK: Extensions
 extension UIApplication {
     func endEditing() {
@@ -343,23 +383,6 @@ struct RoundedCorner: Shape {
     }
 }
 
-
-struct CheckView: View {
-    @State var isChecked:Bool = false
-    var title:String
-    func toggle(){isChecked = !isChecked}
-    var body: some View {
-        Button(action: toggle){
-            
-            HStack{
-                Image(systemName: isChecked ? "checkmark.square.fill": "square")
-                    .foregroundColor(.green)
-                Text(title)
-            }
-        }.foregroundColor(.black)
-          
-    }
-}
 
 //MARK: card design
 struct CardDesign : View {
@@ -676,23 +699,34 @@ struct CustomAlert_Previews: PreviewProvider {
     }
 }
 
-//MARK: listliabview
-
-struct listliabview: View {
+//MARK: listRow
+struct listRow: View {
     var liability : Liabilities
     var body: some View {
-        HStack {
-            Image(systemName: "mappin.circle.fill")
-            VStack(alignment: .leading) {
-                
-                Text(liability.liabilityName)
-                Text("\(liability.liabilityCost)")
-                
+        if liability.liabilityName != "" && liability.liabilityCost != "" {
+            HStack {
+                Image(systemName: "mappin.circle.fill")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .padding(.leading, 17.0)
+                VStack(alignment: .leading ,spacing: 2) {
+                    Text(liability.liabilityName)
+                        .font(.headline)
+                    Text(liability.liabilityCost)
+                        .font(.caption)
+                }
+                .padding(.leading, 17.0)
+                Spacer()
+                //Image(systemName: "line.3.horizontal")
             }
-            Spacer()
-            Image(systemName: "line.3.horizontal")
-            
+            .frame(height: 60)
         }
+    }
+}
+
+struct listRow_Previews: PreviewProvider {
+    static var previews: some View {
+        listRow(liability: Liabilities(liabilityName: "car", liabilityCost: "200"))
     }
 }
 
