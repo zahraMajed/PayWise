@@ -20,11 +20,11 @@ struct PersonalInfoView: View {
             ViewTitleDescription(viewTitle: "Personal Information", viewDescription: "Please fill the information ")
             Spacer()
             VStack (spacing: 17){
-                CustomTextField(textFieldLabel: "Name", textFieldHint: "Enter Your name", isSwitch: false, isCurrancy: false, userInput: $userData.name)
+                CustomTextField(textFieldLabel: "Name", textFieldHint: "First & Last name", isSwitch: false, isCurrancy: false, userInput: $userData.name)
                 
                 CustomTextFieldWithDate(textFieldLabel: "Date of Bitrh", datePickerTitle: "Date of birth", selectedDate: $userData.dateOfBirth)
                 
-                CustomTextField(textFieldLabel: "National ID", textFieldHint: "1111111111", isSwitch: false, isCurrancy: false, userInput: $userData.nationalID)
+                CustomTextField(textFieldLabel: "National ID", textFieldHint: "1100110011", isSwitch: false, isCurrancy: false, userInput: $userData.nationalID)
             }
             Spacer()
             LargeButton(text: "Continue", isfilled: true) {
