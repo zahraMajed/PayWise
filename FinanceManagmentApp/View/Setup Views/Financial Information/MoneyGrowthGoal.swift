@@ -63,6 +63,7 @@ struct MoneyGrowthGoal: View {
             LargeButton(text: "Create Account", isfilled: true) {
                 showNextView = true
                 //creat the calculation and everything
+                //alert if we gonna lock card.
             }
             Spacer()
         }
