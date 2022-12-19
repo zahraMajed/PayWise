@@ -15,7 +15,7 @@ struct Account: View {
         
         var body: some View {
             
-            VStack(spacing:50){
+            VStack(spacing:17){
                 Spacer()
                 ZStack{
                     Text ("Account")
@@ -26,7 +26,7 @@ struct Account: View {
             
              
                     
-                    VStack(spacing:17){
+                    VStack{
                         ZStack{
                             RoundedRectangle(cornerRadius: 25)
                                 .foregroundColor(Color("Gray4"))
