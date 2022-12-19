@@ -87,7 +87,7 @@ struct Account: View {
                             
                             Text("Settings")
                                 .font(.system(.title2))
-                                .frame(width: 350, alignment: .topLeading)
+                                .frame(width: 340, alignment: .topLeading)
                                 .offset(y:-120)
                                
                             HStack{
