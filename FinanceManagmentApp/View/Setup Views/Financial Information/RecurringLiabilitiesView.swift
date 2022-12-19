@@ -13,7 +13,7 @@ struct RecurringLiabilitiesView: View {
     @State private var liabilityName: String = ""
     @State private var liabilityCost: String = ""
     @State private var showNextView : Bool = false
-    @State var editinglidt = false
+    @State private var editinglidt = false
     
     //MARK: body
     var body: some View {

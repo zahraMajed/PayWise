@@ -181,8 +181,6 @@ struct OTPTextField: View {
             }
         }
     }
-    
-    //MARK: functions
     func OTPFieldsCondition(newOTPFieldValue: [String]){
         
         // checking if OTP is pressed
@@ -329,15 +327,20 @@ struct CustomTextFieldWithDate: View {
 }
 
 struct CheckView: View {
-    @State var isChecked:Bool = false
+    @State var isChecked: Bool = false
     var title:String
-    func toggle(){isChecked = !isChecked}
+    var clicked: ((Bool) -> Void)
+    
     var body: some View {
         HStack {
-            Button(action: toggle) {
+            Button {
+                isChecked.toggle()
+                clicked(isChecked)
+            } label: {
                 Image(systemName: isChecked ? "checkmark.square.fill": "square")
                     .foregroundColor(Color("AccentGreenLight"))
             }
+
             Text(title)
                 .font(.body)
                 .disableAutocorrection(true)
@@ -354,13 +357,6 @@ struct CheckView: View {
                 Text(title)
             }
         }.foregroundColor(.black)*/
-    }
-}
-
-
-struct CheckView_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckView(title: "Open")
     }
 }
 

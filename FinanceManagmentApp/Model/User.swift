@@ -20,7 +20,7 @@ class User: ObservableObject {
     
     @Published var liabilitiesAccount = LiabilitiesAccount(cardInfo: CardInfo(accountType: .Liabilities, cardName: "Liability Card", cardNumber: "1111 2222 3333 4444", cardCVV: "444", cardColor: "PrimaryBlueLight", cardExpDate: "12/10"), cardSetting: CardSetting(cardLimit: 0, isCardLocked: false, isEcommerceTransDisabled: false), liabilities: [], liabilitiesCost: 0, totalBalance: 0, thisMonthBudget: 0, thisMonthExpense: 0)
     
-    @Published var businessAccount = BusinessAccount(cardInfo: CardInfo(accountType: .Business, cardName: "Business Card", cardNumber: "1111 2222 3333 4444", cardCVV: "760", cardColor: "AccentPurpleLight", cardExpDate: "13/3"), cardSetting: CardSetting(cardLimit: 0, isCardLocked: true, isEcommerceTransDisabled: true), gaols: [], totalBalance: 0, thisMonthBudget: 0, thisMonthExpense: 0)
+    @Published var businessAccount = BusinessAccount(cardInfo: CardInfo(accountType: .Business, cardName: "Business Card", cardNumber: "1111 2222 3333 4444", cardCVV: "760", cardColor: "AccentPurpleLight", cardExpDate: "13/3"), cardSetting: CardSetting(cardLimit: 0, isCardLocked: true, isEcommerceTransDisabled: true), gaols: [:], totalBalance: 0, thisMonthBudget: 0, thisMonthExpense: 0)
 
     
     /*init(personalAccount: PersonalAccount, liabilitiesAccount: LiabilitiesAccount) {

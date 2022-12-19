@@ -12,6 +12,7 @@ struct MoneyGrowthGoal: View {
     @State private var BusinessCost: String = ""
     @State private var selectedDate : Date = Date.now
     //MARK: vars
+    @EnvironmentObject var userData : User
     @State private var showNextView : Bool = false
 
     var body: some View {
@@ -28,9 +29,26 @@ struct MoneyGrowthGoal: View {
                         .foregroundColor(Color("Gray2"))
                         .padding([.top, .leading, .trailing], 12)
                         .padding(.bottom, 5)
-                    
-                    CheckView(title: "Opening Startup")
-                    CheckView(title: "Stock Trading")
+                   
+                    CheckView(title: "Opening Startup"){ isChecked in
+                        if isChecked {
+                            userData.businessAccount.gaols[1] = "Opening Startup"
+                        }else {
+                            if userData.businessAccount.gaols[1] != nil {
+                                userData.businessAccount.gaols.removeValue(forKey: 1)
+                            }
+                        }
+                    }
+        
+                    CheckView(title: "Stock Trading") { isChecked in
+                        if isChecked {
+                            userData.businessAccount.gaols[2] = "Stock Trading"
+                        }else {
+                            if userData.businessAccount.gaols[2] != nil {
+                                userData.businessAccount.gaols.removeValue(forKey: 2)
+                            }
+                        }
+                    }
                     
                 }
                 .frame(width: 355, height: 121)
@@ -57,5 +75,6 @@ struct MoneyGrowthGoal: View {
 struct MoneyGrowthGoal_Previews: PreviewProvider {
     static var previews: some View {
         MoneyGrowthGoal()
+            .environmentObject(User())
     }
 }

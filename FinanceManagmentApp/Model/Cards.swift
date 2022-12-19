@@ -61,17 +61,14 @@ struct BusinessAccount {
     var cardInfo : CardInfo
     var cardSetting : CardSetting
     //var transactions : Transactions
-    var gaols : [gaolsOptions]
+    var gaols : [Int:String]
     var totalBalance : Int
     var thisMonthBudget : Int
     var thisMonthExpense : Int
     var businessCost : Int?
     //var currenProgress
+    
 }
 
-enum gaolsOptions : String {
-    case OpenBusiness =  "Opening Startup"
-    case Stock = "Stock Trading"
-}
 
 
