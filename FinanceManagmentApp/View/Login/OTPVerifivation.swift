@@ -10,6 +10,7 @@ import SwiftUI
 struct OTPVerifivation: View {
     //MARK: vars
     @ObservedObject var loginData : LoginViewModel
+    @State private var showNextView : Bool = false
     
     //MARK: body
     var body: some View {
@@ -28,11 +29,14 @@ struct OTPVerifivation: View {
                 
                 PlainButton(text: "Resend OTP") {
                     loginData.requestCode()
+                    showNextView = true
                 }
                 Spacer()
                 //should go to the Home withouth navigation link.
-                NavigationLink(destination: TabMainView(), isActive: $loginData.isLoggedIn) {
-                }.labelsHidden()
+                if loginData.isLoggedIn {
+                    NavigationLink(destination: TabMainView(), isActive: $showNextView) {
+                    }.labelsHidden()
+                }
             }
             if loginData.isError {
                 CustomAlert(presentAlert: $loginData.isError, alertType: .error(title: "Error", message: loginData.errorMsg))
