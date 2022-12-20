@@ -69,7 +69,6 @@ struct SetupInfoView: View {
                 }.labelsHidden()
             }.fullScreenCover(isPresented: $shouldshowonboarding, content: {onboarding1(shouldshowonboarding: $shouldshowonboarding)})
         
-        
     }
 }
 
