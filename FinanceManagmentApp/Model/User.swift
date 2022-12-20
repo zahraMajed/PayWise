@@ -10,6 +10,7 @@ import Foundation
 
 class User: ObservableObject {
     @Published var name = ""
+    @Published var isSetupDone = false
     @Published var countryPhoneCode = ""
     @Published var phoneNumber = ""
     @Published var dateOfBirth = Date.now

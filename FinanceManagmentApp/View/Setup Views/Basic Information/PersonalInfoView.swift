@@ -31,7 +31,7 @@ struct PersonalInfoView: View {
                 showNextView = true
             }
             Spacer()
-        NavigationLink(destination: SetupInfoView(), isActive: $showNextView) {
+        NavigationLink(destination: setUpInfo2(), isActive: $showNextView) {
             }.labelsHidden()
             
         }

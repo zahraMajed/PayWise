@@ -89,18 +89,15 @@ struct MoneyGrowthGoal: View {
                 //total balance
                 userData.businessAccount.totalBalance += (montlyIncom/3)
                 userData.liabilitiesAccount.totalBalance += userData.liabilitiesAccount.liabilitiesCost
-                userData.personalAccount.totalBalance += montlyIncom - (montlyIncom/3)
-                userData.liabilitiesAccount.liabilitiesCost
+                userData.personalAccount.totalBalance += montlyIncom - (montlyIncom/3) - userData.liabilitiesAccount.liabilitiesCost
                 //thisMonthBudget
                 userData.businessAccount.thisMonthBudget += (montlyIncom/3)
                 userData.liabilitiesAccount.thisMonthBudget += userData.liabilitiesAccount.liabilitiesCost
-                userData.personalAccount.thisMonthBudget += montlyIncom - (montlyIncom/3)
-                userData.liabilitiesAccount.liabilitiesCost
+                userData.personalAccount.thisMonthBudget += montlyIncom - (montlyIncom/3) - userData.liabilitiesAccount.liabilitiesCost
                 //card limit
                 userData.businessAccount.cardSetting.cardLimit = (montlyIncom/3)
                 userData.liabilitiesAccount.cardSetting.cardLimit = userData.liabilitiesAccount.liabilitiesCost
-                userData.personalAccount.cardSetting.cardLimit = montlyIncom - (montlyIncom/3)
-                userData.liabilitiesAccount.liabilitiesCost
+                userData.personalAccount.cardSetting.cardLimit = montlyIncom - (montlyIncom/3) - userData.liabilitiesAccount.liabilitiesCost
             } else {
                 // show alert here "it is important to cut down unimportant liabilitiesCost"
             }
@@ -129,6 +126,8 @@ struct MoneyGrowthGoal: View {
                 userData.businessAccount.cardSetting.isCardLocked = false
             }
         }
+        
+        userData.isSetupDone = true
     }
     
 }

@@ -9,12 +9,11 @@ import SwiftUI
 
 struct SplashView: View {
     //MARK: vars
-    @AppStorage("Setup_Status") var isSetupDone = false
     @State private var isSplashActive = true
     @EnvironmentObject var userData : User
     @State private var size = 1.0
     @State private var opacity = 0.5
-    /// do i need to declare this on every view in flow? or only on views that need to access infro from the model, for example here i do not need to access any data (but its view in a flow to another view which i need a data on!
+   
     var body: some View {
         if isSplashActive {
             //animation splash screen
@@ -49,7 +48,7 @@ struct SplashView: View {
             
             
         }else {
-            if isSetupDone {
+            if userData.isSetupDone {
                 NavigationView {
                     Login()
                         //.environmentObject(userData)
@@ -71,6 +70,3 @@ struct SplashView_Previews: PreviewProvider {
     }
 }
 
-//Questions:
-///About button with keyboard
-///making user struct as AppStorage

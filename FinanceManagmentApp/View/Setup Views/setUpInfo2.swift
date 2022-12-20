@@ -11,16 +11,15 @@ struct setUpInfo2: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
-        
+            Spacer()
             Image("Logo")
                 .padding(.top)
                 .padding(.trailing)
             
-            
             ViewTitleDescription(viewTitle: "PAYWISE", viewDescription: "We will need some information to get started")
                 .padding(.leading)
-
-        HStack{
+            Spacer()
+            HStack{
             Text("1")
                 .foregroundColor(Color("AccentPurpleLight"))
                 .padding(9)
@@ -52,12 +51,14 @@ struct setUpInfo2: View {
             Text("Share with us a little bit of your financial information so that we can develop an appropriate financial strategy. All your data will be secure. ")
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading)
+            Spacer()
             LargeButton(text: "Start", isfilled: true) {
                
             }
             .padding(5)
             .padding(.leading)
             Spacer()
+            //this page should go to "FinancialPlanInfo"
         }
     }
 }
