@@ -20,6 +20,7 @@ struct PersonalAccount {
 struct LiabilitiesAccount {
     var cardInfo : CardInfo
     var cardSetting : CardSetting
+    var isNotStable : Bool
     //var transactions : Transactions
     var liabilities : [Liabilities]
     var liabilitiesCost : Int
@@ -99,6 +100,11 @@ enum CreditCardNumberType {
     case DinersClubInternational
     case DinersClubCarteBlanche
     case JCB
+}
+
+func generateCVV () -> String {
+    var random = Int.random(in: 0...9)
+    return "\(random)\(random)\(random)"
 }
 
 func generateCreditCardNumber(for type: CreditCardNumberType) -> String{

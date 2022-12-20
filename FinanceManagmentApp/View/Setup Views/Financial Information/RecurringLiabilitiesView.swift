@@ -17,57 +17,71 @@ struct RecurringLiabilitiesView: View {
     
     //MARK: body
     var body: some View {
-        VStack(){
-            Spacer()
-            ViewTitleDescription(viewTitle: "Recurring Liabilities", viewDescription: "We will store and send a varivarion code to it")
-            Spacer(minLength: 100)
-            VStack(spacing: 17){
-                CustomTextField(textFieldLabel: "Liability name", textFieldHint: "Car installments", isSwitch: false, isCurrancy: false, userInput: $liabilityName)
-                
-                CustomTextField(textFieldLabel: "Liability Cost", textFieldHint: "1000", isSwitch: false, isCurrancy: true, userInput: $liabilityCost)
-                    .keyboardType(.namePhonePad)
-                
-                LargeButton(text: "Add liability", isfilled: false) {
-                    userData.liabilitiesAccount.liabilities.append(Liabilities(liabilityName: liabilityName, liabilityCost: liabilityCost))
-                    if let liabCost = Int(liabilityCost) {
-                        userData.liabilitiesAccount.liabilitiesCost += liabCost
+        ZStack {
+            VStack(){
+                Spacer()
+                ViewTitleDescription(viewTitle: "Recurring Liabilities", viewDescription: "We will store and send a varivarion code to it")
+                Spacer(minLength: 100)
+                VStack(spacing: 17){
+                    CustomTextField(textFieldLabel: "Liability name", textFieldHint: "Car installments", isSwitch: false, isCurrancy: false, userInput: $liabilityName)
+                    
+                    CustomTextField(textFieldLabel: "Liability Cost", textFieldHint: "1000", isSwitch: false, isCurrancy: true, userInput: $liabilityCost)
+                        .keyboardType(.namePhonePad)
+                    
+                    LargeButton(text: "Add liability", isfilled: false) {
+                        userData.liabilitiesAccount.liabilities.append(Liabilities(liabilityName: liabilityName, liabilityCost: liabilityCost))
+                        if let liabCost = Int(liabilityCost) {
+                            userData.liabilitiesAccount.liabilitiesCost += liabCost
+                        }
+                        if let montlyIncom = Int(userData.monthlyIncom)  {
+                            if userData.liabilitiesAccount.liabilitiesCost > (montlyIncom/3) {
+                                userData.liabilitiesAccount.isNotStable = true
+                            }
+                        }
                     }
                 }
-            }
-                                
-            List{
-                ForEach(userData.liabilitiesAccount.liabilities, id: \.self) { liability in
-                    listRow(liability: liability)
+                                    
+                List{
+                    ForEach(userData.liabilitiesAccount.liabilities, id: \.self) { liability in
+                        listRow(liability: liability)
+                    }
+                    .onDelete(perform: deleteLiabilitie)
+                     .onMove(perform: moveLiabilitie)
+                     .onLongPressGesture{
+                     withAnimation{
+                     self.editinglidt = true
+                     }
+                     }
+                     .environment(\.editMode, editinglidt ?.constant(.active): .constant(.inactive))
+                    .listRowSeparator(.hidden)
                 }
-                .onDelete(perform: deleteLiabilitie)
-                 .onMove(perform: moveLiabilitie)
-                 .onLongPressGesture{
-                 withAnimation{
-                 self.editinglidt = true
-                 }
-                 }
-                 .environment(\.editMode, editinglidt ?.constant(.active): .constant(.inactive))
-                .listRowSeparator(.hidden)
-            }
-            .padding(.bottom, 17.0)
-            .frame(maxHeight: 200)
-            .listStyle(.plain)
-            if userData.liabilitiesAccount.liabilitiesCost > 0 {
-                HStack{
-                    Text("Total liabilities Cost:")
-                        .font(.headline)
-                    Text("\(userData.liabilitiesAccount.liabilitiesCost)")
-                    Spacer()
+                .padding(.bottom, 17.0)
+                .frame(maxHeight: 200)
+                .listStyle(.plain)
+                
+                if userData.liabilitiesAccount.liabilitiesCost > 0 {
+                    HStack{
+                        Text("Total liabilities Cost:")
+                            .font(.headline)
+                        Text("\(userData.liabilitiesAccount.liabilitiesCost)")
+                        Spacer()
+                    }
+                    .padding(.leading, 17)
                 }
-                .padding(.leading, 17)
+                Spacer()
+                
+                LargeButton(text: "Continue", isfilled: true) {
+                    showNextView = true
+                }
+                .padding(.bottom, 20)
+                
+                NavigationLink(destination: MoneyGrowthGoal(), isActive: $showNextView) {
+                }
             }
-            Spacer()
-            LargeButton(text: "Continue", isfilled: true) {
-                showNextView = true
-            }
-            .padding(.bottom, 20)
-            NavigationLink(destination: MoneyGrowthGoal(), isActive: $showNextView) {
-            }
+        }
+
+        if userData.liabilitiesAccount.isNotStable {
+            CustomAlert(presentAlert: $userData.liabilitiesAccount.isNotStable, alertType: .error(title: "Prioritize", message: "We recommend you reduce liabilities and prioritize"))
         }
     }
     //MARK: function

@@ -61,6 +61,7 @@ struct MoneyGrowthGoal: View {
             }
             Spacer()
             LargeButton(text: "Create Account", isfilled: true) {
+                createFinancePlan()
                 showNextView = true
                 //creat the calculation and everything
                 //alert if we gonna lock card.
@@ -81,9 +82,16 @@ struct MoneyGrowthGoal: View {
         // if liabilitiesCost more than 1/3 income
         if userData.liabilitiesAccount.liabilitiesCost > (montlyIncom/3) {
             if userData.liabilitiesAccount.liabilitiesCost < (montlyIncom * (2/3)) {
+                //total balance
                 userData.businessAccount.totalBalance += (montlyIncom/3)
                 userData.liabilitiesAccount.totalBalance += userData.liabilitiesAccount.liabilitiesCost
-                userData.personalAccount.totalBalance += montlyIncom - (montlyIncom/3) - userData.liabilitiesAccount.liabilitiesCost
+                userData.personalAccount.totalBalance += montlyIncom - (montlyIncom/3)
+                userData.liabilitiesAccount.liabilitiesCost
+                //thisMonthBudget
+                userData.businessAccount.thisMonthBudget += (montlyIncom/3)
+                userData.liabilitiesAccount.thisMonthBudget += userData.liabilitiesAccount.liabilitiesCost
+                userData.personalAccount.thisMonthBudget += montlyIncom - (montlyIncom/3)
+                userData.liabilitiesAccount.liabilitiesCost
                 // show alert here as a tips
             } else {
                 // show alert here "it is important to cut down unimportant liabilitiesCost"
