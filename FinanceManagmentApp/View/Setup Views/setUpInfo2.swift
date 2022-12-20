@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct setUpInfo2: View {
-
+    @State private var showNextView: Bool = false
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
-            Spacer()
             Image("Logo")
                 .padding(.top)
                 .padding(.trailing)
@@ -53,12 +52,15 @@ struct setUpInfo2: View {
             .padding(.leading)
             Spacer()
             LargeButton(text: "Start", isfilled: true) {
-               
+               showNextView = true
             }
             .padding(5)
             .padding(.leading)
+            
             Spacer()
-            //this page should go to "FinancialPlanInfo"
+            
+            NavigationLink(destination: FinancialPlanInfo(), isActive: $showNextView) {
+            }.labelsHidden()
         }
     }
 }

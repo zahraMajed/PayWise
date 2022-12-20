@@ -12,6 +12,7 @@ struct Account: View {
         @State private var isOn1:Bool = true
         @State private var isOn2:Bool = false
         @State private var isOn3:Bool = false
+    @EnvironmentObject var userData : User
         
         var body: some View {
             
@@ -43,7 +44,7 @@ struct Account: View {
                                 .font(.system(.title2))
                                 .frame(width: 350, alignment: .leading)
                                 .offset(y:25)
-                            Text("Zahra Alzawad")
+                            Text(userData.name)
                                 .font(.subheadline)
                                 .frame(width: 350, alignment: .leading)
                                 .offset(y:60)
@@ -200,5 +201,6 @@ struct Account: View {
 struct Account_Previews: PreviewProvider {
     static var previews: some View {
         Account()
+            .environmentObject(User())
     }
 }

@@ -4,7 +4,7 @@
 import SwiftUI
 
 struct FinancialPlanInfo: View {
-
+    @State private var showNextView: Bool = false
     var body: some View {
         
         VStack(alignment: .leading, spacing: 15){
@@ -57,12 +57,15 @@ struct FinancialPlanInfo: View {
             }
            
             LargeButton(text: "Start", isfilled: true) {
-               
+               showNextView = true
             }
             
             .padding(5)
             .padding(.leading)
             Spacer()
+            
+            NavigationLink(destination: FinancialInfoView(), isActive: $showNextView) {
+            }.labelsHidden()
         }
         
     }

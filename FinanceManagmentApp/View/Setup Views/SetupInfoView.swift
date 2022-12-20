@@ -10,11 +10,10 @@ import SwiftUI
 struct SetupInfoView: View {
     
   @AppStorage("shouldshowonboarding") var shouldshowonboarding: Bool = true
-//
+    @State private var showNextView: Bool = false
     
         //@State var shouldshowonboarding: Bool = true
     var body: some View {
-        NavigationView{
             VStack(alignment: .leading, spacing: 15){
                 
                 Image("Logo")
@@ -62,13 +61,13 @@ struct SetupInfoView: View {
                     
                 }
                 LargeButton(text: "Start", isfilled: true) {
-                    
+                    showNextView = true
                 }
                 .padding(.leading)
                 Spacer()
-            }
-        }
-        .fullScreenCover(isPresented: $shouldshowonboarding, content: {onboarding1(shouldshowonboarding: $shouldshowonboarding)})
+                NavigationLink(destination: PhoneNumberPInfo(), isActive: $showNextView) {
+                }.labelsHidden()
+            }.fullScreenCover(isPresented: $shouldshowonboarding, content: {onboarding1(shouldshowonboarding: $shouldshowonboarding)})
         
         
     }
