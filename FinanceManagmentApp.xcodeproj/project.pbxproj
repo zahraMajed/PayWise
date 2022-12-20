@@ -12,6 +12,8 @@
 		2B1DE9DC2941F41E007F7518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B1DE9DB2941F41E007F7518 /* Assets.xcassets */; };
 		2B1DE9DF2941F41E007F7518 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B1DE9DE2941F41E007F7518 /* Preview Assets.xcassets */; };
 		2B1DE9EF2941FEA2007F7518 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DE9EE2941FEA2007F7518 /* UI.swift */; };
+		2B962C4C2951BD10002DEFDE /* AddToWalletView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B962C4B2951BD10002DEFDE /* AddToWalletView2.swift */; };
+		2B962C4E2951BE4E002DEFDE /* AddToWalletView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B962C4D2951BE4E002DEFDE /* AddToWalletView3.swift */; };
 		2BC0801B294C817500B90371 /* WalletMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0801A294C817500B90371 /* WalletMain.swift */; };
 		2BC0801D294C822600B90371 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0801C294C822600B90371 /* Cards.swift */; };
 		2BC0801F294EE2A900B90371 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0801E294EE2A900B90371 /* InsightsView.swift */; };
@@ -54,6 +56,8 @@
 		2B1DE9DB2941F41E007F7518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B1DE9DE2941F41E007F7518 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B1DE9EE2941FEA2007F7518 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		2B962C4B2951BD10002DEFDE /* AddToWalletView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWalletView2.swift; sourceTree = "<group>"; };
+		2B962C4D2951BE4E002DEFDE /* AddToWalletView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWalletView3.swift; sourceTree = "<group>"; };
 		2BC0801A294C817500B90371 /* WalletMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMain.swift; sourceTree = "<group>"; };
 		2BC0801C294C822600B90371 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		2BC0801E294EE2A900B90371 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
@@ -185,6 +189,16 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		2B962C4A2951BC2B002DEFDE /* Add To Apple Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				2BC08024294F39FE00B90371 /* AddToWalletView.swift */,
+				2B962C4B2951BD10002DEFDE /* AddToWalletView2.swift */,
+				2B962C4D2951BE4E002DEFDE /* AddToWalletView3.swift */,
+			);
+			path = "Add To Apple Wallet";
+			sourceTree = "<group>";
+		};
 		2BC07FF2294B119A00B90371 /* Core Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,13 +214,13 @@
 		2BF567E1294760B500A6E95B /* Setup Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B962C4A2951BC2B002DEFDE /* Add To Apple Wallet */,
 				2BF567F72948646200A6E95B /* Permissions  */,
 				2BF567E3294760D500A6E95B /* Financial Information */,
 				2BF567E2294760C500A6E95B /* Basic Information */,
 				2BF567EC294773EF00A6E95B /* SetupInfoView.swift */,
 				87058072295087C10062B3DA /* setUpInfo2.swift */,
 				87058070295087130062B3DA /* FinancialPlanInfo.swift */,
-				2BC08024294F39FE00B90371 /* AddToWalletView.swift */,
 			);
 			path = "Setup Views";
 			sourceTree = "<group>";
@@ -359,9 +373,11 @@
 				2B1DE9D82941F41D007F7518 /* FinanceManagmentAppApp.swift in Sources */,
 				2BF568392949139400A6E95B /* User.swift in Sources */,
 				56DD2367294B48470062BC21 /* MoneyGrowthGoal.swift in Sources */,
+				2B962C4E2951BE4E002DEFDE /* AddToWalletView3.swift in Sources */,
 				2BF5683D294A642A00A6E95B /* Transactions.swift in Sources */,
 				2BF567ED294773EF00A6E95B /* SetupInfoView.swift in Sources */,
 				2B1DE9EF2941FEA2007F7518 /* UI.swift in Sources */,
+				2B962C4C2951BD10002DEFDE /* AddToWalletView2.swift in Sources */,
 				56DD2400294F2A2F0062BC21 /* FinancialInfoView.swift in Sources */,
 				5691E10B294A138000576643 /* PersonalInfoView.swift in Sources */,
 				56DD2402294F329C0062BC21 /* RecurringLiabilitiesView.swift in Sources */,

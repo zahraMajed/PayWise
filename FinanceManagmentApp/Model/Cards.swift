@@ -41,9 +41,9 @@ struct CardInfo: Identifiable {
         case .Personal:
             return "Persoanl Card"
         case .Business:
-            return "Liability Card"
-        case .Liabilities:
             return "Business Card"
+        case .Liabilities:
+            return "Liability Card"
         }
     }
     var cardColor :String {
