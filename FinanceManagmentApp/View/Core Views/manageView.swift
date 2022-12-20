@@ -11,7 +11,8 @@ struct manageView: View {
     
     @State private var isOn1 :Bool = true
     @State private var isOn2 :Bool = true
-    @State private var limit :String = "$"
+    @State private var limit :String = ""
+    @EnvironmentObject var userData : User
     var body: some View {
         
         VStack(spacing:17){
@@ -39,7 +40,7 @@ struct manageView: View {
                             .padding([.leading, .bottom, .trailing], 12)
                     }
                     
-                    Toggle("", isOn: $isOn1)
+                    Toggle("", isOn: $userData.personalAccount.cardSetting.isCardLocked)
                         .tint(Color("AccentGreenLight"))
                         .padding()
                 
@@ -68,7 +69,7 @@ struct manageView: View {
                             .padding([.leading, .bottom, .trailing], 12)
                     }
                     
-                    Toggle("", isOn: $isOn2)
+                    Toggle("", isOn: $userData.personalAccount.cardSetting.isEcommerceTransDisabled)
                         .tint(Color("AccentGreenLight"))
                         .padding()
                 
@@ -91,5 +92,6 @@ struct manageView: View {
 struct manageView_Previews: PreviewProvider {
     static var previews: some View {
         manageView()
+            .environmentObject(User())
     }
 }

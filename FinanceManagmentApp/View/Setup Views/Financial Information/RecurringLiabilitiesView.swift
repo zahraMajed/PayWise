@@ -20,7 +20,7 @@ struct RecurringLiabilitiesView: View {
         ZStack {
             VStack(){
                 Spacer()
-                ViewTitleDescription(viewTitle: "Recurring Liabilities", viewDescription: "We will store and send a varivarion code to it")
+                ViewTitleDescription(viewTitle: "Recurring Liabilities", viewDescription: "The Liability Card will be managed according to your input")
                 Spacer(minLength: 100)
                 VStack(spacing: 17){
                     CustomTextField(textFieldLabel: "Liability name", textFieldHint: "Car installments", isSwitch: false, isCurrancy: false, userInput: $liabilityName)

@@ -70,7 +70,7 @@ struct Account: View {
                                 .foregroundColor(Color("AccentGreenLight"))
                             }
                             
-                            Text("966550000000")
+                            Text(userData.phoneNumber)
                                 .font(.subheadline)
                                 .frame(width: 350, alignment: .topLeading)
                                 .offset(y:145)
@@ -108,7 +108,7 @@ struct Account: View {
                                 .foregroundColor(Color("AccentGreenLight"))
                             }
                             
-                            Text("500$")
+                            Text(userData.monthlyIncom)
                                 .font(.subheadline)
                                 .frame(width: 350, alignment: .topLeading)
                             
@@ -117,7 +117,7 @@ struct Account: View {
                                 .frame(width: 360, alignment: .topTrailing)
                                 .foregroundColor(Color.gray)
                             Divider()
-                                .offset(y:-110)
+                                .offset(y:-90)
                                 .frame(width: 300, height: 0.5)
                                 .frame(width: 360, alignment: .topLeading)
                             HStack{
@@ -125,10 +125,10 @@ struct Account: View {
                                 
                                     .font(.title2)
                                     .frame(width: 350, alignment: .topLeading)
-                                    .offset(y:40)
+                                    .offset(y:50)
                                 
                                     .frame(width: 360, alignment: .topTrailing)
-                                    .offset(x:260, y:-150)
+                                    .offset(x:260, y:-140)
                                 Spacer()
                                     .frame(width: 180)
                                 Button("Edit") {
@@ -136,14 +136,14 @@ struct Account: View {
                                 }
                                 
                                 .frame(width: 340, alignment: .leading)
-                                .offset( x:35, y:-110)
+                                .offset( x:35, y:-90)
                                 .foregroundColor(Color("AccentGreenLight"))
                                 
                             }
                             Text("English")
                                 .font(.subheadline)
                                 .frame(width: 340, alignment: .topLeading)
-                                .offset(y:-100)
+                                .offset(y:-80)
                                 .foregroundColor(Color.gray)
                         }
                         
@@ -152,38 +152,38 @@ struct Account: View {
                                 .foregroundColor(Color("Gray4"))
                                 .frame(width: 365, height: 190)
                                 .frame(width: 360, alignment: .center)
-                                .offset(y:-70)
+                                .offset(y:-55)
                             
                             HStack{
                                 Toggle("Notifications", isOn: $isOn1)
                                     .frame(width: 340, alignment: .leading)
-                                    .offset(y:-120)
+                                    .offset(y:-110)
                                     .font(.title2)
                                     .tint(Color("AccentGreenLight"))
                                     
                             }
                             Divider()
-                                .offset(y:-90)
+                                .offset(y:-80)
                                 .frame(width: 350, height: 0.5)
                                 .frame(width: 360, alignment: .topTrailing)
                             HStack{
                                 
                                 Toggle("Dark mode", isOn: $isOn2)
                                     .frame(width: 340, alignment: .leading)
-                                    .offset(y:-70)
+                                    .offset(y:-60)
                                     .font(.title2)
                                     .tint(Color("AccentGreenLight"))
                                     
                             }
                             Divider()
-                                .offset(y:-40)
+                                .offset(y:-30)
                                 .frame(width: 350, height: 0.5)
                                 .frame(width: 360, alignment: .topLeading)
                                     ZStack{
                                         Toggle("Enable online payment", isOn: $isOn3)
                                         
                                             .frame(width: 340, alignment: .leading)
-                                            .offset(y:-20)
+                                            .offset(y:-5)
                                             .font(.title2)
                                             .tint(Color("AccentGreenLight"))
                                            

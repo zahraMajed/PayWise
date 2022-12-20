@@ -16,7 +16,7 @@ struct FinancialInfoView: View {
     var body: some View {
         VStack(){
             Spacer()
-            ViewTitleDescription(viewTitle: "Financial Information", viewDescription: "We will store and send a varivarion code to it")
+            ViewTitleDescription(viewTitle: "Financial Information", viewDescription: "The Cards will be managed according to your input")
             Spacer(minLength: 100)
             CustomTextField(textFieldLabel: "Monthly income", textFieldHint: "0.00", isSwitch: true, isCurrancy: true, userInput: $userData.monthlyIncom)
                 .keyboardType(.numberPad)
