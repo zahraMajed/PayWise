@@ -76,7 +76,7 @@ struct RecurringLiabilitiesView: View {
                 .padding(.bottom, 20)
                 
                 NavigationLink(destination: MoneyGrowthGoal(), isActive: $showNextView) {
-                }
+                }.labelsHidden()
             }
         }
 

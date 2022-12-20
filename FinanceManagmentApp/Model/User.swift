@@ -16,10 +16,10 @@ class User: ObservableObject {
     @Published var nationalID = ""
     @Published var monthlyIncom = ""
     
-    @Published var personalAccount  =  PersonalAccount(cardInfo: CardInfo(accountType: .Personal, cardNumber: generateCreditCardNumber(for: .Visa), cardCVV: generateCVV(), cardExpDate: "12/10"), cardSetting: CardSetting(cardLimit: 3000, isCardLocked: false, isEcommerceTransDisabled: false), totalBalance: 3000, thisMonthBudget: 3000, thisMonthExpense: 2000)
+    @Published var personalAccount  =  PersonalAccount(cardInfo: CardInfo(accountType: .Personal, cardNumber: generateCreditCardNumber(for: .Visa), cardCVV: generateCVV(), cardExpDate: "12/10"), cardSetting: CardSetting(cardLimit: 0, isCardLocked: false, isEcommerceTransDisabled: false), totalBalance: 3000, thisMonthBudget: 3000, thisMonthExpense: 2000)
     
     @Published var liabilitiesAccount = LiabilitiesAccount(cardInfo: CardInfo(accountType: .Liabilities, cardNumber: generateCreditCardNumber(for: .Visa), cardCVV: generateCVV(), cardExpDate: "12/10"), cardSetting: CardSetting(cardLimit: 0, isCardLocked: false, isEcommerceTransDisabled: false), isNotStable: false, liabilities: [], liabilitiesCost: 0, totalBalance: 0, thisMonthBudget: 0, thisMonthExpense: 0)
     
-    @Published var businessAccount = BusinessAccount(cardInfo: CardInfo(accountType: .Business, cardNumber: generateCreditCardNumber(for: .Visa), cardCVV: generateCVV(), cardExpDate: "12/10"), cardSetting: CardSetting(cardLimit: 0, isCardLocked: true, isEcommerceTransDisabled: true), gaols: [:], totalBalance: 0, thisMonthBudget: 0, thisMonthExpense: 0)
+    @Published var businessAccount = BusinessAccount(cardInfo: CardInfo(accountType: .Business, cardNumber: generateCreditCardNumber(for: .Visa), cardCVV: generateCVV(), cardExpDate: "12/10"), cardSetting: CardSetting(cardLimit: 0, isCardLocked: false, isEcommerceTransDisabled: true), gaols: [:], totalBalance: 0, thisMonthBudget: 0, thisMonthExpense: 0)
     
 }
