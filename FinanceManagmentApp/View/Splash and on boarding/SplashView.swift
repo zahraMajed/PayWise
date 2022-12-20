@@ -47,8 +47,8 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
 
             
             
-        }else {
-            if userData.isSetupDone {
+        } else {
+            /*if userData.isSetupDone {
                 NavigationView {
                     Login()
                         //.environmentObject(userData)
@@ -58,6 +58,9 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
                 NavigationView {
                     SetupInfoView()
                 }
+            }*/
+            NavigationView {
+                SetupInfoView()
             }
         }
     }

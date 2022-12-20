@@ -78,10 +78,10 @@ struct RecurringLiabilitiesView: View {
                 NavigationLink(destination: MoneyGrowthGoal(), isActive: $showNextView) {
                 }.labelsHidden()
             }
-        }
-
-        if userData.liabilitiesAccount.isNotStable {
-            CustomAlert(presentAlert: $userData.liabilitiesAccount.isNotStable, alertType: .error(title: "Prioritize", message: "We recommend you reduce liabilities and prioritize"))
+            
+            if userData.liabilitiesAccount.isNotStable {
+                CustomAlert(presentAlert: $userData.liabilitiesAccount.isNotStable, alertType: .error(title: "Prioritize", message: "We recommend you reduce liabilities and prioritize"))
+            }
         }
     }
     //MARK: function
