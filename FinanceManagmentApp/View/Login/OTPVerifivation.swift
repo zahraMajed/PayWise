@@ -13,28 +13,33 @@ struct OTPVerifivation: View {
     
     //MARK: body
     var body: some View {
-        VStack {
-            Spacer()
-            ViewTitleDescription(viewTitle: "OTP Sent", viewDescription: "Enter the 6-digit code sent to your phone number.")
-            Spacer()
-            OTPTextField(loginData: loginData)
-            Spacer(minLength: 377)
-            LargeButton(text: "Continue", isfilled: true) {
-                Task{await loginData.verifyOTP()}
+        ZStack {
+            VStack {
+                Spacer()
+                ViewTitleDescription(viewTitle: "OTP Sent", viewDescription: "Enter the 6-digit code sent to your phone number.")
+                Spacer()
+                OTPTextField(loginData: loginData)
+                Spacer(minLength: 377)
+                LargeButton(text: "Continue", isfilled: true) {
+                    Task{await loginData.verifyOTP()}
+                }
+                .disabled(checkOTPFieldStates())
+                .opacity(checkOTPFieldStates() ? 0.4 : 1)
+                
+                PlainButton(text: "Resend OTP") {
+                    loginData.requestCode()
+                }
+                Spacer()
+                //should go to the Home withouth navigation link.
+                NavigationLink(destination: TabMainView(), isActive: $loginData.isLoggedIn) {
+                }.labelsHidden()
             }
-            .disabled(checkOTPFieldStates())
-            .opacity(checkOTPFieldStates() ? 0.4 : 1)
-            
-            PlainButton(text: "Resend OTP") {
-                loginData.requestCode()
+            if loginData.isError {
+                CustomAlert(presentAlert: $loginData.isError, alertType: .error(title: "Error", message: loginData.errorMsg))
             }
-            Spacer()
-            //should go to the Home withouth navigation link.
-            NavigationLink(destination: TabMainView(), isActive: $loginData.isLoggedIn) {
-            }.labelsHidden()
-        }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+        }.navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+        
     }
     //MARK: function
     func checkOTPFieldStates() -> Bool {

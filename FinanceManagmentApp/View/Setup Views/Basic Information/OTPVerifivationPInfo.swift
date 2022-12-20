@@ -13,25 +13,30 @@ struct OTPVerifivationPInfo: View {
     
     //MARK: body
     var body: some View {
-        VStack {
-            Spacer()
-            ViewTitleDescription(viewTitle: "OTP Sent", viewDescription: "Enter the 6-digit code sent to your phone number.")
-            Spacer()
-            OTPTextField(loginData: loginData)
-            Spacer(minLength: 377)
-            LargeButton(text: "Continue", isfilled: true) {
-                //Task{await loginData.verifyOTP()}
-                Task{await loginData.verifyOTPithoutSignin()}
+        ZStack {
+            VStack {
+                Spacer()
+                ViewTitleDescription(viewTitle: "OTP Sent", viewDescription: "Enter the 6-digit code sent to your phone number.")
+                Spacer()
+                OTPTextField(loginData: loginData)
+                Spacer(minLength: 377)
+                LargeButton(text: "Continue", isfilled: true) {
+                    //Task{await loginData.verifyOTP()}
+                    Task{await loginData.verifyOTPithoutSignin()}
+                }
+                .disabled(checkOTPFieldStates())
+                .opacity(checkOTPFieldStates() ? 0.4 : 1)
+                
+                PlainButton(text: "Resend OTP") {
+                    loginData.requestCode()
+                }
+                
+                NavigationLink(destination: PersonalInfoView(), isActive: $loginData.shouldGoToPersonalInfo) {
+                }.labelsHidden()
             }
-            .disabled(checkOTPFieldStates())
-            .opacity(checkOTPFieldStates() ? 0.4 : 1)
-            
-            PlainButton(text: "Resend OTP") {
-                loginData.requestCode()
+            if loginData.isError {
+                CustomAlert(presentAlert: $loginData.isError, alertType: .error(title: "Error", message: loginData.errorMsg))
             }
-            
-            NavigationLink(destination: PersonalInfoView(), isActive: $loginData.shouldGoToPersonalInfo) {
-            }.labelsHidden()
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
