@@ -14,10 +14,11 @@ struct OTPVerifivationPInfo: View {
     //MARK: body
     var body: some View {
         VStack {
+            Spacer()
             ViewTitleDescription(viewTitle: "OTP Sent", viewDescription: "Enter the 6-digit code sent to your phone number.")
-            
+            Spacer()
             OTPTextField(loginData: loginData)
-            
+            Spacer(minLength: 377)
             LargeButton(text: "Continue", isfilled: true) {
                 //Task{await loginData.verifyOTP()}
                 Task{await loginData.verifyOTPithoutSignin()}
@@ -26,14 +27,14 @@ struct OTPVerifivationPInfo: View {
             .opacity(checkOTPFieldStates() ? 0.4 : 1)
             
             PlainButton(text: "Resend OTP") {
-                //loginData.requestCode()
+                loginData.requestCode()
             }
             
             NavigationLink(destination: PersonalInfoView(), isActive: $loginData.shouldGoToPersonalInfo) {
-                Text("")
-                    .hidden()
-            }
+            }.labelsHidden()
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
     
     //MARK: function

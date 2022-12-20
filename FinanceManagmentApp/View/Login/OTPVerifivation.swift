@@ -26,11 +26,12 @@ struct OTPVerifivation: View {
             .opacity(checkOTPFieldStates() ? 0.4 : 1)
             
             PlainButton(text: "Resend OTP") {
-                //loginData.requestCode()
+                loginData.requestCode()
             }
             Spacer()
             //should go to the Home withouth navigation link.
-            
+            NavigationLink(destination: TabMainView(), isActive: $loginData.isLoggedIn) {
+            }.labelsHidden()
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)

@@ -37,7 +37,6 @@ struct Login: View {
                 
             }
             .onAppear(perform: authenticate)
-            
            
             if loginData.isError {
                 CustomAlert(presentAlert: $loginData.isError, alertType: .error(title: "Error", message: loginData.errorMsg))
