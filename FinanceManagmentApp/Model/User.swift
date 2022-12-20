@@ -27,4 +27,5 @@ class User: ObservableObject {
         self.personalAccount = personalAccount
         self.liabilitiesAccount = liabilitiesAccount
     }*/
+    
 }

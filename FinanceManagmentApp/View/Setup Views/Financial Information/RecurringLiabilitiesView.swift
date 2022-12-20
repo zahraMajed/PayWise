@@ -71,40 +71,17 @@ struct RecurringLiabilitiesView: View {
         }
     }
     //MARK: function
-    func division(){
-          guard let montlyIncom = Int(userData.monthlyIncom) else {
-              return
-          }
-        if userData.liabilitiesAccount.liabilitiesCost > (montlyIncom/3) {
-            userData.businessAccount.totalBalance += (montlyIncom/3)
-            userData.personalAccount.totalBalance += montlyIncom - (montlyIncom/3) - userData.liabilitiesAccount.liabilitiesCost
-            userData.liabilitiesAccount.totalBalance += userData.liabilitiesAccount.liabilitiesCost
-            //what if liabilitiesCost much more than monthly incom
-            // show alert here as a tips
-            
-        } else if userData.liabilitiesAccount.liabilitiesCost <= (montlyIncom/3) {
-            let budgetPerAcc = (montlyIncom/3)
-            userData.personalAccount.totalBalance += budgetPerAcc
-            userData.liabilitiesAccount.totalBalance += budgetPerAcc
-            userData.businessAccount.totalBalance += budgetPerAcc
-            
-            userData.personalAccount.thisMonthBudget = budgetPerAcc
-            userData.liabilitiesAccount.thisMonthBudget = budgetPerAcc
-            userData.businessAccount.thisMonthBudget = budgetPerAcc
+    func deleteLiabilitie(indexSet : IndexSet){
+        userData.liabilitiesAccount.liabilities.remove(atOffsets: indexSet)
+    }
+  
+    func moveLiabilitie(fromOffsets source: IndexSet, toOffsets destination : Int){
+        userData.liabilitiesAccount.liabilities.move(fromOffsets: source, toOffset: destination)
+        withAnimation{
+            editinglidt = false
         }
-      }
-      
-      func deleteLiabilitie(indexSet : IndexSet){
-          userData.liabilitiesAccount.liabilities.remove(atOffsets: indexSet)
-      }
-    
-      func moveLiabilitie(fromOffsets source: IndexSet, toOffsets destination : Int){
-          userData.liabilitiesAccount.liabilities.move(fromOffsets: source, toOffset: destination)
-          withAnimation{
-              editinglidt = false
-          }
-          
-      }
+        
+    }
 }
 
 struct RecurringLiabilitiesView_Previews: PreviewProvider {

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MoneyGrowthGoal: View {
-    @State private var BusinessCost: String = ""
+    @State private var businessCost: String = ""
     //MARK: vars
     @EnvironmentObject var userData : User
     @State private var showNextView : Bool = false
@@ -54,7 +54,7 @@ struct MoneyGrowthGoal: View {
                 .background(Color("Gray4"))
                 .cornerRadius(14)
                 
-                CustomTextField(textFieldLabel: "Business Cost", textFieldHint: "$50,000.00", isSwitch: false, isCurrancy: false, userInput: $BusinessCost)
+                CustomTextField(textFieldLabel: "Business Cost", textFieldHint: "$50,000.00", isSwitch: false, isCurrancy: false, userInput: $businessCost)
                 
                 CustomTextFieldWithDate(textFieldLabel: "Business opening date", datePickerTitle: "Business opening date", selectedDate: $userData.businessAccount.businessDueDate)
 
@@ -67,7 +67,38 @@ struct MoneyGrowthGoal: View {
             }
             Spacer()
         }
-
+    }
+    //MARK: functions
+    func createFinancePlan(){
+          guard let montlyIncom = Int(userData.monthlyIncom) else {
+              return
+          }
+        guard let businessCost = Int(businessCost) else {
+            return
+        }
+        userData.businessAccount.businessCost = businessCost
+        
+        // if liabilitiesCost more than 1/3 income
+        if userData.liabilitiesAccount.liabilitiesCost > (montlyIncom/3) {
+            if userData.liabilitiesAccount.liabilitiesCost < (montlyIncom * (2/3)) {
+                userData.businessAccount.totalBalance += (montlyIncom/3)
+                userData.liabilitiesAccount.totalBalance += userData.liabilitiesAccount.liabilitiesCost
+                userData.personalAccount.totalBalance += montlyIncom - (montlyIncom/3) - userData.liabilitiesAccount.liabilitiesCost
+                // show alert here as a tips
+            } else {
+                // show alert here "it is important to cut down unimportant liabilitiesCost"
+            }
+            
+        } else if userData.liabilitiesAccount.liabilitiesCost <= (montlyIncom/3) {
+            let budgetPerAcc = (montlyIncom/3)
+            userData.personalAccount.totalBalance += budgetPerAcc
+            userData.liabilitiesAccount.totalBalance += budgetPerAcc
+            userData.businessAccount.totalBalance += budgetPerAcc
+            
+            userData.personalAccount.thisMonthBudget = budgetPerAcc
+            userData.liabilitiesAccount.thisMonthBudget = budgetPerAcc
+            userData.businessAccount.thisMonthBudget = budgetPerAcc
+        }
     }
     
 }
