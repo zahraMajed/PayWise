@@ -35,7 +35,7 @@ struct AccountView: View {
         case .goals:
             return AnyView(Text("GoalsView()"))
         case .liabilities:
-            return AnyView(Text("LiabilitesView()"))
+            return AnyView(LiabilitesView())
         }
     }
 

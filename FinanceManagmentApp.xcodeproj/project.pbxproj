@@ -37,6 +37,7 @@
 		2BF5683F294A645100A6E95B /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5683E294A645100A6E95B /* TransactionsView.swift */; };
 		2BF56841294A648C00A6E95B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF56840294A648C00A6E95B /* API.swift */; };
 		2BF56843294A649A00A6E95B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF56842294A649A00A6E95B /* APIService.swift */; };
+		5624E4BB2952022A00F6E701 /* LiabilitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E4BA2952022A00F6E701 /* LiabilitesView.swift */; };
 		5691E10B294A138000576643 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5691E10A294A138000576643 /* PersonalInfoView.swift */; };
 		56DD2367294B48470062BC21 /* MoneyGrowthGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD2366294B48470062BC21 /* MoneyGrowthGoal.swift */; };
 		56DD2400294F2A2F0062BC21 /* FinancialInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD23FF294F2A2F0062BC21 /* FinancialInfoView.swift */; };
@@ -81,6 +82,7 @@
 		2BF5683E294A645100A6E95B /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		2BF56840294A648C00A6E95B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2BF56842294A649A00A6E95B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		5624E4BA2952022A00F6E701 /* LiabilitesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiabilitesView.swift; sourceTree = "<group>"; };
 		5691E10A294A138000576643 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 		56DD2366294B48470062BC21 /* MoneyGrowthGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyGrowthGoal.swift; sourceTree = "<group>"; };
 		56DD23FF294F2A2F0062BC21 /* FinancialInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialInfoView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				2BC0801E294EE2A900B90371 /* InsightsView.swift */,
 				2BC08022294EEEDC00B90371 /* AccountView.swift */,
 				5F060882294F516900D29E0D /* manageView.swift */,
+				5624E4BA2952022A00F6E701 /* LiabilitesView.swift */,
 			);
 			path = "Core Views";
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				87058075295089700062B3DA /* DetailsView.swift in Sources */,
 				2BF567F42947BD1300A6E95B /* Login.swift in Sources */,
 				2BF567EB2947734200A6E95B /* SplashView.swift in Sources */,
+				5624E4BB2952022A00F6E701 /* LiabilitesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
