@@ -52,7 +52,7 @@ struct WalletMain: View {
                 }//end scrole
                 .coordinateSpace(name: "SCROLL")
                 
-                NavigationLink(destination: AccountView(currentCard: currentCard ?? CardInfo(accountType: .Personal, cardName: "", cardNumber: "", cardCVV: "", cardColor: "", cardExpDate: ""), userData: _userData), isActive: $showDetailCard) {}.labelsHidden()
+                NavigationLink(destination: AccountView(currentCard: currentCard ?? CardInfo(accountType: .Personal, cardNumber: "", cardCVV: "", cardExpDate: ""), userData: _userData), isActive: $showDetailCard) {}.labelsHidden()
     
             }
             .padding([.horizontal, .top])
