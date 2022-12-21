@@ -717,7 +717,7 @@ struct listRow: View {
                 }
                 .padding(.leading, 17.0)
                 Spacer()
-                //Image(systemName: "line.3.horizontal")
+               Image(systemName: "line.3.horizontal")
             }
             .frame(height: 60)
         }

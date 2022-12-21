@@ -24,10 +24,10 @@ struct AccountView: View {
         }
     }
     //MARK: functions
-    func containedView(selectedOption: AccountServicesSegmentedPicker.accountServicesOptions) -> AnyView {
+    func containedView(selectedOption: AccountServicesSegmentedPicker.accountServicesOptions) ->  AnyView {
         switch selectedOption {
         case .transactions:
-            return AnyView(TransactionsView())
+             return AnyView(TransactionsView())
         case .manage:
             return AnyView(manageView())
         case .detailes:
@@ -43,7 +43,7 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView(currentCard: CardInfo(accountType: .Personal, cardNumber: "", cardCVV: "", cardExpDate: ""))
+        AccountView(currentCard: CardInfo(accountType: .Liabilities, cardNumber: "", cardCVV: "", cardExpDate: ""))
             .environmentObject(User())
     }
 }

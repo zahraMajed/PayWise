@@ -44,6 +44,7 @@ struct RecurringLiabilitiesView: View {
                 List{
                     ForEach(userData.liabilitiesAccount.liabilities, id: \.self) { liability in
                         listRow(liability: liability)
+
                     }
                     .onDelete(perform: deleteLiabilitie)
                      .onMove(perform: moveLiabilitie)

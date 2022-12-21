@@ -10,12 +10,15 @@ import SwiftUI
 struct LiabilitesView: View {
     @EnvironmentObject var userData : User
     @State private var editinglidt = false
+    @State private var liabilityCost: String = ""
+    @State private var showNextView : Bool = false
+    
     
     var body: some View {
         VStack {
             
-            /*List{
-                ForEach(userData.liabilitiesAccount.liabilities, id: \.self) { liability in
+        
+            ForEach(userData.liabilitiesAccount.liabilities, id: \.self) { liability in
                     listRow(liability: liability)
                     
                 }
@@ -28,11 +31,17 @@ struct LiabilitesView: View {
                  }
                  .environment(\.editMode, editinglidt ?.constant(.active): .constant(.inactive))
                 .listRowSeparator(.hidden)
-            }
-            //.padding(.bottom, 17.0)
-            //.listStyle(.plain)*/
             
+            
+            LargeButton(text: "Add liability", isfilled: true) {
+                showNextView = true
+            }
+            .padding(.bottom, 20)
+            
+            NavigationLink(destination: RecurringLiabilitiesView(), isActive: $showNextView) {
+            }.labelsHidden()
         }
+        
     }
     //MARK: function
     func deleteLiabilitie(indexSet : IndexSet){
