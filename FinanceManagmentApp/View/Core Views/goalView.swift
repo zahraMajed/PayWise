@@ -25,56 +25,58 @@ struct goalView: View {
     }
     
     var body: some View {
-        VStack(alignment: .center){
-//            Text("Goal tracker")
-//                .font(.title3)
-//                .fontWeight(.semibold)
-            
+        VStack(alignment: .leading){
+            Spacer()
             ViewTitleDescription(viewTitle: "Goal tracker", viewDescription: "")
-                
+                .offset(x:15)
             
                 List{
-                    VStack{
+
                         ForEach(userData.businessAccount.gaols.map { key, value in Item(key: key, value: value)}, id: \.self) { item in
-                            
+
                             Text("\(item.value)")
                                 .font(.title3)
                                 .fontWeight(.light)
-                            
-                            ZStack(alignment: .leading){
-                                RoundedRectangle(cornerRadius: 20)
-                                    .foregroundColor(Color("Gray3"))
-                                .frame(width: 300,height: 10) }
-                            
+
                             ZStack(alignment: .leading){
                                 RoundedRectangle(cornerRadius: 20)
                                     .foregroundColor(Color("Gray4"))
-                                .frame(width: 300,height: 10) }
-                            
-                            
+                                .frame(width: 300,height: 10)
+
+                                RoundedRectangle(cornerRadius: 20)
+                                    .foregroundColor(Color("Gray3"))
+                                .frame(width: 180,height: 10)
+
+                            }
+
+
+
                         }
                         
-                    }
                 }
 //                .padding(.bottom, 17.0)
 //                .frame(maxHeight: 200)
 //                .listStyle(.plain)
             
                             
-            
+
             ViewTitleDescription(viewTitle: "Recommendations", viewDescription: "")
-            
+                .offset(x:15)
+
             VStack(alignment: .center){
                 Image("Image1")
-                   
+
                     .resizable()
-                    .frame(width: 380, height: 70)
+                    .frame(width: 370, height: 70)
                 Image("Image2")
                     .resizable()
-                    .frame(width: 380, height: 70)
+                    .frame(width: 370, height: 70)
             }
+            .offset(x:10)
             
         }
+        
+        
         
     }
     
