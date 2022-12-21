@@ -84,23 +84,27 @@ struct onboarding1: View {
     @Binding var shouldshowonboarding: Bool
     var body: some View {
         TabView{
-            PageView(title: "Easy way to manage your money", subtitle: "", imageName: "background1", showbutton: false, shouldshowonboarding: $shouldshowonboarding,
-                     dissbutton: true)
+            //"Easy way to manage your money"
+            /*PageView(title: "Manage Your Money Like the RICH", subtitle: "We will help you controling your money", imageName: "background1", showbutton: false, shouldshowonboarding: $shouldshowonboarding,
+                     dissbutton: true)*/
+            PageView(title: "Manage Your Money Like the ", accentWord: "RICH", title2: "", subtitle: "We will help you controling your money", imageName: "", showbutton: false, shouldshowonboarding: $shouldshowonboarding, dissbutton: false)
             
-            PageView(title: "Set your goal " ,
+            PageView(title: "", accentWord: "Balance", title2: " Your Money", subtitle: "Divide your income into different digital cards based on a financial strategy", imageName: "", showbutton: true, shouldshowonboarding: $shouldshowonboarding, dissbutton: false)
+            
+           /* PageView(title: "Set your goal " ,
                      subtitle: "Set your goal to grow your money and achieve the goal you are aiming for " ,
                      imageName: "background",
                      showbutton: false,
                      shouldshowonboarding: $shouldshowonboarding,
-                     dissbutton: false)
+                     dissbutton: false)*/
 
             
-            PageView(title: "Track your goal " ,
+           /* PageView(title: "Track your goal " ,
                      subtitle: "Manage and track your goal depending on period of time and amount of money. " ,
                      imageName: "track",
                      showbutton: true,
                      shouldshowonboarding: $shouldshowonboarding,
-                     dissbutton: false)
+                     dissbutton: false)*/
         }
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(.page(backgroundDisplayMode: .always))
@@ -110,76 +114,82 @@ struct onboarding1: View {
 
 struct PageView: View {
     let title: String
+    let accentWord : String
+    let title2: String
     let subtitle: String
     let imageName: String
     let showbutton: Bool
     @Binding var shouldshowonboarding: Bool
     let dissbutton: Bool
     var body: some View {
-        ZStack{
+        VStack{
             
-            /*Image(imageName)
-                .resizable()
-                .ignoresSafeArea()*/
+           // Spacer(minLength:500)
+            GIFView(type: .name(""))
+                .frame(width: 380, height: 480)
             
-            VStack{
-                
-               // Spacer(minLength:500)
-                GIFView(type: .name(""))
-                
-                
-                Text(title)
-                    .frame(width: 350, height: 90, alignment: .leading)
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("AccentPurpleLight"))
-                
+            Group {
+              Text(title) +
+                Text(accentWord).foregroundColor(Color("AccentPurpleLight")).fontWeight(.bold) +
+              Text(title2)
+            }.frame(width: 350,  alignment: .leading)
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .padding(.bottom, 10.0)
+
             
-                Text(subtitle)
-                    .frame(width: 350, height: 90, alignment: .leading)
-                    .foregroundColor(Color("AccentPurpleLight"))
-                
-                
-                
-                Spacer()
-                if showbutton{
+           /* Text(title)
+                .frame(width: 350,  alignment: .leading)
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .foregroundColor(.black)
+                .padding(.bottom, 10.0)*/
+            
+        
+            Text(subtitle)
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .padding(.bottom, 30.0)
+                .frame(width: 350, alignment: .leading)
+                .foregroundColor(.black)
+            
+            Spacer()
+
+            if showbutton{
+                Button {
+                    shouldshowonboarding.toggle()
+                }label: {
+                    
+                    Text("Get Started")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(width: 355, height: 43)
+                        .background(Color("AccentGreenLight"))
+                        .cornerRadius(14)
+                }
+            }
+            
+            
+                if dissbutton{
                     Button {
                         shouldshowonboarding.toggle()
                     }label: {
                         
-                        Text("Get Started")
+                        Text("Not Now")
                             .font(.headline)
                             .fontWeight(.semibold)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color("AccentGreenLight"))
                             .frame(width: 355, height: 43)
-                            .background(Color("AccentGreenLight"))
+//                                .background(Color("greenn"))
                             .cornerRadius(14)
                     }
-                }
-                
-                
-                    if dissbutton{
-                        Button {
-                            shouldshowonboarding.toggle()
-                        }label: {
-                            
-                            Text("Not Now")
-                                .font(.headline)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color("AccentGreenLight"))
-                                .frame(width: 355, height: 43)
-//                                .background(Color("greenn"))
-                                .cornerRadius(14)
-                        }
-                }
-                
-                
-                Spacer(minLength: 42)
-                
             }
+            
+            
+            Spacer(minLength: 42)
+            
         }
-        
-        
     }
         
         

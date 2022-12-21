@@ -9,41 +9,48 @@ import SwiftUI
 
 
 struct DetailsView: View {
-
+    @EnvironmentObject var userData : User
+    var currentCard: CardInfo
     var body: some View {
-        
-        Spacer()
-        VStack(alignment: .leading, spacing: 15){
-        
+        VStack(alignment: .leading, spacing: 20){
             
-            Text("Total Balance")
-                .padding(.leading)
-            Text("$ 53,405.08")
-                .bold()
-                .padding(.leading)
+            VStack (alignment: .leading,spacing: 10){
+                Text("Total Balance")
+                Text("$ 53,405.08")
+                    .bold()
+            }.padding(.top, 17)
             
+            VStack (alignment: .leading,spacing: 10){
+                Text("Sep Budget")
+                Text("$ 3,300")
+                    .bold()
+            }
             
-            Text("Sep Budget")
-                .padding(.leading)
-            Text("$ 3,300")
-                .bold()
-                .padding(.leading)
+            VStack (alignment: .leading,spacing: 10){
+                Text("Sep Expanse")
+                Text("$ 2,300")
+                    .bold()
+            }
             
-          
-            Text("Sep Expanse")
-                .padding(.leading)
-            Text("$ 2,300")
-                .bold()
-                .padding(.leading)
+            if currentCard.accountType == .Liabilities {
+                VStack (alignment: .leading,spacing: 10){
+                    Text("Liabilities Cost")
+                    Text("$ 2,300")
+                        .bold()
+                }
+            }
             
-           
+            VStack{
+                
+            }.frame(width: 355)
         }
     }
 }
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView()
+        DetailsView(currentCard: CardInfo(accountType: .Liabilities, cardNumber: "", cardCVV: "", cardExpDate: ""))
+            .environmentObject(User())
     }
 }
 

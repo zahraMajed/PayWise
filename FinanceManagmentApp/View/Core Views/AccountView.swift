@@ -22,6 +22,8 @@ struct AccountView: View {
                 containedView(selectedOption: selectedOption)
             }
         }
+        .navigationTitle(currentCard.cardName)
+        .navigationBarTitleDisplayMode(.inline)
     }
     //MARK: functions
     func containedView(selectedOption: AccountServicesSegmentedPicker.accountServicesOptions) ->  AnyView {
@@ -31,7 +33,7 @@ struct AccountView: View {
         case .manage:
             return AnyView(manageView())
         case .detailes:
-            return AnyView(DetailsView())
+            return AnyView(DetailsView(currentCard: currentCard))
         case .goals:
             return AnyView(goalView())
         case .liabilities:
@@ -43,7 +45,7 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView(currentCard: CardInfo(accountType: .Personal, cardNumber: "", cardCVV: "", cardExpDate: ""))
+        AccountView(currentCard: CardInfo(accountType: .Liabilities, cardNumber: "", cardCVV: "", cardExpDate: ""))
             .environmentObject(User())
     }
 }
