@@ -14,23 +14,23 @@ struct LiabilitesView: View {
     var body: some View {
         VStack {
             
-            List{
+            /*List{
                 ForEach(userData.liabilitiesAccount.liabilities, id: \.self) { liability in
                     listRow(liability: liability)
+                    
                 }
                 .onDelete(perform: deleteLiabilitie)
                  .onMove(perform: moveLiabilitie)
                  .onLongPressGesture{
                  withAnimation{
-                 self.editinglidt = true
+                     self.editinglidt = true
                  }
                  }
                  .environment(\.editMode, editinglidt ?.constant(.active): .constant(.inactive))
                 .listRowSeparator(.hidden)
             }
-            .padding(.bottom, 17.0)
-            .frame(maxHeight: 200)
-            .listStyle(.plain)
+            //.padding(.bottom, 17.0)
+            //.listStyle(.plain)*/
             
         }
     }

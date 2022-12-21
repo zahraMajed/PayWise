@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftUICharts
 
 struct insightspersenal: View {
+    let chartStyle = ChartStyle(backgroundColor: .white, accentColor: Color("AccentGreenVariantLight"), secondGradientColor: Color("AccentGreenLight"), textColor: .black, legendTextColor: .black, dropShadowColor: .white)
     var body: some View {
         VStack(spacing: 17){
             
@@ -19,7 +20,7 @@ struct insightspersenal: View {
             
             
 
-            BarChartView(data: ChartData(values: [("January", 100), ("February",400), ("March", 200), ("April", 300),("May",3),("June",40)]), title: "", form: CGSize(width: 370, height: 350), animatedToBack: true).padding(.bottom, 45.0)
+            BarChartView(data: ChartData(values: [("January", 100), ("February",400), ("March", 200), ("April", 300),("May",3),("June",40)]), title: "", style: chartStyle,form: CGSize(width: 370, height: 350), animatedToBack: true).padding(.bottom, 45.0)
                 
             ZStack{
                Rectangle()

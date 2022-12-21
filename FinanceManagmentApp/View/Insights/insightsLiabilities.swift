@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftUICharts
 
 struct insightsLiabilities: View {
+//    let chartStyle = ChartStyle(backgroundColor: <#T##Color#>, accentColor: <#T##Color#>, gradientColor: <#T##GradientColor#>, textColor: <#T##Color#>, legendTextColor: <#T##Color#>, dropShadowColor: <#T##Color#>)
     var body: some View {
         VStack(spacing: 17){
             ViewTitleDescription(viewTitle: "Liabilities Account", viewDescription: "This insight responsible your Liabilities in PieChart.")
