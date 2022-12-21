@@ -9,13 +9,14 @@ import SwiftUI
 import SwiftUICharts
 
 struct insightsLiabilities: View {
-//    let chartStyle = ChartStyle(backgroundColor: <#T##Color#>, accentColor: <#T##Color#>, gradientColor: <#T##GradientColor#>, textColor: <#T##Color#>, legendTextColor: <#T##Color#>, dropShadowColor: <#T##Color#>)
+    let chartStyle = ChartStyle(backgroundColor: .white, accentColor: Color("AccentGreenLight"), secondGradientColor: Color("AccentGreenLight"), textColor: .black, legendTextColor: .gray, dropShadowColor: .white)
     var body: some View {
-        VStack(spacing: 17){
+        VStack(){
+            Spacer()
             ViewTitleDescription(viewTitle: "Liabilities Account", viewDescription: "This insight responsible your Liabilities in PieChart.")
             Spacer()
             
-            PieChartView(data: [(3.0), (5.0),(4.0),(2)], title: "Liabilities", form: CGSize(width: 370, height: 350)).padding(.bottom, 45.0)
+            PieChartView(data: [8,23,54,32], title: "Liabilities",style: chartStyle, form: CGSize(width: 370, height: 350)).padding(.bottom, 45.0)
             Spacer()
         }
     }
