@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291F5781295333FF0031C10A /* goalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F5780295333FF0031C10A /* goalView.swift */; };
 		2B1DE9D82941F41D007F7518 /* FinanceManagmentAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DE9D72941F41D007F7518 /* FinanceManagmentAppApp.swift */; };
 		2B1DE9DA2941F41D007F7518 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DE9D92941F41D007F7518 /* ContentView.swift */; };
 		2B1DE9DC2941F41E007F7518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B1DE9DB2941F41E007F7518 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291F5780295333FF0031C10A /* goalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goalView.swift; sourceTree = "<group>"; };
 		2B1DE9D42941F41D007F7518 /* FinanceManagmentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceManagmentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B1DE9D72941F41D007F7518 /* FinanceManagmentAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceManagmentAppApp.swift; sourceTree = "<group>"; };
 		2B1DE9D92941F41D007F7518 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				2BC08022294EEEDC00B90371 /* AccountView.swift */,
 				5F060882294F516900D29E0D /* manageView.swift */,
 				5624E4BA2952022A00F6E701 /* LiabilitesView.swift */,
+				291F5780295333FF0031C10A /* goalView.swift */,
 			);
 			path = "Core Views";
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */,
+				291F5781295333FF0031C10A /* goalView.swift in Sources */,
 				5F060883294F516900D29E0D /* manageView.swift in Sources */,
 				5624E4C82953267800F6E701 /* insightspersenal.swift in Sources */,
 				2BC0801F294EE2A900B90371 /* InsightsView.swift in Sources */,
