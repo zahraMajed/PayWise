@@ -29,9 +29,6 @@ struct goalView: View {
             Spacer()
             ViewTitleDescription(viewTitle: "Goal tracker", viewDescription: "")
                 .offset(x:15)
-            
-                List{
-
                         ForEach(userData.businessAccount.gaols.map { key, value in Item(key: key, value: value)}, id: \.self) { item in
 
                             Text("\(item.value)")
@@ -46,33 +43,26 @@ struct goalView: View {
                                 RoundedRectangle(cornerRadius: 20)
                                     .foregroundColor(Color("Gray3"))
                                 .frame(width: 180,height: 10)
-
                             }
 
-
-
-                        }
-                        
-                }
-//                .padding(.bottom, 17.0)
-//                .frame(maxHeight: 200)
-//                .listStyle(.plain)
+                        }.padding([.leading, .trailing], 17.0)
             
                             
+            if userData.businessAccount.gaols[2] != nil {
+                ViewTitleDescription(viewTitle: "Recommendations", viewDescription: "")
+                    .offset(x:15)
 
-            ViewTitleDescription(viewTitle: "Recommendations", viewDescription: "")
-                .offset(x:15)
+                VStack(alignment: .center){
+                    Image("Image1")
 
-            VStack(alignment: .center){
-                Image("Image1")
-
-                    .resizable()
-                    .frame(width: 370, height: 70)
-                Image("Image2")
-                    .resizable()
-                    .frame(width: 370, height: 70)
+                        .resizable()
+                        .frame(width: 370, height: 70)
+                    Image("Image2")
+                        .resizable()
+                        .frame(width: 370, height: 70)
+                }
+                .offset(x:10)
             }
-            .offset(x:10)
             
         }
         
