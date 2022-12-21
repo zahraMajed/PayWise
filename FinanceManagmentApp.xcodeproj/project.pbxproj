@@ -14,6 +14,8 @@
 		2B1DE9EF2941FEA2007F7518 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DE9EE2941FEA2007F7518 /* UI.swift */; };
 		2B962C4C2951BD10002DEFDE /* AddToWalletView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B962C4B2951BD10002DEFDE /* AddToWalletView2.swift */; };
 		2B962C4E2951BE4E002DEFDE /* AddToWalletView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B962C4D2951BE4E002DEFDE /* AddToWalletView3.swift */; };
+		2B962C5F29531297002DEFDE /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2B962C5E29531297002DEFDE /* FLAnimatedImage */; };
+		2B962C6129531407002DEFDE /* balanceLine.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2B962C6029531407002DEFDE /* balanceLine.gif */; };
 		2BC0801B294C817500B90371 /* WalletMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0801A294C817500B90371 /* WalletMain.swift */; };
 		2BC0801D294C822600B90371 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0801C294C822600B90371 /* Cards.swift */; };
 		2BC0801F294EE2A900B90371 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0801E294EE2A900B90371 /* InsightsView.swift */; };
@@ -59,6 +61,7 @@
 		2B1DE9EE2941FEA2007F7518 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		2B962C4B2951BD10002DEFDE /* AddToWalletView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWalletView2.swift; sourceTree = "<group>"; };
 		2B962C4D2951BE4E002DEFDE /* AddToWalletView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWalletView3.swift; sourceTree = "<group>"; };
+		2B962C6029531407002DEFDE /* balanceLine.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = balanceLine.gif; sourceTree = "<group>"; };
 		2BC0801A294C817500B90371 /* WalletMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMain.swift; sourceTree = "<group>"; };
 		2BC0801C294C822600B90371 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		2BC0801E294EE2A900B90371 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF567DE29475DE300A6E95B /* FirebaseAuth in Frameworks */,
+				2B962C5F29531297002DEFDE /* FLAnimatedImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +174,7 @@
 		2B1DE9E72941F59D007F7518 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B962C6029531407002DEFDE /* balanceLine.gif */,
 				2BC07FF2294B119A00B90371 /* Core Views */,
 				2BF567F22947BCFD00A6E95B /* Login */,
 				2BF567E9294772F100A6E95B /* Splash and on boarding */,
@@ -293,6 +298,7 @@
 			name = FinanceManagmentApp;
 			packageProductDependencies = (
 				2BF567DD29475DE300A6E95B /* FirebaseAuth */,
+				2B962C5E29531297002DEFDE /* FLAnimatedImage */,
 			);
 			productName = FinanceManagmentApp;
 			productReference = 2B1DE9D42941F41D007F7518 /* FinanceManagmentApp.app */;
@@ -324,6 +330,7 @@
 			mainGroup = 2B1DE9CB2941F41D007F7518;
 			packageReferences = (
 				2BF567DC29475DE300A6E95B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2B962C5D29531297002DEFDE /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
 			);
 			productRefGroup = 2B1DE9D52941F41D007F7518 /* Products */;
 			projectDirPath = "";
@@ -340,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B1DE9DF2941F41E007F7518 /* Preview Assets.xcassets in Resources */,
+				2B962C6129531407002DEFDE /* balanceLine.gif in Resources */,
 				2B1DE9DC2941F41E007F7518 /* Assets.xcassets in Resources */,
 				2BF567DB29475CEE00A6E95B /* GoogleService-Info.plist in Resources */,
 			);
@@ -597,6 +605,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2B962C5D29531297002DEFDE /* XCRemoteSwiftPackageReference "FLAnimatedImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flipboard/FLAnimatedImage";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		2BF567DC29475DE300A6E95B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -608,6 +624,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2B962C5E29531297002DEFDE /* FLAnimatedImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B962C5D29531297002DEFDE /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;
+			productName = FLAnimatedImage;
+		};
 		2BF567DD29475DE300A6E95B /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2BF567DC29475DE300A6E95B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
