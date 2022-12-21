@@ -40,8 +40,8 @@ struct SetupInfoView: View {
                 
                 Text("Give us your phone number and wait for the magic! We will provide you with information, and you only have to amend it in case of error")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading)
-                
+                    .padding(.leading, 40.0)
+
                 //    Spacer()
                     .frame(height: 85)
                 HStack{

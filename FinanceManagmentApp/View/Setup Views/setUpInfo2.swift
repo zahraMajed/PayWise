@@ -49,7 +49,7 @@ struct setUpInfo2: View {
             }
             Text("Share with us a little bit of your financial information so that we can develop an appropriate financial strategy. All your data will be secure. ")
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading)
+            .padding(.leading, 40.0)
             Spacer()
             LargeButton(text: "Start", isfilled: true) {
                showNextView = true
