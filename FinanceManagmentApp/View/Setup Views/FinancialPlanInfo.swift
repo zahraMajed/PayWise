@@ -52,7 +52,7 @@ struct FinancialPlanInfo: View {
                     .clipShape(Circle())
                     .padding(.leading)
             
-                Text("Business card")
+                Text("Business card to achieve your gouls")
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
            
