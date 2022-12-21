@@ -10,21 +10,23 @@ import FLAnimatedImage
 
 struct SetupInfoView: View {
     
-  @AppStorage("shouldshowonboarding") var shouldshowonboarding: Bool = true
+  @AppStorage("shouldshowonboarding") var shouldshowonboarding: Bool = false
     @State private var showNextView: Bool = false
     
         //@State var shouldshowonboarding: Bool = true
     var body: some View {
-            VStack(alignment: .leading, spacing: 15){
+            VStack(alignment: .leading, spacing: 10){
                 
-                Image("Logo")
+                /*Image("Logo")
                     .padding(.top)
-                    .padding(.trailing)
+                    .padding(.trailing)*/
                 
-                
+               /* GIFView(type: .name(""))
+                    .frame(width: 200, height: 250)*/
+                Spacer()
                 ViewTitleDescription(viewTitle: "PAYWISE", viewDescription: "We will need some information to get started")
                     .padding(.leading)
-                
+                Spacer()
                 HStack{
                     Text("1")
                         .foregroundColor(.white)
@@ -39,11 +41,10 @@ struct SetupInfoView: View {
                     .bold() }
                 
                 Text("Give us your phone number and wait for the magic! We will provide you with information, and you only have to amend it in case of error")
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(alignment: .leading)
                     .padding(.leading, 40.0)
-
-                //    Spacer()
-                    .frame(height: 85)
+                    .padding(.trailing, 17)
+                    
                 HStack{
                     
                     Text("2")
@@ -61,6 +62,7 @@ struct SetupInfoView: View {
                     
                     
                 }
+                Spacer()
                 LargeButton(text: "Start", isfilled: true) {
                     showNextView = true
                 }

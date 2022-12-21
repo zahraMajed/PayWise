@@ -31,18 +31,26 @@ struct MoneyGrowthGoal: View {
                         CheckView(title: "Opening Startup"){ isChecked in
                             if isChecked {
                                 userData.businessAccount.gaols[1] = "Opening Startup"
+                                if userData.businessAccount.gaols[2] == nil {
+                                    userData.businessAccount.cardSetting.isCardLocked = true
+                                }
                             }else {
                                 if userData.businessAccount.gaols[1] != nil {
                                     userData.businessAccount.gaols.removeValue(forKey: 1)
+                                    
                                 }
                             }
                         }
                         CheckView(title: "Stock Trading") { isChecked in
                             if isChecked {
                                 userData.businessAccount.gaols[2] = "Stock Trading"
+                                userData.businessAccount.cardSetting.isCardLocked = false
                             }else {
                                 if userData.businessAccount.gaols[2] != nil {
                                     userData.businessAccount.gaols.removeValue(forKey: 2)
+                                    if userData.businessAccount.gaols[1] != nil {
+                                        userData.businessAccount.cardSetting.isCardLocked = true
+                                    }
                                 }
                             }
                         }
@@ -117,7 +125,7 @@ struct MoneyGrowthGoal: View {
             userData.personalAccount.cardSetting.cardLimit = budgetPerAcc
         }
         
-        if userData.businessAccount.gaols.count > 1 {
+        /*if userData.businessAccount.gaols.count > 1 {
             userData.businessAccount.cardSetting.isCardLocked = false
         } else if userData.businessAccount.gaols.count == 1 {
             if userData.businessAccount.gaols[1] != nil {
@@ -125,7 +133,7 @@ struct MoneyGrowthGoal: View {
             }else {
                 userData.businessAccount.cardSetting.isCardLocked = false
             }
-        }
+        }*/
         
         userData.isSetupDone = true
     }

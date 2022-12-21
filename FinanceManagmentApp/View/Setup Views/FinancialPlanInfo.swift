@@ -12,7 +12,7 @@ struct FinancialPlanInfo: View {
             Image("cards")
                 .resizable()
             
-            ViewTitleDescription(viewTitle: "We are preparing a financial plan", viewDescription: "")
+            ViewTitleDescription(viewTitle: "We will prepare a financial strategy", viewDescription: "")
                 .padding(.leading)
 
         HStack{
@@ -52,7 +52,7 @@ struct FinancialPlanInfo: View {
                     .clipShape(Circle())
                     .padding(.leading)
             
-                Text("Business card to achieve your gouls")
+                Text("Business card to achieve your goals")
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
            

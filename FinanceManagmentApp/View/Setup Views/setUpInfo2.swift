@@ -11,10 +11,10 @@ struct setUpInfo2: View {
     @State private var showNextView: Bool = false
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
-            Image("Logo")
+            /*Image("Logo")
                 .padding(.top)
-                .padding(.trailing)
-            
+                .padding(.trailing)*/
+            Spacer()
             ViewTitleDescription(viewTitle: "PAYWISE", viewDescription: "We will need some information to get started")
                 .padding(.leading)
             Spacer()
@@ -45,6 +45,7 @@ struct setUpInfo2: View {
                     .padding(.leading)
             
                 Text("Financial Information")
+                    .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             Text("Share with us a little bit of your financial information so that we can develop an appropriate financial strategy. All your data will be secure. ")
