@@ -40,6 +40,10 @@
 		2BF56841294A648C00A6E95B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF56840294A648C00A6E95B /* API.swift */; };
 		2BF56843294A649A00A6E95B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF56842294A649A00A6E95B /* APIService.swift */; };
 		5624E4BB2952022A00F6E701 /* LiabilitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E4BA2952022A00F6E701 /* LiabilitesView.swift */; };
+		5624E4C82953267800F6E701 /* insightspersenal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E4C72953267800F6E701 /* insightspersenal.swift */; };
+		5624E4CB295326CB00F6E701 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5624E4CA295326CB00F6E701 /* SwiftUICharts */; };
+		5624E4CD2953278C00F6E701 /* insightsLiabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E4CC2953278C00F6E701 /* insightsLiabilities.swift */; };
+		5624E4CF295328D300F6E701 /* insightsBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E4CE295328D300F6E701 /* insightsBusiness.swift */; };
 		5691E10B294A138000576643 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5691E10A294A138000576643 /* PersonalInfoView.swift */; };
 		56DD2367294B48470062BC21 /* MoneyGrowthGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD2366294B48470062BC21 /* MoneyGrowthGoal.swift */; };
 		56DD2400294F2A2F0062BC21 /* FinancialInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD23FF294F2A2F0062BC21 /* FinancialInfoView.swift */; };
@@ -86,6 +90,9 @@
 		2BF56840294A648C00A6E95B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2BF56842294A649A00A6E95B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5624E4BA2952022A00F6E701 /* LiabilitesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiabilitesView.swift; sourceTree = "<group>"; };
+		5624E4C72953267800F6E701 /* insightspersenal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insightspersenal.swift; sourceTree = "<group>"; };
+		5624E4CC2953278C00F6E701 /* insightsLiabilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insightsLiabilities.swift; sourceTree = "<group>"; };
+		5624E4CE295328D300F6E701 /* insightsBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insightsBusiness.swift; sourceTree = "<group>"; };
 		5691E10A294A138000576643 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 		56DD2366294B48470062BC21 /* MoneyGrowthGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyGrowthGoal.swift; sourceTree = "<group>"; };
 		56DD23FF294F2A2F0062BC21 /* FinancialInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialInfoView.swift; sourceTree = "<group>"; };
@@ -103,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5624E4CB295326CB00F6E701 /* SwiftUICharts in Frameworks */,
 				2BF567DE29475DE300A6E95B /* FirebaseAuth in Frameworks */,
 				2B962C5F29531297002DEFDE /* FLAnimatedImage in Frameworks */,
 			);
@@ -174,6 +182,7 @@
 		2B1DE9E72941F59D007F7518 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5624E4C62953266100F6E701 /* Insights */,
 				2B962C6029531407002DEFDE /* balanceLine.gif */,
 				2BC07FF2294B119A00B90371 /* Core Views */,
 				2BF567F22947BCFD00A6E95B /* Login */,
@@ -280,6 +289,16 @@
 			path = "Permissions ";
 			sourceTree = "<group>";
 		};
+		5624E4C62953266100F6E701 /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				5624E4C72953267800F6E701 /* insightspersenal.swift */,
+				5624E4CC2953278C00F6E701 /* insightsLiabilities.swift */,
+				5624E4CE295328D300F6E701 /* insightsBusiness.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,6 +318,7 @@
 			packageProductDependencies = (
 				2BF567DD29475DE300A6E95B /* FirebaseAuth */,
 				2B962C5E29531297002DEFDE /* FLAnimatedImage */,
+				5624E4CA295326CB00F6E701 /* SwiftUICharts */,
 			);
 			productName = FinanceManagmentApp;
 			productReference = 2B1DE9D42941F41D007F7518 /* FinanceManagmentApp.app */;
@@ -331,6 +351,7 @@
 			packageReferences = (
 				2BF567DC29475DE300A6E95B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2B962C5D29531297002DEFDE /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
+				5624E4C9295326CB00F6E701 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 2B1DE9D52941F41D007F7518 /* Products */;
 			projectDirPath = "";
@@ -362,6 +383,7 @@
 			files = (
 				2BF567F92948648600A6E95B /* FaceIdPermission.swift in Sources */,
 				5F060883294F516900D29E0D /* manageView.swift in Sources */,
+				5624E4C82953267800F6E701 /* insightspersenal.swift in Sources */,
 				2BC0801F294EE2A900B90371 /* InsightsView.swift in Sources */,
 				2BF56841294A648C00A6E95B /* API.swift in Sources */,
 				2BF567E029475EB700A6E95B /* CountriesPhoneCode.swift in Sources */,
@@ -374,12 +396,14 @@
 				5F060881294F4F7A00D29E0D /* Account.swift in Sources */,
 				2BF56843294A649A00A6E95B /* APIService.swift in Sources */,
 				2BF5683F294A645100A6E95B /* TransactionsView.swift in Sources */,
+				5624E4CD2953278C00F6E701 /* insightsLiabilities.swift in Sources */,
 				2BC08025294F39FE00B90371 /* AddToWalletView.swift in Sources */,
 				87058071295087130062B3DA /* FinancialPlanInfo.swift in Sources */,
 				2BF5683B294A640E00A6E95B /* APIContentViewModel.swift in Sources */,
 				2BC0801B294C817500B90371 /* WalletMain.swift in Sources */,
 				87C26CF2294B523C0006334F /* TabMainView.swift in Sources */,
 				2BF567D929475BB700A6E95B /* LoginViewModel.swift in Sources */,
+				5624E4CF295328D300F6E701 /* insightsBusiness.swift in Sources */,
 				2BF567F62947BD2F00A6E95B /* OTPVerifivation.swift in Sources */,
 				2B1DE9D82941F41D007F7518 /* FinanceManagmentAppApp.swift in Sources */,
 				2BF568392949139400A6E95B /* User.swift in Sources */,
@@ -621,6 +645,14 @@
 				kind = branch;
 			};
 		};
+		5624E4C9295326CB00F6E701 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -633,6 +665,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2BF567DC29475DE300A6E95B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		5624E4CA295326CB00F6E701 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5624E4C9295326CB00F6E701 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
