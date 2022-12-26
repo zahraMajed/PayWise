@@ -110,6 +110,7 @@ struct CustomTextField: View {
     var isSwitch: Bool
     var isCurrancy: Bool
     @Binding var userInput: String
+    @FocusState private var focusedField: String?
     
     var body: some View {
         VStack(alignment: .leading){
@@ -122,6 +123,13 @@ struct CustomTextField: View {
                 .disableAutocorrection(true)
                 .foregroundColor(Color.black)
                 .padding([.leading, .bottom, .trailing], 12)
+                .focused($focusedField, equals: userInput)
+        }.toolbar {
+            ToolbarItem(placement: .keyboard) {
+                Button("Done") {
+                    focusedField = nil
+                }
+            }
         }
         .frame(width: 355, height: 65)
         .background(Color("Gray4"))
@@ -134,6 +142,7 @@ struct CustomTextField: View {
 struct CustomPhoneTextField: View {
     var countryPhoneCode: String
     @Binding var userInput: String
+    @FocusState private var focusedField: String?
     
     var body: some View {
         VStack(alignment: .leading){
@@ -147,8 +156,15 @@ struct CustomPhoneTextField: View {
                 TextField("650-555-1234", text: $userInput)
                     .keyboardType(.numberPad)
                     .foregroundColor(Color.black)
+                    .focused($focusedField, equals: userInput)
             }
             .padding([.leading, .bottom, .trailing], 12)
+        }.toolbar {
+            ToolbarItem(placement: .keyboard) {
+                Button("Done") {
+                    focusedField = nil
+                }
+            }
         }
         .frame(width: 355, height: 65)
         .background(Color("Gray4"))

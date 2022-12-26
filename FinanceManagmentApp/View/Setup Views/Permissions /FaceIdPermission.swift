@@ -29,7 +29,7 @@ struct FaceIdPermission: View {
                     shouldGoToNotificationPermission = true
                 }
                 Spacer()
-                NavigationLink(destination: NotificationsPermission(), isActive: $shouldGoToNotificationPermission) {
+                NavigationLink(destination: AddToWalletView(), isActive: $shouldGoToNotificationPermission) {
                 }.labelsHidden()
         }
         

@@ -60,7 +60,7 @@ struct MoneyGrowthGoal: View {
                     .background(Color("Gray4"))
                     .cornerRadius(14)
                     
-                    CustomTextField(textFieldLabel: "Business Cost", textFieldHint: "$50,000.00", isSwitch: false, isCurrancy: false, userInput: $businessCost)
+                    CustomTextField(textFieldLabel: "Business Cost", textFieldHint: "50,000.00 SR", isSwitch: false, isCurrancy: false, userInput: $businessCost)
                     
                     CustomTextFieldWithDate(textFieldLabel: "Business opening date", datePickerTitle: "Business opening date", selectedDate: $userData.businessAccount.businessDueDate)
 
@@ -72,7 +72,7 @@ struct MoneyGrowthGoal: View {
                     showNextView = true
                 }
                 Spacer()
-                NavigationLink(destination: AddToWalletView(), isActive: $showNextView) {
+                NavigationLink(destination: FaceIdPermission(), isActive: $showNextView) {
                 }.labelsHidden()
             }
             

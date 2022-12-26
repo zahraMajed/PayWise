@@ -19,6 +19,7 @@ struct PhoneNumberPInfo: View {
                 ViewTitleDescription(viewTitle: "Phone Number", viewDescription: "We will store it and send OTP to it")
                 Spacer()
                 CustomPhoneTextField(countryPhoneCode: loginData.getCountryCode(), userInput: $loginData.phoneNumber)
+
                 Spacer(minLength: 377)
                 LargeButton(text: "Continue", isfilled: true) {
                     //updating USER struct

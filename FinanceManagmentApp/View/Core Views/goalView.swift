@@ -44,7 +44,6 @@ struct goalView: View {
                                         .foregroundColor(Color("Gray3"))
                                     .frame(width: 50,height: 10)
                                 }
-                                Text("you ")
                             }
 
                         }.padding([.leading, .trailing], 17.0)

@@ -18,7 +18,7 @@ struct FinancialInfoView: View {
             Spacer()
             ViewTitleDescription(viewTitle: "Financial Information", viewDescription: "The Cards will be managed according to your input")
             Spacer(minLength: 100)
-            CustomTextField(textFieldLabel: "Monthly income", textFieldHint: "0.00", isSwitch: true, isCurrancy: true, userInput: $userData.monthlyIncom)
+            CustomTextField(textFieldLabel: "Monthly income", textFieldHint: "0.00 SR", isSwitch: true, isCurrancy: true, userInput: $userData.monthlyIncom)
                 .keyboardType(.numberPad)
             
             Spacer(minLength: 380)

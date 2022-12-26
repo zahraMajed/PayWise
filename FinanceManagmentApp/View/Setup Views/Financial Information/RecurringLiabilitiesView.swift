@@ -25,7 +25,7 @@ struct RecurringLiabilitiesView: View {
                 VStack(spacing: 17){
                     CustomTextField(textFieldLabel: "Liability name", textFieldHint: "Car installments", isSwitch: false, isCurrancy: false, userInput: $liabilityName)
                     
-                    CustomTextField(textFieldLabel: "Liability Cost", textFieldHint: "1000", isSwitch: false, isCurrancy: true, userInput: $liabilityCost)
+                    CustomTextField(textFieldLabel: "Liability Cost", textFieldHint: "1,000 SR", isSwitch: false, isCurrancy: true, userInput: $liabilityCost)
                         .keyboardType(.namePhonePad)
                     
                     LargeButton(text: "Add liability", isfilled: false) {
@@ -87,7 +87,9 @@ struct RecurringLiabilitiesView: View {
     }
     //MARK: function
     func deleteLiabilitie(indexSet : IndexSet){
+       // userData.liabilitiesAccount.liabilitiesCost = Int(userData.liabilitiesAccount.liabilities.)
         userData.liabilitiesAccount.liabilities.remove(atOffsets: indexSet)
+       
     }
   
     func moveLiabilitie(fromOffsets source: IndexSet, toOffsets destination : Int){

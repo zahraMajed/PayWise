@@ -10,7 +10,7 @@ import FLAnimatedImage
 
 struct SetupInfoView: View {
     
-  @AppStorage("shouldshowonboarding") var shouldshowonboarding: Bool = false
+  @AppStorage("shouldshowonboarding") var shouldshowonboarding: Bool = true
     @State private var showNextView: Bool = false
     
         //@State var shouldshowonboarding: Bool = true

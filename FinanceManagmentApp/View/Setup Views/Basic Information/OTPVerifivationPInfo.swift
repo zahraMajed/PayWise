@@ -34,9 +34,9 @@ struct OTPVerifivationPInfo: View {
                 NavigationLink(destination: PersonalInfoView(), isActive: $loginData.shouldGoToPersonalInfo) {
                 }.labelsHidden()
             }
-            if loginData.isError {
+            /*if loginData.isError {
                 CustomAlert(presentAlert: $loginData.isError, alertType: .error(title: "Error", message: loginData.errorMsg))
-            }
+            }*/
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)

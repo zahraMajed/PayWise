@@ -16,26 +16,26 @@ struct DetailsView: View {
             
             VStack (alignment: .leading,spacing: 10){
                 Text("Total Balance")
-                Text("$ 53,405.08")
+                Text("4,000 SR")
                     .bold()
             }.padding(.top, 17)
             
             VStack (alignment: .leading,spacing: 10){
                 Text("Sep Budget")
-                Text("$ 3,300")
+                Text("4,000 SR ")
                     .bold()
             }
             
             VStack (alignment: .leading,spacing: 10){
                 Text("Sep Expanse")
-                Text("$ 2,300")
+                Text("0,000 SR")
                     .bold()
             }
             
             if currentCard.accountType == .Liabilities {
                 VStack (alignment: .leading,spacing: 10){
                     Text("Liabilities Cost")
-                    Text("$ 2,300")
+                    Text("2,000 SR")
                         .bold()
                 }
             }

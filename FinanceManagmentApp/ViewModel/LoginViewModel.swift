@@ -39,7 +39,7 @@ class LoginViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self.isLoading = true
             }
-            Auth.auth().settings?.isAppVerificationDisabledForTesting = true
+            //Auth.auth().settings?.isAppVerificationDisabledForTesting = true
             let number = "+\(getCountryCode()) \(phoneNumber)"
             let result = try await PhoneAuthProvider.provider().verifyPhoneNumber(number, uiDelegate: nil)
             DispatchQueue.main.async {
